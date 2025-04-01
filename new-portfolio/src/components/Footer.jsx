@@ -1,30 +1,37 @@
 import React, { useState, useEffect } from 'react';
 
-function Header() {
-    const [headerData, setHeaderData] = useState({ title: "", navLink: [], logo: "" });
+function Footer() {
+    const [footerData, setFooterData] = useState({ title: "", navLink: [] });
 
     useEffect(() => {
-        fetch('/data/headerData.json') 
+        fetch('/data/footerData.json') 
             .then(response => response.json())
-            .then(data => setHeaderData(data))
+            .then(data => seFooterData(data))
             .catch(error => console.error("Error fetching data:", error));
     }, []);
 
-    return (
-        <header>
-            {headerData.logo && (
-               <img src={'/data/' + headerData.logo} alt="logo" />
+    const scrollToTop = () => {
 
-            )}
+        window.scrollTo({top:0, behavior: "smooth"});
+
+    };
+
+    return (
+        <footer>
+            <h2>{footerData.title}</h2>
+            <h3>{footerData.subtitle}</h3>
             <nav>
-                {headerData.navLink.map((link, index) => (
+                {footerData.navLink.map((link, index) => (
                     <a key={index} href={link.link}>
                         {link.name}
                     </a>
                 ))}
             </nav>
-        </header>
+            <p>&copy;{new Data().getFullYear()}Mahdi Roozbahani</p>
+            <button 
+            onClick={scrollToTop}>↑Back to top</button>
+        </footer>
     );
 }
 
-export default Header;
+export default Footer;
