@@ -2,12 +2,27 @@ import React, { useState, useEffect } from 'react';
 
 function Header() {
     const [headerData, setHeaderData] = useState({ title: "", navLink: [], logo: "" });
+    const [localTime, setLocalTime] = useState("");
+    
+
 
     useEffect(() => {
         fetch('/data/headerData.json') 
             .then(response => response.json())
             .then(data => setHeaderData(data))
             .catch(error => console.error("Error fetching data:", error));
+    }, []);
+
+    useEffect (() => {
+        const updateTime = () => {
+            const now = new Date().toLocaleTimeString("en-US", { timeZone:"America/Vancouver" });
+            setLocalTime(now);
+            };
+            
+            updateTime();
+            const interval = setInterval(updateTime, 1000);
+
+            return () => clearInterval(interval);
     }, []);
 
     return (
@@ -23,6 +38,7 @@ function Header() {
                     </a>
                 ))}
             </nav>
+            <p>Local Time: {localTime}</p>
         </header>
     );
 }
