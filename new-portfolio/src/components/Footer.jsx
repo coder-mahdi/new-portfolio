@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
 function Footer() {
-    const [footerData, setFooterData] = useState({ title: "", navLink: [] });
+    const [footerData, setFooterData] = useState({ title: "", subtitle: "", navLink: [] });
 
     useEffect(() => {
         fetch('/data/footerData.json') 
             .then(response => response.json())
-            .then(data => seFooterData(data))
+            .then(data => setFooterData(data))
             .catch(error => console.error("Error fetching data:", error));
     }, []);
 
@@ -27,7 +27,7 @@ function Footer() {
                     </a>
                 ))}
             </nav>
-            <p>&copy;{new Data().getFullYear()}Mahdi Roozbahani</p>
+            <p>&copy;{new Date().getFullYear()} Mahdi Roozbahani</p>
             <button 
             onClick={scrollToTop}>↑Back to top</button>
         </footer>
