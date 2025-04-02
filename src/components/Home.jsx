@@ -21,6 +21,22 @@ function Home() {
                 <button>{homeData.buttonText || "Click me"}
                 <a href="#about"></a>
                 </button>
+
+                <div className='about'>
+
+                </div>
+
+                <div className='work-section'>
+
+                </div>
+
+                <div className='education-section'>
+
+                </div>
+
+                <div className='recomendation-section'>
+                    
+                </div>
             </div>
         </Layout>
     );
