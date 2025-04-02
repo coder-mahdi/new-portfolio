@@ -1,8 +1,17 @@
 {
 
-      "title": "Mahdi Roozbahani",
-      "subtitle": "Web Developer",
-      "buttonText": "Learn more"
-    
+  "hero": {
+    "title": "Mahdi Roozbahani",
+    "subtitle": "Web Developer",
+    "buttonText": "Learn more",
+    "location": "Based in Vancouver, Canada"
+  
+  },
+
+  "about":{
+    "title": ""  
+
+
+  }
     }
     

@@ -4,7 +4,7 @@ import Layout from './Layout.jsx';
 
 
 function Home() {
-    const [homeData, setHomeData] = useState({});
+    const [homeData, setHomeData] = useState({hero: {} });
 
     useEffect(() => {
         fetch('/data/homeData.json') 
@@ -16,11 +16,13 @@ function Home() {
     return (
         <Layout> 
             <div className="main-content">
-                <h1>{homeData.title || "loading..."}</h1>
-                <h2>{homeData.subtitle || ""}</h2>
-                <button>{homeData.buttonText || "Click me"}
-                <a href="#about"></a>
+                <h1>{homeData.hero.title || "loading..."}</h1>
+                <h2>{homeData.hero.subtitle || ""}</h2>
+                <button>
+                <a href="#about">{homeData.hero.buttonText || "Click me"}</a>
                 </button>
+                <p>{homeData.hero.location}</p>
+                <img src="" alt="Mahdi's photo" />
 
                 <div className='about'>
 
@@ -35,7 +37,7 @@ function Home() {
                 </div>
 
                 <div className='recomendation-section'>
-                    
+
                 </div>
             </div>
         </Layout>
