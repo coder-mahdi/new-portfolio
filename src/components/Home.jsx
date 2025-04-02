@@ -4,7 +4,7 @@ import Layout from './Layout.jsx';
 
 
 function Home() {
-    const [homeData, setHomeData] = useState({title:"", subtitle:""});
+    const [homeData, setHomeData] = useState({});
 
     useEffect(() => {
         fetch('/data/homeData.json') 
@@ -16,9 +16,11 @@ function Home() {
     return (
         <Layout> 
             <div className="main-content">
-                <h1>{homeData.title}</h1>
-                <h2>{homeData.subtitle}</h2>
-                <h3>This is a test</h3>
+                <h1>{homeData.title || "loading..."}</h1>
+                <h2>{homeData.subtitle || ""}</h2>
+                <button>{homeData.buttonText || "Click me"}
+                <a href="#about"></a>
+                </button>
             </div>
         </Layout>
     );
