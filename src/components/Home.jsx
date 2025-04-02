@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Layout from './Layout.jsx';
+
 
 
 function Home() {
@@ -15,9 +15,8 @@ function Home() {
 
 
     return (
-        <header>
-        </header>
+        <Layout/>
     );
 }
 
-export default Footer;
+export default Home;
