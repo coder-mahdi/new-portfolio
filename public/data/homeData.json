@@ -17,8 +17,43 @@
 
   "works": {
     "title": "Selected Works",
-    "explanation": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',"
+    "explanation": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',",
+
+  },
+
+  "education":{
+    "title": "Education",
+    "explanation": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',",
+  },
+
+  "university4":{
+     "name":"front-end developer",
+     "university": "British Columbia institute of technology(BCIT)",
+     "degree":"certificate",
+     "duration": "2024"
+  },
+
+  "niversity3":{
+    "name":"Javascript",
+    "university": "Johns Hopkins University",
+     "degree":"certificate",
+     "duration": "2022"
+  },
+
+  "niversity2":{
+    "name":"Communication",
+    "university": "Allameh Tabataba'i University",
+     "degree":"Master's degree",
+     "duration": "2019"
+  },
+
+  "niversity1":{
+    "name":"Journalism",
+    "university": "Allameh Tabataba'i University",
+     "degree":"bachelor's degree",
+     "duration": "2013"
+  }
 
   }
-    }
+    
     
