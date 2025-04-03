@@ -15,7 +15,12 @@ function Header() {
 
     useEffect (() => {
         const updateTime = () => {
-            const now = new Date().toLocaleTimeString("en-US", { timeZone:"America/Vancouver" });
+            const now = new Date().toLocaleTimeString("en-US", { 
+                timeZone:"America/Vancouver",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: true
+            });
             setLocalTime(now);
             };
             

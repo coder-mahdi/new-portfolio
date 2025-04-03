@@ -1,0 +1,9 @@
+{
+    "logo": "images/logo.png",
+      "navLink": [
+        { "name": "Works", "link": "#Works" },
+        { "name": "About", "link": "#about" },
+        { "name": "Contact", "link": "#contact" }
+      ]
+    }
+    
