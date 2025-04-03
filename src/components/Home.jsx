@@ -4,7 +4,12 @@ import Layout from './Layout.jsx';
 
 
 function Home() {
-    const [homeData, setHomeData] = useState({hero: {}, about: {} });
+    const [homeData, setHomeData] = useState({
+        hero: {},
+        about: {},
+        works: { projects: [] },
+        education: { universities: [] }
+    });
 
     useEffect(() => {
         fetch('/data/homeData.json') 
@@ -29,7 +34,7 @@ function Home() {
                 <div className='about'>
                 <h2>{homeData.about.title || "loading..."}</h2>
                 <button>
-                    <a href="#works">View works</a>
+                    <a href="#works">View Works</a>
                 </button>
                 <h3>Skills</h3>
                 <p>{homeData.about.skills}</p>
@@ -42,11 +47,33 @@ function Home() {
                     <h2>{homeData.works.title || "loading..."}</h2>
                     <p>{homeData.works.explanation}</p>
                     <button>
-                        <a href="#woks">View Works</a>
+                        <a href="#woks"> View Works</a>
                     </button>
+
+                    <ul>
+                        {homeData.works?.projects?.map((pro, index) => (
+                            <li key={index}>
+                                <img src={pro.image} alt={pro.name} className="project-image" />
+                                <h3>{pro.name}</h3>
+                            </li>
+                        ) )}
+                    </ul>
                 </div>
 
                 <div className='education-section'>
+                    <h2>{homeData.education?.title || "loading..."}</h2>
+                    <p>{homeData.education?.explanation || ""}</p>
+
+                    <ul>
+                        {homeData.education?.universities?.map((edu, index) => (
+                            <li key={index}>
+                                <h3>{edu.name}</h3>
+                                <p>{edu.university}</p>
+                                <p>{edu.degree}</p>
+                                <p>{edu.duration}</p>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
                 <div className='recomendation-section'>
