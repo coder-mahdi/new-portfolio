@@ -23,9 +23,9 @@ function Layout({ children }) {
     position: 'absolute', 
     width: '20px', 
     height: '20px', 
-    backgroundColor: 'red', // رنگ قرمز برای نمایش بهتر
-    borderRadius: '50%', // دایره بودن پوینتر
-    pointerEvents: 'none', // جلوگیری از اختلال در تعاملات دیگر
+    backgroundColor: 'red',
+    borderRadius: '50%', 
+    pointerEvents: 'none', 
   }}  ref={ref} className="pointer"></motion.div>
             <main>{children}</main> 
             <Footer />
