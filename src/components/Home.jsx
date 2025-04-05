@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout.jsx';
+import { BrowserRouter } from 'react-router-dom';
+
 
 
 
@@ -19,6 +21,7 @@ function Home() {
     }, []);
 
     return (
+        <BrowserRouter>
         <Layout> 
             <div className="main-content">
                 <h1>{homeData.hero.title || "loading..."}</h1>
@@ -81,6 +84,8 @@ function Home() {
 
             </div>
         </Layout>
+        </BrowserRouter>
+        
     );
 }
 

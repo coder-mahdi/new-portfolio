@@ -4,6 +4,7 @@ import Footer from './Footer';
 
 import { motion } from 'framer-motion';
 import { useFollowPointer } from './useFollowPointer';
+import { Link } from 'react-router-dom';
 
 function Layout({ children }) {
     const ref = useRef(null);
