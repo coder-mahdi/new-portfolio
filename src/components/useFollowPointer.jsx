@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from "react";
 import { useMotionValue, useSpring, frame } from 'framer-motion';
 
-const spring = { damping: 2, stiffness: 60, restDelta: 0.001 };
+const spring = { damping: 15, stiffness: 50, restDelta: 0.001 };
 
 export function useFollowPointer(ref) {
     const xPoint = useMotionValue(0);
