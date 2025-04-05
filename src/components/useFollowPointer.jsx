@@ -10,7 +10,8 @@ export function useFollowPointer(ref) {
     const y = useSpring(yPoint, spring);
 
     useEffect(() => {
-        const isTouchDevice = Window.matchMedia("(pointer: coarse)").matches;
+        const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
+
 
         if  (isTouchDevice) return;
 
