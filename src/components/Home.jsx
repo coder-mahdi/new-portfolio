@@ -49,7 +49,7 @@ function Home() {
                     <h2>{homeData.works.title || "loading..."}</h2>
                     <p>{homeData.works.explanation}</p>
                     <button>
-                        <a href="#woks"> View Works</a>
+                        <a href="/works"> View Works</a>
                     </button>
 
                     <ul>

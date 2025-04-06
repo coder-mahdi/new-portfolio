@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout.jsx';
-import { li } from 'framer-motion/client';
+
 
 
 
@@ -18,7 +18,7 @@ function Works() {
         <Layout> 
             <div className="main-content">
                 <h1>{worksData.title || "loading..."}</h1>
-                 <p>{worksData.title}</p>
+                 <p>{worksData.explanation}</p>
 
                  <ul>
                     {worksData.projects?.map((projects, index) => {
