@@ -3,8 +3,6 @@ import Layout from './Layout.jsx';
 
 
 
-
-
 function Home() {
     const [homeData, setHomeData] = useState({
         hero: {},
@@ -49,7 +47,7 @@ function Home() {
                     <h2>{homeData.works.title || "loading..."}</h2>
                     <p>{homeData.works.explanation}</p>
                     <button>
-                        <a href="/works"> View Works</a>
+                        <a href="#woks"> View Works</a>
                     </button>
 
                     <ul>
@@ -83,7 +81,6 @@ function Home() {
 
             </div>
         </Layout>
-        
     );
 }
 
