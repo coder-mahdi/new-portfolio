@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Layout from './Layout.jsx';
 
 
@@ -10,7 +11,12 @@ function Works() {
     useEffect(() => {
         fetch('/data/worksData.json') 
             .then(response => response.json())
-            .then(data => setWorksData(data))
+            .then(data => {
+                const shuffled = [ ...data.projects].sort(() => 5 - Math.random());
+                const randomProjects = shuffled.slice(0, 4);
+
+                setWorksData({...data, projects: randomProjects});
+            })
             .catch(error => console.error("Error fetching data:", error));
     }, []);
 
@@ -20,7 +26,7 @@ function Works() {
                 <h1>{worksData.title || "loading..."}</h1>
                  <p>{worksData.explanation}</p>
 
-                 <ul>
+                 <ul className='projects-list'>
                     {worksData.projects?.map((projects, index) => {
                         return ( 
 
@@ -30,6 +36,12 @@ function Works() {
                                 <img src={projects.image} alt={projects.name} />
 
                                  )}
+
+                            <p>
+                                <Link to={`/singlework/${projects.id}`} className="learn-more-btn">
+                                 Learn More
+                                </Link>
+                            </p>
                         </li>
 
                     )}

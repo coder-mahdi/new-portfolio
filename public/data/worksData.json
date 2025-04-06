@@ -1,24 +1,167 @@
-{ 
-  "title": "Swlected Works",
-  "explanation": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',",
+{
+  "title": "Selected Works",
+  "explanation": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'.",
 
-    "projects": [
-      {
-        "name":"Call Me Guide",
-        "image": "/images/projects/callmeguide.jpg"
-      },
-
-      {
-        "name":"RedTattoo"
-      },
-      {
-        "name":"Game"
-      },
-      {
-        "name":"Movie data base"
+  "projects": [
+    {
+      "id": 1,
+      "name": "Call Me Guide",
+      "image": "/images/projects/callmeguide.jpg",
+      "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
+      "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
+      "detailedDescription": {
+        "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
+        "sections": {
+          "Technologies": [
+            "React: Used for dynamic component management and to create an interactive user experience.",
+            "SASS: Applied for clean, maintainable, and responsive styling.",
+            "SiteGround: The website is hosted on SiteGround, ensuring reliable performance and uptime.",
+            "Vite: Deployed with Vite for fast build times and efficient development."
+          ],
+          "Features": [
+            "Project Showcase: Includes an interactive slider to showcase projects with smooth navigation.",
+            "Responsive Design: Ensures compatibility across all devices, from desktops to smartphones.",
+            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience.",
+            "JSON-based Content: All content is dynamically sourced from JSON files, allowing easy updates without modifying the code."
+          ],
+          "Contributions": [
+            "Designed and developed the entire site structure and layout.",
+            "Created custom React components for dynamic and reusable UI elements.",
+            "Styled all UI elements using SASS, ensuring design consistency and responsiveness.",
+            "Implemented a JSON-based content management system for easier future updates.",
+            "Ensured cross-browser compatibility and optimized performance for faster load times."
+          ]
+        }
       }
-    ]
+    },
 
-  }
-   
-    
+    {
+      "id": 2,
+      "name": "Redtattoo",
+      "image": "/images/projects/callmeguide.jpg",
+      "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
+      "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
+      "detailedDescription": {
+        "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
+        "sections": {
+          "Technologies": [
+            "React: Used for dynamic component management and to create an interactive user experience.",
+            "SASS: Applied for clean, maintainable, and responsive styling.",
+            "SiteGround: The website is hosted on SiteGround, ensuring reliable performance and uptime.",
+            "Vite: Deployed with Vite for fast build times and efficient development."
+          ],
+          "Features": [
+            "Project Showcase: Includes an interactive slider to showcase projects with smooth navigation.",
+            "Responsive Design: Ensures compatibility across all devices, from desktops to smartphones.",
+            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience.",
+            "JSON-based Content: All content is dynamically sourced from JSON files, allowing easy updates without modifying the code."
+          ],
+          "Contributions": [
+            "Designed and developed the entire site structure and layout.",
+            "Created custom React components for dynamic and reusable UI elements.",
+            "Styled all UI elements using SASS, ensuring design consistency and responsiveness.",
+            "Implemented a JSON-based content management system for easier future updates.",
+            "Ensured cross-browser compatibility and optimized performance for faster load times."
+          ]
+        }
+      }
+    },
+
+    {
+      "id": 3,
+      "name": "Adventure tour",
+      "image": "/images/projects/callmeguide.jpg",
+      "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
+      "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
+      "detailedDescription": {
+        "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
+        "sections": {
+          "Technologies": [
+            "React: Used for dynamic component management and to create an interactive user experience.",
+            "SASS: Applied for clean, maintainable, and responsive styling.",
+            "SiteGround: The website is hosted on SiteGround, ensuring reliable performance and uptime.",
+            "Vite: Deployed with Vite for fast build times and efficient development."
+          ],
+          "Features": [
+            "Project Showcase: Includes an interactive slider to showcase projects with smooth navigation.",
+            "Responsive Design: Ensures compatibility across all devices, from desktops to smartphones.",
+            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience.",
+            "JSON-based Content: All content is dynamically sourced from JSON files, allowing easy updates without modifying the code."
+          ],
+          "Contributions": [
+            "Designed and developed the entire site structure and layout.",
+            "Created custom React components for dynamic and reusable UI elements.",
+            "Styled all UI elements using SASS, ensuring design consistency and responsiveness.",
+            "Implemented a JSON-based content management system for easier future updates.",
+            "Ensured cross-browser compatibility and optimized performance for faster load times."
+          ]
+        }
+      }
+    },
+
+    {
+      "id": 4,
+      "name": "Flag game",
+      "image": "/images/projects/callmeguide.jpg",
+      "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
+      "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
+      "detailedDescription": {
+        "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
+        "sections": {
+          "Technologies": [
+            "React: Used for dynamic component management and to create an interactive user experience.",
+            "SASS: Applied for clean, maintainable, and responsive styling.",
+            "SiteGround: The website is hosted on SiteGround, ensuring reliable performance and uptime.",
+            "Vite: Deployed with Vite for fast build times and efficient development."
+          ],
+          "Features": [
+            "Project Showcase: Includes an interactive slider to showcase projects with smooth navigation.",
+            "Responsive Design: Ensures compatibility across all devices, from desktops to smartphones.",
+            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience.",
+            "JSON-based Content: All content is dynamically sourced from JSON files, allowing easy updates without modifying the code."
+          ],
+          "Contributions": [
+            "Designed and developed the entire site structure and layout.",
+            "Created custom React components for dynamic and reusable UI elements.",
+            "Styled all UI elements using SASS, ensuring design consistency and responsiveness.",
+            "Implemented a JSON-based content management system for easier future updates.",
+            "Ensured cross-browser compatibility and optimized performance for faster load times."
+          ]
+        }
+      }
+    },
+
+    {
+      "id": 5,
+      "name": "Vansun",
+      "image": "/images/projects/callmeguide.jpg",
+      "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
+      "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
+      "detailedDescription": {
+        "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
+        "sections": {
+          "Technologies": [
+            "React: Used for dynamic component management and to create an interactive user experience.",
+            "SASS: Applied for clean, maintainable, and responsive styling.",
+            "SiteGround: The website is hosted on SiteGround, ensuring reliable performance and uptime.",
+            "Vite: Deployed with Vite for fast build times and efficient development."
+          ],
+          "Features": [
+            "Project Showcase: Includes an interactive slider to showcase projects with smooth navigation.",
+            "Responsive Design: Ensures compatibility across all devices, from desktops to smartphones.",
+            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience.",
+            "JSON-based Content: All content is dynamically sourced from JSON files, allowing easy updates without modifying the code."
+          ],
+          "Contributions": [
+            "Designed and developed the entire site structure and layout.",
+            "Created custom React components for dynamic and reusable UI elements.",
+            "Styled all UI elements using SASS, ensuring design consistency and responsiveness.",
+            "Implemented a JSON-based content management system for easier future updates.",
+            "Ensured cross-browser compatibility and optimized performance for faster load times."
+          ]
+        }
+      }
+    }
+
+
+  ]}
