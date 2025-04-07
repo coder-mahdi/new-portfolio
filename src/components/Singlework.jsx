@@ -1,87 +1,95 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Layout from './Layout.jsx';
+import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 
-
-function Home() {
-    const [homeData, setHomeData] = useState({
-        hero: {},
-        about: {},
-        works: { projects: [] },
-        education: { universities: [] }
-    });
+function SingleWork() {
+    const { id } = useParams(); 
+    const [project, setProject] = useState(null);
 
     useEffect(() => {
-        fetch('/data/homeData.json') 
+        fetch('/data/worksData.json')
             .then(response => response.json())
-            .then(data => setHomeData(data))
-            .catch(error => console.error("Error fetching data:", error));
-    }, []);
+            .then(data => {
+                const foundProject = data.projects.find(p => p.id === Number(id));
+                setProject(foundProject);
+            })
+            .catch(error => console.error('Error fetching project data:', error));
+    }, [id]);
+
+    if (!project) {
+        return (
+            <Layout>
+                <div className="main-content">
+                    <p>Loading project...</p>
+                </div>
+            </Layout>
+        );
+    }
+
+    const details = project.details || project.detailedDescription || {};
+    
+    const sections = details.sections || project.sections || {};
 
     return (
-        <Layout> 
+        <Layout>
             <div className="main-content">
-                <h1>{homeData.hero.title || "loading..."}</h1>
-                  <h2>{homeData.hero.subtitle || ""}</h2>
-                <button>
-                <a href="#about">{homeData.hero.buttonText || "Click me"}</a>
-                </button>
-                 <p>{homeData.hero.location}</p>
-                < img src="/images/home/hero.jpg" alt="Mahdi's photo" />
+                <h1>{project.name}</h1>
+                {project.image && (
+                    <img src={project.image} alt={project.alt || project.name} />
+                )}
+                <p>{details.overview || project.overview || 'No overview available'}</p>
+
+          
+
+                {project.details && (
+  <div className="project-details mt-6">
+    <h2 className="text-xl font-semibold mb-4">Project Details</h2>
+    <ul className="space-y-2 text-base">
+      {["Client", "Year", "Category", "ProjectLink", "Live Project"].map((key) => (
+        <li key={key}>
+          <strong>{key}:</strong>{" "}
+          {project.details[key]?.toString().startsWith("http") ? (
+            <a href={project.details[key]} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
+              {project.details[key]}
+            </a>
+          ) : (
+            project.details[key]
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
+<motion.div
+  animate={{ rotate: [0, 15, -15, 0] }}
+  transition={{ duration: 0.6, repeat: 3, repeatDelay: 0.5 }}
+>
+  <Link to={`/works`} className="see-more-works">
+    see more works
+  </Link>
+</motion.div>
 
 
 
-                <div className='about'>
-                <h2>{homeData.about.title || "loading..."}</h2>
-                <button>
-                    <a href="#works">View Works</a>
-                </button>
-                <h3>Skills</h3>
-                <p>{homeData.about.skills}</p>
+                {Object.entries(sections).map(([sectionTitle, items], index) => (
+                    <div key={index}>
+                        <h2>{sectionTitle}</h2>
+                        <ul>
+                            {items.map((item, idx) => (
+                                <li key={idx}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
 
-                <h3>Hobbies</h3>
-                <p>{homeData.about.hobbies}</p>
-                </div>
-
-                <div className='work-section'>
-                    <h2>{homeData.works.title || "loading..."}</h2>
-                    <p>{homeData.works.explanation}</p>
-                    <button>
-                        <a href="#woks"> View Works</a>
-                    </button>
-
-                    <ul>
-                        {homeData.works?.projects?.map((pro, index) => (
-                            <li key={index}>
-                                <img src={pro.image} alt={pro.name} className="project-image" />
-                                <h3>{pro.name}</h3>
-                            </li>
-                        ) )}
-                    </ul>
-                </div>
-
-                <div className='education-section'>
-                    <h2>{homeData.education?.title || "loading..."}</h2>
-                    <p>{homeData.education?.explanation || ""}</p>
-
-                    <ul>
-                        {homeData.education?.universities?.map((edu, index) => (
-                            <li key={index}>
-                                <h3>{edu.name}</h3>
-                                <p>{edu.university}</p>
-                                <p>{edu.degree}</p>
-                                <p>{edu.duration}</p>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                <div className='recomendation-section'>
-                </div>
 
             </div>
         </Layout>
     );
 }
 
-export default Home;
+export default SingleWork;
