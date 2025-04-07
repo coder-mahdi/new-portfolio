@@ -1,90 +1,81 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from './Layout.jsx';
 
-
-
-
-
-function Home() {
-    const [homeData, setHomeData] = useState({
+function About() {
+    const [aboutData, setAboutData] = useState({
         hero: {},
-        about: {},
-        works: { projects: [] },
-        education: { universities: [] }
+        mystory: "",
+        hobbies: "",
+        gallery: [],
+        skills: [],
+        experience: []
     });
 
     useEffect(() => {
-        fetch('/data/homeData.json') 
+        fetch('/data/aboutData.json')
             .then(response => response.json())
-            .then(data => setHomeData(data))
+            .then(data => setAboutData(data))
             .catch(error => console.error("Error fetching data:", error));
     }, []);
 
     return (
-        <Layout> 
+        <Layout>
             <div className="main-content">
-                <h1>{homeData.hero.title || "loading..."}</h1>
-                  <h2>{homeData.hero.subtitle || ""}</h2>
-                <button>
-                <a href="#about">{homeData.hero.buttonText || "Click me"}</a>
-                </button>
-                 <p>{homeData.hero.location}</p>
-                < img src="/images/home/hero.jpg" alt="Mahdi's photo" />
+                {/* Hero Section */}
+                <h1>{aboutData.hero.title || "loading..."}</h1>
+                <h2>{aboutData.hero.subtitle || "loading..."}</h2>
+                <p>{aboutData.hero.location || "loading..."}</p>
+                <img src={aboutData.hero.image} alt="Hero" />
+                
+                {/* My Story */}
+                <section>
+                    <h3>My Story</h3>
+                    <p>{aboutData.myStory || "loading..."}</p>
+                </section>
 
+                {/* Hobbies */}
+                <section>
+                    <h3>Hobbies</h3>
+                    <p>{aboutData.hobbies || "loading..."}</p>
+                </section>
 
+                {/* Gallery */}
+                <section>
+                    <h3>Gallery</h3>
+                    <div className="gallery">
+                        {aboutData.gallery.map((item, index) => (
+                            <img key={index} src={item.image} alt={`Gallery ${index}`} />
+                        ))}
+                    </div>
+                </section>
 
-                <div className='about'>
-                <h2>{homeData.about.title || "loading..."}</h2>
-                <button>
-                    <a href="#works">View Works</a>
-                </button>
-                <h3>Skills</h3>
-                <p>{homeData.about.skills}</p>
-
-                <h3>Hobbies</h3>
-                <p>{homeData.about.hobbies}</p>
-                </div>
-
-                <div className='work-section'>
-                    <h2>{homeData.works.title || "loading..."}</h2>
-                    <p>{homeData.works.explanation}</p>
-                    <button>
-                        <a href="/works"> View Works</a>
-                    </button>
-
+                {/* Skills */}
+                <section>
+                    <h3>Skills</h3>
                     <ul>
-                        {homeData.works?.projects?.map((pro, index) => (
+                        {aboutData.skills.map((skill, index) => (
                             <li key={index}>
-                                <img src={pro.image} alt={pro.name} className="project-image" />
-                                <h3>{pro.name}</h3>
-                            </li>
-                        ) )}
-                    </ul>
-                </div>
-
-                <div className='education-section'>
-                    <h2>{homeData.education?.title || "loading..."}</h2>
-                    <p>{homeData.education?.explanation || ""}</p>
-
-                    <ul>
-                        {homeData.education?.universities?.map((edu, index) => (
-                            <li key={index}>
-                                <h3>{edu.name}</h3>
-                                <p>{edu.university}</p>
-                                <p>{edu.degree}</p>
-                                <p>{edu.duration}</p>
+                                {skill.soft && <p><strong>Soft Skills:</strong> {skill.soft}</p>}
+                                {skill.languages && <p><strong>Languages:</strong> {skill.languages}</p>}
                             </li>
                         ))}
                     </ul>
-                </div>
+                </section>
 
-                <div className='recomendation-section'>
-                </div>
-
+                {/* Experience */}
+                <section>
+                    <h3>Experience</h3>
+                    <ul>
+                        {aboutData.experience.map((exp, index) => (
+                            <li key={index}>
+                                <p><strong>{exp.title}</strong> - {exp.year}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
             </div>
         </Layout>
-        
     );
 }
 
-export default Home;
+export default About;
