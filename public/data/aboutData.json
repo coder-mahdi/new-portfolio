@@ -1,0 +1,45 @@
+{
+  
+    "hero": {
+      "title": "Mahdi Roozbahani",
+      "subtitle": "Web Developer",
+      "location": "Based in Vancouver, Canada",
+      "image": "/images/projects/callmeguide.jpg"
+    },
+  
+    "myStory": "It is a long established fact that a reader will be distracted by the readable content of a It is a long established fact that a reader will be distracted by the readable content of a ",
+    "hobbies": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'",
+   
+  
+      "gallery": [
+        { "image": "/images/projects/callmeguide.jpg" },
+        { "image": "/images/projects/callmeguide.jpg" },
+        { "image": "/images/projects/callmeguide.jpg" }
+      ],
+  
+      "skills": [
+        {
+          "soft": "writing, Communication"
+        },
+        {
+          "languages": "English, French"
+        }
+      ],
+  
+      "experience": [
+        {
+          "title": "Web Developer",
+          "year": "2023 - PRESENT"
+        },
+        {
+          "title": "Web Developer",
+          "year": "2023 - PRESENT"
+        },
+        {
+          "title": "Web Developer",
+          "year": "2023 - PRESENT"
+        }
+      ]
+    }
+  
+  

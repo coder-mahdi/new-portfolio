@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout.jsx';
+import { Link } from 'react-router-dom';
 
 
 
@@ -26,7 +27,10 @@ function Home() {
                 <h1>{homeData.hero.title || "loading..."}</h1>
                   <h2>{homeData.hero.subtitle || ""}</h2>
                 <button>
-                <a href="#about">{homeData.hero.buttonText || "Click me"}</a>
+                                <Link to={`/about`} className="learn-more-btn">
+                                    Learn More
+                                </Link>
+                
                 </button>
                  <p>{homeData.hero.location}</p>
                 < img src="/images/home/hero.jpg" alt="Mahdi's photo" />
