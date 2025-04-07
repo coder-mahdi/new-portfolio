@@ -1,7 +1,6 @@
 {
   "title": "Selected Works",
   "explanation": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'.",
-
   "projects": [
     {
       "id": 1,
@@ -9,8 +8,16 @@
       "image": "/images/projects/callmeguide.jpg",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
-      "detailedDescription": {
-        "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
+      "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
+       
+      "details": {
+        "Client": ["Call Me Guide Tourism Service Inc"],
+        "Year": " 2023",
+        "Category": "Tourism",
+        "ProjectLink": "https://callmeguide.com",
+        "Live Project": "View Now"
+      },
+
         "sections": {
           "Technologies": [
             "React: Used for dynamic component management and to create an interactive user experience.",
@@ -31,7 +38,6 @@
             "Implemented a JSON-based content management system for easier future updates.",
             "Ensured cross-browser compatibility and optimized performance for faster load times."
           ]
-        }
       }
     },
 
