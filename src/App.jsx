@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
 import Home from './components/Home';
 import Works from './components/Works';
+import Singlework from './components/Singlework';
 
 
 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/works" element={<Works />} />
+        <Route path="/singlework" element={<Singlework />} />
       </Routes>
     </Router>
   );
