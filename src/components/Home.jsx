@@ -2,10 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Layout from './Layout.jsx';
 import { Link } from 'react-router-dom';
 
-
-
-
-
 function Home() {
     const [homeData, setHomeData] = useState({
         hero: {},
@@ -25,35 +21,32 @@ function Home() {
         <Layout> 
             <div className="main-content">
                 <h1>{homeData.hero.title || "loading..."}</h1>
-                  <h2>{homeData.hero.subtitle || ""}</h2>
+                <h2>{homeData.hero.subtitle || ""}</h2>
                 <button>
-                                <Link to={`/about`} className="learn-more-btn">
-                                    Learn More
-                                </Link>
-                
+                    <Link to={`/about`} className="learn-more-btn">
+                        Learn More
+                    </Link>
                 </button>
-                 <p>{homeData.hero.location}</p>
-                < img src="/images/home/hero.jpg" alt="Mahdi's photo" />
-
-
+                <p>{homeData.hero.location}</p>
+                <img src="/images/home/hero.jpg" alt="Mahdi's photo" />
 
                 <div className='about'>
-                <h2>{homeData.about.title || "loading..."}</h2>
-                <button>
-                    <a href="#works">View Works</a>
-                </button>
-                <h3>Skills</h3>
-                <p>{homeData.about.skills}</p>
+                    <h2>{homeData.about.title || "loading..."}</h2>
+                    <button>
+                        <a href="#works">View Works</a>
+                    </button>
+                    <h3>Skills</h3>
+                    <p>{homeData.about.skills}</p>
 
-                <h3>Hobbies</h3>
-                <p>{homeData.about.hobbies}</p>
+                    <h3>Hobbies</h3>
+                    <p>{homeData.about.hobbies}</p>
                 </div>
 
                 <div className='work-section'>
                     <h2>{homeData.works.title || "loading..."}</h2>
                     <p>{homeData.works.explanation}</p>
                     <button>
-                        <a href="/works"> View Works</a>
+                        <a href="/works">View Works</a>
                     </button>
 
                     <ul>
@@ -62,7 +55,7 @@ function Home() {
                                 <img src={pro.image} alt={pro.name} className="project-image" />
                                 <h3>{pro.name}</h3>
                             </li>
-                        ) )}
+                        ))}
                     </ul>
                 </div>
 
@@ -84,10 +77,8 @@ function Home() {
 
                 <div className='recomendation-section'>
                 </div>
-
             </div>
         </Layout>
-        
     );
 }
 
