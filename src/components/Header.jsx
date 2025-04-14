@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function Header() {
-    const [headerData, setHeaderData] = useState({ title: "", navLink: [], logo: "" });
+    const [headerData, setHeaderData] = useState({ title: "", navLink: [] });
     const [localTime, setLocalTime] = useState("");
     
     useEffect(() => {
@@ -30,9 +30,6 @@ function Header() {
 
     return (
         <header>
-            {headerData.logo && (
-                <img src={'/data/' + headerData.logo} alt="logo" />
-            )}
             <nav>
                 {headerData.navLink.map((link, index) => (
                     <a key={index} href={link.link}>

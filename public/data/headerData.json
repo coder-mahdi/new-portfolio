@@ -1,9 +1,9 @@
 {
-    "logo": "images/logo.png",
-      "navLink": [
+    "navLink": [
+        { "name": "Main Home", "link": "/" },
         { "name": "Works", "link": "/works" },
         { "name": "About", "link": "/about" },
         { "name": "Contact", "link": "/contact" }
-      ]
-    }
+    ]
+}
     
