@@ -5,4 +5,18 @@
   box-sizing: border-box;
 }
 
+// Global background color
+body {
+  background-color: #000000;
+}
+
+// All main components should have black background
+main, 
+header, 
+footer, 
+section, 
+div {
+  background-color: #000000;
+}
+
 // Reset styles will be added here 

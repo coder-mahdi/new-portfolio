@@ -6,8 +6,21 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #000000;
+}
+
+main,
+header,
+footer,
+section,
+div {
+  background-color: #000000;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Space Grotesk", sans-serif;
+  color: #FFFFFF;
 }
 
 h1 {
@@ -43,6 +56,18 @@ p.italic {
 p.bold-italic {
   font-weight: 700;
   font-style: italic;
+}
+
+body {
+  background-color: #000000;
+}
+
+main,
+header,
+footer,
+section,
+div {
+  background-color: #000000;
 }
 
 :root {
