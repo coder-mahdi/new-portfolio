@@ -4,8 +4,6 @@ function Header() {
     const [headerData, setHeaderData] = useState({ title: "", navLink: [], logo: "" });
     const [localTime, setLocalTime] = useState("");
     
-
-
     useEffect(() => {
         fetch('/data/headerData.json') 
             .then(response => response.json())
@@ -13,7 +11,7 @@ function Header() {
             .catch(error => console.error("Error fetching data:", error));
     }, []);
 
-    useEffect (() => {
+    useEffect(() => {
         const updateTime = () => {
             const now = new Date().toLocaleTimeString("en-US", { 
                 timeZone:"America/Vancouver",
@@ -22,19 +20,18 @@ function Header() {
                 hour12: true
             });
             setLocalTime(now);
-            };
+        };
             
-            updateTime();
-            const interval = setInterval(updateTime, 1000);
+        updateTime();
+        const interval = setInterval(updateTime, 1000);
 
-            return () => clearInterval(interval);
+        return () => clearInterval(interval);
     }, []);
 
     return (
         <header>
             {headerData.logo && (
-               <img src={'/data/' + headerData.logo} alt="logo" />
-
+                <img src={'/data/' + headerData.logo} alt="logo" />
             )}
             <nav>
                 {headerData.navLink.map((link, index) => (

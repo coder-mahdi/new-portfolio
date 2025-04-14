@@ -11,9 +11,7 @@ function Footer() {
     }, []);
 
     const scrollToTop = () => {
-
         window.scrollTo({top:0, behavior: "smooth"});
-
     };
 
     return (
@@ -28,8 +26,7 @@ function Footer() {
                 ))}
             </nav>
             <p>&copy;{new Date().getFullYear()} Mahdi Roozbahani</p>
-            <button 
-            onClick={scrollToTop}>↑Back to top</button>
+            <button onClick={scrollToTop}>↑Back to top</button>
         </footer>
     );
 }
