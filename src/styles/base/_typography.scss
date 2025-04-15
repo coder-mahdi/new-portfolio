@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
 // Import Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 // Headings
 h1, h2, h3, h4, h5, h6 {
@@ -11,7 +11,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
+  font-size: 96px;
+  font-weight: 700;
+  letter-spacing: -5px;
+  line-height: 80px;
+  text-transform: uppercase;
+  color: #1d1d1f;
+  text-align: center;
 }
 
 h2 {
@@ -36,7 +43,15 @@ h6 {
 
 // Paragraphs
 p {
-  margin-bottom: $spacing-md;
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  line-height: 34px;
+  text-transform: uppercase;
+  color: #1d1d1f;
+  text-align: start;
+  margin-bottom: 0;
 }
 
 // Links
