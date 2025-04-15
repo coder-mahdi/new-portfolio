@@ -135,45 +135,8 @@ a:hover {
   color: #ffffff;
 }
 .header .menu-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 100px;
-  height: 40px;
-  background-color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 0 20px;
   position: relative;
-  overflow: hidden;
   z-index: 101;
-}
-.header .menu-toggle::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #646cff;
-  transition: width 0.3s ease-in-out;
-  z-index: 1;
-}
-.header .menu-toggle:hover::before {
-  width: 100%;
-}
-.header .menu-toggle .menu-text {
-  font-family: "Roboto Mono", monospace;
-  font-size: 16px;
-  font-weight: 500;
-  color: #000000;
-  position: relative;
-  z-index: 2;
-  transition: color 0.3s ease-in-out;
-}
-.header .menu-toggle:hover .menu-text {
-  color: #ffffff;
 }
 .header .main-nav {
   display: flex;
@@ -260,6 +223,52 @@ a:hover {
     padding: 1rem 0;
   }
 }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  height: 40px;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #646cff;
+  transition: width 0.3s ease-in-out;
+  z-index: 1;
+  clip-path: inherit;
+}
+.btn:hover::before {
+  width: 100%;
+}
+.btn span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease-in-out;
+}
+.btn:hover span {
+  color: #ffffff;
+}
+
+.menu-box {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }

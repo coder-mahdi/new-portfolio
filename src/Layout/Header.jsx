@@ -47,11 +47,11 @@ const Header = () => {
             </div>
 
             <div className="header-right">
-                <button className="menu-toggle" onClick={toggleMenu}>
-                    <span className="menu-text">{isMenuOpen ? 'Close' : 'Menu'}</span>
+                <button className="btn menu-toggle" onClick={toggleMenu}>
+                    <span>{isMenuOpen ? 'Close' : 'Menu'}</span>
                 </button>
                 
-                <nav className={`main-nav ${isMenuOpen ? 'active' : ''}`}>
+                <nav className={`main-nav menu-box ${isMenuOpen ? 'active' : ''}`}>
                     {headerData.navLink.map((link, index) => (
                         <Link 
                             key={index} 
