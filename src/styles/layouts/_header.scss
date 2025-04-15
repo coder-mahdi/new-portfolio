@@ -57,6 +57,8 @@
       font-family: "Roboto Mono", monospace;
       font-size: 16px;
       text-transform: uppercase;
+      text-align: center;
+      width: 100%;
 
       &:hover {
         color: #ffffff;
@@ -77,6 +79,7 @@
       background-color: $background-color;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       padding: $spacing-xl;
       transition: right 0.3s ease-in-out;
       gap: $spacing-xl;
@@ -89,7 +92,7 @@
 
       a {
         font-size: 18px;
-        text-align: right;
+        text-align: center;
         width: 100%;
         padding: $spacing-md 0;
       }
