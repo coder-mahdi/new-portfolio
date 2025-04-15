@@ -3,6 +3,7 @@
         { "name": "Main Home", "link": "/" },
         { "name": "Works", "link": "/works" },
         { "name": "About", "link": "/about" },
+        { "name": "Education", "link": "/#education-section" },
         { "name": "Contact", "link": "/contact" }
     ]
 }

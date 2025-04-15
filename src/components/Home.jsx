@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout.jsx';
 import { Link } from 'react-router-dom';
+import '../styles/home.scss';
 
 function Home() {
     const [homeData, setHomeData] = useState({
@@ -59,7 +60,7 @@ function Home() {
                     </ul>
                 </div>
 
-                <div className='education-section'>
+                <div className='education-section' id="education-section">
                     <h2>{homeData.education?.title || "loading..."}</h2>
                     <p>{homeData.education?.explanation || ""}</p>
 
