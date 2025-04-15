@@ -152,9 +152,31 @@ a:hover {
   text-transform: uppercase;
   text-align: center;
   width: 100%;
+  position: relative;
+  padding: 10px 0;
+}
+.header .main-nav a::after {
+  content: attr(data-hover-text);
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  font-size: 12px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: #646cff;
+  white-space: nowrap;
+  pointer-events: none;
 }
 .header .main-nav a:hover {
   color: #ffffff;
+}
+.header .main-nav a:hover::after {
+  opacity: 1;
+  bottom: -15px;
+}
+.header .main-nav a.active {
+  color: #646cff;
 }
 
 @media (min-width: 768px) {

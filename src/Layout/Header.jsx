@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 const Header = () => {
@@ -8,6 +8,11 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef(null);
     const buttonRef = useRef(null);
+    const location = useLocation();
+
+    useEffect(() => {
+        console.log('Current path:', location.pathname);
+    }, [location]);
 
     useEffect(() => {
         fetch('/data/headerData.json')
@@ -72,18 +77,24 @@ const Header = () => {
                 </button>
                 
                 <nav className={`main-nav menu-box ${isMenuOpen ? 'active' : ''}`} ref={menuRef}>
-                    {headerData.navLink.map((link, index) => (
-                        <Link 
-                            key={index} 
-                            to={link.link}
-                            onClick={() => {
-                                setIsMenuOpen(false);
-                                document.body.style.overflow = 'auto';
-                            }}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
+                    {headerData.navLink.map((link, index) => {
+                        const isCurrentPage = location.pathname === link.link;
+                        console.log(`Link ${link.name}:`, { path: link.link, isCurrentPage });
+                        return (
+                            <Link 
+                                key={index} 
+                                to={link.link}
+                                data-hover-text={isCurrentPage ? 'here' : 'open'}
+                                className={isCurrentPage ? 'active' : ''}
+                                onClick={() => {
+                                    setIsMenuOpen(false);
+                                    document.body.style.overflow = 'auto';
+                                }}
+                            >
+                                {link.name}
+                            </Link>
+                        );
+                    })}
                 </nav>
             </div>
         </header>

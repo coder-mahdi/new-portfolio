@@ -59,9 +59,34 @@
       text-transform: uppercase;
       text-align: center;
       width: 100%;
+      position: relative;
+      padding: 10px 0;
+
+      &::after {
+        content: attr(data-hover-text);
+        position: absolute;
+        left: 50%;
+        bottom: -5px;
+        transform: translateX(-50%);
+        font-size: 12px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        color: #646cff;
+        white-space: nowrap;
+        pointer-events: none;
+      }
 
       &:hover {
         color: #ffffff;
+        
+        &::after {
+          opacity: 1;
+          bottom: -15px;
+        }
+      }
+
+      &.active {
+        color: #646cff;
       }
     }
   }
