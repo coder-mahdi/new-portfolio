@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Layout from '../Layout/Layout.jsx';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 function Home() {
     const [homeData, setHomeData] = useState({
@@ -23,7 +23,8 @@ function Home() {
         const handleScroll = () => {
             if (heroImageRef.current) {
                 const scrollPosition = window.scrollY;
-                const scale = 1 + (scrollPosition * 0.0001);
+                const scale = Math.min(1.3, 1 + scrollPosition * 0.0003);
+
                 heroImageRef.current.style.transform = `scale(${scale})`;
             }
         };
@@ -45,7 +46,7 @@ function Home() {
                     </div>
                     <p className="location-text">{homeData.hero.location}</p>
                     <div className="hero-image-container">
-                        <img 
+                        <img
                             ref={heroImageRef}
                             src="/images/home/hero.jpg" 
                             alt="Mahdi's photo" 
@@ -54,7 +55,8 @@ function Home() {
                     </div>
                 </div>
 
-                <div className='about'>
+                <div className="about">
+
                     <h2>{homeData.about.title || "loading..."}</h2>
                     <div className="about-content">
                         <div className="left-column">

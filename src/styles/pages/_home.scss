@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 120px; // This will create space from the top
+  padding-top: 120px;
   min-height: 100vh;
   position: relative;
 
@@ -101,9 +101,9 @@
   .hero-image-container {
     width: 100vw;
     height: 100vh;
-    position: relative;
-    margin-top: 2rem;
-    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 
   .hero-image {
@@ -124,6 +124,8 @@
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 
     h2 {
       font-size: 48px;
@@ -215,6 +217,9 @@
     align-items: flex-start;
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
 
     h2 {
       font-size: 48px;
@@ -310,6 +315,9 @@
     align-items: flex-start;
     max-width: 800px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(10px);
 
     h2 {
       font-size: 48px;

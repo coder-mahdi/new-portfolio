@@ -536,9 +536,9 @@ footer .footer-bottom button:hover {
 .main-content .hero-image-container {
   width: 100vw;
   height: 100vh;
-  position: relative;
-  margin-top: 2rem;
-  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 .main-content .hero-image {
   width: 100%;
@@ -557,6 +557,8 @@ footer .footer-bottom button:hover {
   flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 .main-content .about h2 {
   font-size: 48px;
@@ -636,6 +638,9 @@ footer .footer-bottom button:hover {
   align-items: flex-start;
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
 }
 .main-content .work-section h2 {
   font-size: 48px;
@@ -719,6 +724,9 @@ footer .footer-bottom button:hover {
   align-items: flex-start;
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
 }
 .main-content .education-section h2 {
   font-size: 48px;
