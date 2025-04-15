@@ -56,14 +56,20 @@ function Home() {
 
                 <div className='about'>
                     <h2>{homeData.about.title || "loading..."}</h2>
-                    <button>
-                        <a href="#works">View Works</a>
-                    </button>
-                    <h3>Skills</h3>
-                    <p>{homeData.about.skills}</p>
+                    <div className="about-content">
+                        <div className="left-column">
+                            <button>
+                                <a href="#works">View Works</a>
+                            </button>
+                        </div>
+                        <div className="right-column">
+                            <h3>Skills</h3>
+                            <p>{homeData.about.skills}</p>
 
-                    <h3>Hobbies</h3>
-                    <p>{homeData.about.hobbies}</p>
+                            <h3>Hobbies</h3>
+                            <p>{homeData.about.hobbies}</p>
+                        </div>
+                    </div>
                 </div>
 
                 <div className='work-section'>

@@ -550,10 +550,203 @@ footer .footer-bottom button:hover {
   will-change: transform;
   min-width: 100vw;
 }
-.main-content img {
-  max-width: 100%;
+.main-content .about {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.main-content .about h2 {
+  font-size: 48px;
+  margin-bottom: 2rem;
+}
+.main-content .about .about-content {
+  display: flex;
+  gap: 4rem;
+  width: 100%;
+}
+.main-content .about .about-content .left-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.main-content .about .about-content .left-column button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  border: none;
+  color: #000000;
+  text-decoration: none;
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  margin: 1rem 0;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  overflow: hidden;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.main-content .about .about-content .left-column button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #646cff;
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+.main-content .about .about-content .left-column button a {
+  position: relative;
+  z-index: 2;
+  color: inherit;
+  text-decoration: none;
+}
+.main-content .about .about-content .left-column button:hover {
+  color: #ffffff;
+}
+.main-content .about .about-content .left-column button:hover::before {
+  left: 0;
+}
+.main-content .about .about-content .right-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.main-content .about .about-content .right-column h3 {
+  font-size: 24px;
+  margin: 2rem 0 1rem;
+}
+.main-content .about .about-content .right-column p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+.main-content .work-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.main-content .work-section h2 {
+  font-size: 48px;
+  margin-bottom: 2rem;
+}
+.main-content .work-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+.main-content .work-section button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  border: none;
+  color: #000000;
+  text-decoration: none;
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  margin: 1rem 0;
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  overflow: hidden;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+.main-content .work-section button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #646cff;
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+.main-content .work-section button a {
+  position: relative;
+  z-index: 2;
+  color: inherit;
+  text-decoration: none;
+}
+.main-content .work-section button:hover {
+  color: #ffffff;
+}
+.main-content .work-section button:hover::before {
+  left: 0;
+}
+.main-content .work-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+.main-content .work-section ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.main-content .work-section ul li img {
+  width: 100%;
   height: auto;
-  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.main-content .work-section ul li h3 {
+  font-size: 20px;
+  margin: 0;
+}
+.main-content .education-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.main-content .education-section h2 {
+  font-size: 48px;
+  margin-bottom: 2rem;
+}
+.main-content .education-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+.main-content .education-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  width: 100%;
+}
+.main-content .education-section ul li {
+  margin-bottom: 2rem;
+}
+.main-content .education-section ul li h3 {
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+}
+.main-content .education-section ul li p {
+  font-size: 16px;
+  margin: 0.25rem 0;
+  color: #666;
 }
 
 :root {
