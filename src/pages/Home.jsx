@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Layout from '../Layout/Layout.jsx';
 import { Link } from 'react-router-dom';
 
-
 function Home() {
     const [homeData, setHomeData] = useState({
         hero: {},
@@ -21,15 +20,17 @@ function Home() {
     return (
         <Layout>
             <div className="main-content">
-                <h1>{homeData.hero.title || "loading..."}</h1>
-                <h2>{homeData.hero.subtitle || ""}</h2>
-                <button>
-                    <Link to={`/about`} className="learn-more-btn">
-                        Learn More
-                    </Link>
-                </button>
-                <p>{homeData.hero.location}</p>
-                <img src="/images/home/hero.jpg" alt="Mahdi's photo" />
+                <div className="hero-section">
+                    <div className="hero-content">
+                        <h1>{homeData.hero.title || "loading..."}</h1>
+                        <h2>{homeData.hero.subtitle || ""}</h2>
+                        <Link to="/about" className="learn-more-btn">
+                            <span>Learn More</span>
+                        </Link>
+                    </div>
+                    <p className="location-text">{homeData.hero.location}</p>
+                    <img src="/images/home/hero.jpg" alt="Mahdi's photo" />
+                </div>
 
                 <div className='about'>
                     <h2>{homeData.about.title || "loading..."}</h2>
@@ -74,9 +75,6 @@ function Home() {
                             </li>
                         ))}
                     </ul>
-                </div>
-
-                <div className='recomendation-section'>
                 </div>
             </div>
         </Layout>
