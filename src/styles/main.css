@@ -44,11 +44,12 @@ button {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Space Grotesk", "Space Grotesk Placeholder", sans-serif;
-  margin-bottom: 1rem;
   font-weight: 700;
   letter-spacing: -5px;
   text-transform: uppercase;
   color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 h1 {
@@ -304,6 +305,105 @@ a:hover {
     padding: 1rem 0;
   }
 }
+footer {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  margin-top: 2rem;
+  min-height: 300px;
+  background-color: #000000;
+}
+footer .social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+footer .social-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+}
+footer .social-links a:hover {
+  color: #ffffff;
+}
+footer .social-links a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+}
+footer h2, footer h3 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+footer .footer-nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+footer .footer-nav a {
+  color: rgb(179, 179, 179);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+footer .footer-nav a:hover {
+  color: #ffffff;
+}
+footer .footer-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(179, 179, 179, 0.1);
+}
+footer .footer-bottom p {
+  font-size: 14px;
+  color: rgb(179, 179, 179);
+}
+footer .footer-bottom button {
+  color: rgb(179, 179, 179);
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+footer .footer-bottom button:hover {
+  color: #ffffff;
+}
+footer button {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(179, 179, 179);
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+footer button:hover {
+  color: #ffffff;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

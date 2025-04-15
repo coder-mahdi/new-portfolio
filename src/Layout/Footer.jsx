@@ -16,17 +16,16 @@ function Footer() {
 
     return (
         <footer>
+            <div className="social-links">
+                <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
             <h2>{footerData.title}</h2>
             <h3>{footerData.subtitle}</h3>
-            <nav>
-                {footerData.navLink.map((link, index) => (
-                    <a key={index} href={link.link}>
-                        {link.name}
-                    </a>
-                ))}
-            </nav>
-            <p>&copy;{new Date().getFullYear()} Mahdi Roozbahani</p>
-            <button onClick={scrollToTop}>↑Back to top</button>
+            <div className='footer-bottom'>
+                <p>&copy;{new Date().getFullYear()} Mahdi Roozbahani</p>
+                <button onClick={scrollToTop}>↑Back to top</button>
+            </div>
         </footer>
     );
 }
