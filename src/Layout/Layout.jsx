@@ -14,16 +14,7 @@ function Layout({ children }) {
         <>
             <Header />
             <motion.div 
-                style={{
-                    x, 
-                    y, 
-                    position: 'absolute', 
-                    width: '20px', 
-                    height: '20px', 
-                    backgroundColor: 'red',
-                    borderRadius: '50%', 
-                    pointerEvents: 'none', 
-                }}  
+                style={{ x, y }}
                 ref={ref} 
                 className="pointer"
             />

@@ -348,6 +348,17 @@ a:hover {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 10px 100%, 0 calc(100% - 10px));
 }
 
+.pointer {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
