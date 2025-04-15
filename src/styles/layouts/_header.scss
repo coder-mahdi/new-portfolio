@@ -1,2 +1,189 @@
 @use '../base/variables' as *;
-@use '../mixins/mixins' as *; 
+@use '../mixins/mixins' as *;
+
+.header {
+  width: 100%;
+  padding: $spacing-md;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: $background-color;
+
+  &-left {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .local-time {
+    font-family: "Roboto Mono", monospace;
+    font-size: 14px;
+    color: $text-color;
+  }
+
+  .phone-icon {
+    color: $text-color;
+    transition: $transition-base;
+    
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    height: 40px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: 101;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: #646cff;
+      transition: width 0.3s ease-in-out;
+      z-index: 1;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
+
+    .menu-text {
+      font-family: "Roboto Mono", monospace;
+      font-size: 16px;
+      font-weight: 500;
+      color: #000000;
+      position: relative;
+      z-index: 2;
+      transition: color 0.3s ease-in-out;
+    }
+
+    &:hover .menu-text {
+      color: #ffffff;
+    }
+  }
+
+  .main-nav {
+    display: flex;
+    gap: $spacing-lg;
+    align-items: center;
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      transition: $transition-base;
+      font-family: "Roboto Mono", monospace;
+      font-size: 16px;
+      text-transform: uppercase;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+// Desktop styles
+@include desktop {
+  .header {
+    .main-nav {
+      position: fixed;
+      top: 0;
+      right: -33.33%;
+      width: 33.33%;
+      height: 100vh;
+      background-color: $background-color;
+      flex-direction: column;
+      justify-content: center;
+      padding: $spacing-xl;
+      transition: right 0.3s ease-in-out;
+      gap: $spacing-xl;
+      z-index: 100;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+
+      &.active {
+        right: 0;
+      }
+
+      a {
+        font-size: 18px;
+        text-align: right;
+        width: 100%;
+        padding: $spacing-md 0;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+      z-index: 99;
+    }
+
+    &.menu-open::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+// Mobile styles
+@include mobile {
+  .header {
+    .main-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: $background-color;
+      flex-direction: column;
+      justify-content: center;
+      padding: $spacing-xl;
+      transition: right 0.3s ease-in-out;
+      gap: $spacing-xl;
+      z-index: 100;
+
+      &.active {
+        right: 0;
+      }
+
+      a {
+        font-size: 24px;
+        text-align: center;
+        width: 100%;
+        padding: $spacing-md 0;
+      }
+    }
+  }
+} 

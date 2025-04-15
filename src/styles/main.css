@@ -11,14 +11,14 @@ html {
 }
 
 body {
-  background-color: #ffffff;
-  color: #213547;
+  background-color: #000000;
+  color: rgb(179, 179, 179);
   min-height: 100vh;
   line-height: 1.5;
 }
 
 main {
-  background-color: #ffffff;
+  background-color: #000000;
 }
 
 a {
@@ -46,6 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
   font-weight: 600;
   line-height: 1.2;
+  color: #ffffff;
 }
 
 h1 {
@@ -55,7 +56,7 @@ h1 {
   letter-spacing: -5px;
   line-height: 80px;
   text-transform: uppercase;
-  color: #1d1d1f;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -86,7 +87,7 @@ p {
   letter-spacing: 0.4px;
   line-height: 34px;
   text-transform: uppercase;
-  color: #1d1d1f;
+  color: rgb(163, 163, 163);
   text-align: start;
   margin-bottom: 0;
 }
@@ -99,6 +100,166 @@ a:hover {
   color: #535bf2;
 }
 
+.header {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #000000;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.header .local-time {
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  color: rgb(179, 179, 179);
+}
+.header .phone-icon {
+  color: rgb(179, 179, 179);
+  transition: all 0.3s ease;
+}
+.header .phone-icon:hover {
+  color: #ffffff;
+}
+.header .menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  height: 40px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+  z-index: 101;
+}
+.header .menu-toggle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #646cff;
+  transition: width 0.3s ease-in-out;
+  z-index: 1;
+}
+.header .menu-toggle:hover::before {
+  width: 100%;
+}
+.header .menu-toggle .menu-text {
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease-in-out;
+}
+.header .menu-toggle:hover .menu-text {
+  color: #ffffff;
+}
+.header .main-nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.header .main-nav a {
+  color: rgb(179, 179, 179);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.header .main-nav a:hover {
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .header .main-nav {
+    position: fixed;
+    top: 0;
+    right: -33.33%;
+    width: 33.33%;
+    height: 100vh;
+    background-color: #000000;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    transition: right 0.3s ease-in-out;
+    gap: 2rem;
+    z-index: 100;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .header .main-nav.active {
+    right: 0;
+  }
+  .header .main-nav a {
+    font-size: 18px;
+    text-align: right;
+    width: 100%;
+    padding: 1rem 0;
+  }
+  .header::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 99;
+  }
+  .header.menu-open::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@media (max-width: 576px) {
+  .header .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    transition: right 0.3s ease-in-out;
+    gap: 2rem;
+    z-index: 100;
+  }
+  .header .main-nav.active {
+    right: 0;
+  }
+  .header .main-nav a {
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    padding: 1rem 0;
+  }
+}
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
@@ -112,8 +273,8 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #ffffff;
-  color: #213547;
+  background-color: #000000;
+  color: rgb(179, 179, 179);
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -8,6 +8,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: $spacing-md;
   font-weight: 600;
   line-height: 1.2;
+  color: #ffffff;
 }
 
 h1 {
@@ -17,7 +18,7 @@ h1 {
   letter-spacing: -5px;
   line-height: 80px;
   text-transform: uppercase;
-  color: #1d1d1f;
+  color: #ffffff;
   text-align: center;
 }
 
@@ -49,7 +50,7 @@ p {
   letter-spacing: 0.4px;
   line-height: 34px;
   text-transform: uppercase;
-  color: #1d1d1f;
+  color: rgb(163, 163, 163);
   text-align: start;
   margin-bottom: 0;
 }

@@ -32,6 +32,7 @@ const Header = () => {
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+        document.body.style.overflow = !isMenuOpen ? 'hidden' : 'auto';
     };
 
     if (!headerData) return null;
@@ -47,7 +48,7 @@ const Header = () => {
 
             <div className="header-right">
                 <button className="menu-toggle" onClick={toggleMenu}>
-                    <span className="hamburger"></span>
+                    <span className="menu-text">{isMenuOpen ? 'Close' : 'Menu'}</span>
                 </button>
                 
                 <nav className={`main-nav ${isMenuOpen ? 'active' : ''}`}>
@@ -55,7 +56,10 @@ const Header = () => {
                         <Link 
                             key={index} 
                             to={link.link}
-                            onClick={() => setIsMenuOpen(false)}
+                            onClick={() => {
+                                setIsMenuOpen(false);
+                                document.body.style.overflow = 'auto';
+                            }}
                         >
                             {link.name}
                         </Link>
