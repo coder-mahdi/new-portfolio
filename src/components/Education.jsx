@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import '../styles/education.scss';
+import { useState, useEffect } from 'react';
 
-const Education = () => {
-    const [educationData, setEducationData] = useState(null);
+function Education() {
+    const [educationData, setEducationData] = useState({
+        title: '',
+        explanation: '',
+        universities: []
+    });
 
     useEffect(() => {
         fetch('/data/educationData.json')
@@ -11,30 +14,25 @@ const Education = () => {
             .catch(error => console.error('Error loading education data:', error));
     }, []);
 
-    if (!educationData) return <div>Loading...</div>;
-
     return (
-        <section className="education-section">
-            <div className="container">
-                <h1 className="section-title">Education</h1>
-                <div className="education-grid">
-                    {educationData.education.map(item => (
-                        <div key={item.id} className="education-card">
-                            <h2>{item.title}</h2>
-                            <h3>{item.school}</h3>
-                            <p className="period">{item.period}</p>
-                            <p className="description">{item.description}</p>
-                            <div className="skills">
-                                {item.skills.map((skill, index) => (
-                                    <span key={index} className="skill-tag">{skill}</span>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
-                </div>
+        <div className="education">
+            <h2>{educationData.title || "loading..."}</h2>
+            <p>{educationData.explanation || ""}</p>
+            <div className="universities">
+                {educationData.universities?.map((edu, index) => (
+                    <div key={index} className="university">
+                        <h3>{edu.name}</h3>
+                        <p className="university__degree">{edu.degree}</p>
+                        <p className="university__field">{edu.field}</p>
+                        <p className="university__date">{edu.date}</p>
+                        {edu.description && (
+                            <p className="university__description">{edu.description}</p>
+                        )}
+                    </div>
+                ))}
             </div>
-        </section>
+        </div>
     );
-};
+}
 
 export default Education; 

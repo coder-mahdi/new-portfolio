@@ -1,0 +1,75 @@
+{ 
+  "hero": {
+    "title": "Mahdi Roozbahani",
+    "subtitle": "Web Developer",
+    "buttonText": "Learn more",
+    "location": "Based in Vancouver, Canada"
+  
+  },
+
+  "about":{
+    "title": "Building the Future with Code",
+    "skills": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',",
+    "hobbies": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',"
+
+  },
+
+  "works": {
+    "title": "Selected Works",
+    "explanation": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',",
+    "projects": [
+      {
+        "name":"Call Me Guide",
+        "image": "/images/projects/callmeguide.jpg"
+      },
+
+      {
+        "name":"RedTattoo"
+      },
+      {
+        "name":"Game"
+      },
+      {
+        "name":"Movie data base"
+      }
+    ]
+
+  },
+
+  
+    "education": {
+      "title": "Education",
+      "explanation": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'.",
+      "universities": [
+        {
+          "name": "Front-end Developer",
+          "university": "British Columbia Institute of Technology (BCIT)",
+          "degree": "Certificate",
+          "duration": "2024"
+        },
+        {
+          "name": "JavaScript",
+          "university": "Johns Hopkins University",
+          "degree": "Certificate",
+          "duration": "2022"
+        },
+        {
+          "name": "Communication",
+          "university": "Allameh Tabataba'i University",
+          "degree": "Master's Degree",
+          "duration": "2019"
+        },
+        {
+          "name": "Journalism",
+          "university": "Allameh Tabataba'i University",
+          "degree": "Bachelor's Degree",
+          "duration": "2013"
+        }
+      ]
+    }
+  
+  
+
+  }
+    
+    

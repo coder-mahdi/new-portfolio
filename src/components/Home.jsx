@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './Layout.jsx';
 import { Link } from 'react-router-dom';
-import '../styles/home.scss';
+
 
 function Home() {
     const [homeData, setHomeData] = useState({
@@ -12,14 +12,14 @@ function Home() {
     });
 
     useEffect(() => {
-        fetch('/data/homeData.json') 
+        fetch('/data/homeData.json')
             .then(response => response.json())
             .then(data => setHomeData(data))
             .catch(error => console.error("Error fetching data:", error));
     }, []);
 
     return (
-        <Layout> 
+        <Layout>
             <div className="main-content">
                 <h1>{homeData.hero.title || "loading..."}</h1>
                 <h2>{homeData.hero.subtitle || ""}</h2>
