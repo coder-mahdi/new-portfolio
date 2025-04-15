@@ -65,7 +65,7 @@ const Header = () => {
     return (
         <header className={`header ${isMenuOpen ? 'menu-open' : ''}`}>
             <div className="header-left">
-                <div className="local-time">{currentTime}</div>
+                <div className="local-time">LOCAL/{currentTime}</div>
                 <a href="tel:+1234567890" className="phone-icon">
                     <i className="fas fa-phone"></i>
                 </a>

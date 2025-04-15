@@ -7,6 +7,7 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: $spacing-lg;
+  gap: 0.5rem;
   position: relative;
   margin-top: $spacing-xl;
   min-height: 300px;
@@ -96,25 +97,6 @@ footer {
       &:hover {
         color: #ffffff;
       }
-    }
-  }
-
-  // Back to top button
-  button {
-    position: absolute;
-    bottom: $spacing-xl;
-    left: 50%;
-    transform: translateX(-50%);
-    color: $text-color;
-    transition: $transition-base;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    text-transform: uppercase;
-
-    &:hover {
-      color: #ffffff;
     }
   }
 } 

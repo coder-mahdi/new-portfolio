@@ -311,6 +311,7 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  gap: 0.5rem;
   position: relative;
   margin-top: 2rem;
   min-height: 300px;
@@ -385,22 +386,6 @@ footer .footer-bottom button {
   text-transform: uppercase;
 }
 footer .footer-bottom button:hover {
-  color: #ffffff;
-}
-footer button {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgb(179, 179, 179);
-  transition: all 0.3s ease;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-footer button:hover {
   color: #ffffff;
 }
 

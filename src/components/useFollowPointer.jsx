@@ -12,17 +12,16 @@ export function useFollowPointer(ref) {
     useEffect(() => {
         const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
 
+        if (isTouchDevice) return;
 
-        if  (isTouchDevice) return;
-
-        const handelPointerMove = ({ clientX, clientY }) => {
-            if (!ref.current) returen;
+        const handelPointerMove = ({ pageX, pageY }) => {
+            if (!ref.current) return;
 
             const element = ref.current;
 
             frame.read(() => {
-                xPoint.set(clientX - element.offsetLeft - element.offsetWidth / 2);
-                yPoint.set(clientY - element.offsetTop - element.offsetWidth / 2);
+                xPoint.set(pageX);
+                yPoint.set(pageY);
             });
         };
 
