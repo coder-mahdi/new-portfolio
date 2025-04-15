@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Layout from './Layout.jsx';
+import Layout from '../Layout/Layout.jsx';
 
 function About() {
     const [aboutData, setAboutData] = useState({

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Layout from './Layout.jsx';
+import Layout from '../Layout/Layout.jsx';
 
 function Works() {
     const [worksData, setWorksData] = useState({ title: "", explanation: "", projects: [] });

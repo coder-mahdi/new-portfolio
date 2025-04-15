@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Layout from './Layout.jsx';
+import Layout from '../Layout/Layout.jsx';
 
 
 
