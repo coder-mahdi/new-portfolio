@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Layout from '../Layout/Layout.jsx';
 import { Link } from 'react-router-dom';
 
@@ -9,12 +9,27 @@ function Home() {
         works: { projects: [] },
         education: { universities: [] }
     });
+    
+    const heroImageRef = useRef(null);
 
     useEffect(() => {
         fetch('/data/homeData.json')
             .then(response => response.json())
             .then(data => setHomeData(data))
             .catch(error => console.error("Error fetching data:", error));
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (heroImageRef.current) {
+                const scrollPosition = window.scrollY;
+                const scale = 1 + (scrollPosition * 0.0001);
+                heroImageRef.current.style.transform = `scale(${scale})`;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
@@ -29,7 +44,14 @@ function Home() {
                         </Link>
                     </div>
                     <p className="location-text">{homeData.hero.location}</p>
-                    <img src="/images/home/hero.jpg" alt="Mahdi's photo" />
+                    <div className="hero-image-container">
+                        <img 
+                            ref={heroImageRef}
+                            src="/images/home/hero.jpg" 
+                            alt="Mahdi's photo" 
+                            className="hero-image"
+                        />
+                    </div>
                 </div>
 
                 <div className='about'>
