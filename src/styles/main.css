@@ -140,8 +140,48 @@ a:hover {
 }
 .header .main-nav {
   display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   align-items: center;
+}
+.header .main-nav .nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+.header .main-nav .social-links {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.header .main-nav .social-links a {
+  position: relative;
+  width: auto;
+  font-size: 14px;
+  padding: 5px 0;
+  color: rgb(179, 179, 179);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: "Roboto Mono", monospace;
+  text-transform: uppercase;
+}
+.header .main-nav .social-links a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+  transform: translateY(-50%);
+}
+.header .main-nav .social-links a:hover {
+  color: #ffffff;
+}
+.header .main-nav .social-links a:hover::before {
+  width: 100%;
 }
 .header .main-nav a {
   color: rgb(179, 179, 179);
@@ -199,6 +239,13 @@ a:hover {
   .header .main-nav.active {
     right: 0;
   }
+  .header .main-nav .nav-links {
+    width: 100%;
+  }
+  .header .main-nav .social-links {
+    width: 100%;
+    justify-content: center;
+  }
   .header .main-nav a {
     font-size: 18px;
     text-align: center;
@@ -240,6 +287,13 @@ a:hover {
   }
   .header .main-nav.active {
     right: 0;
+  }
+  .header .main-nav .nav-links {
+    width: 100%;
+  }
+  .header .main-nav .social-links {
+    width: 100%;
+    justify-content: center;
   }
   .header .main-nav a {
     font-size: 24px;

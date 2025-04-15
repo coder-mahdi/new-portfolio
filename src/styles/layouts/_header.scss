@@ -47,8 +47,54 @@
 
   .main-nav {
     display: flex;
+    flex-direction: column;
     gap: $spacing-lg;
     align-items: center;
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+      align-items: center;
+    }
+
+    .social-links {
+      display: flex;
+      gap: $spacing-xl;
+      margin-top: $spacing-xl;
+
+      a {
+        position: relative;
+        width: auto;
+        font-size: 14px;
+        padding: 5px 0;
+        color: $text-color;
+        text-decoration: none;
+        transition: $transition-base;
+        font-family: "Roboto Mono", monospace;
+        text-transform: uppercase;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background-color: #ffffff;
+          transition: width 0.3s ease;
+          transform: translateY(-50%);
+        }
+
+        &:hover {
+          color: #ffffff;
+
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
 
     a {
       color: $text-color;
@@ -115,6 +161,15 @@
         right: 0;
       }
 
+      .nav-links {
+        width: 100%;
+      }
+
+      .social-links {
+        width: 100%;
+        justify-content: center;
+      }
+
       a {
         font-size: 18px;
         text-align: center;
@@ -163,6 +218,15 @@
 
       &.active {
         right: 0;
+      }
+
+      .nav-links {
+        width: 100%;
+      }
+
+      .social-links {
+        width: 100%;
+        justify-content: center;
       }
 
       a {

@@ -77,24 +77,42 @@ const Header = () => {
                 </button>
                 
                 <nav className={`main-nav menu-box ${isMenuOpen ? 'active' : ''}`} ref={menuRef}>
-                    {headerData.navLink.map((link, index) => {
-                        const isCurrentPage = location.pathname === link.link;
-                        console.log(`Link ${link.name}:`, { path: link.link, isCurrentPage });
-                        return (
-                            <Link 
-                                key={index} 
-                                to={link.link}
-                                data-hover-text={isCurrentPage ? 'here' : 'open'}
-                                className={isCurrentPage ? 'active' : ''}
-                                onClick={() => {
-                                    setIsMenuOpen(false);
-                                    document.body.style.overflow = 'auto';
-                                }}
-                            >
-                                {link.name}
-                            </Link>
-                        );
-                    })}
+                    <div className="nav-links">
+                        {headerData.navLink.map((link, index) => {
+                            const isCurrentPage = location.pathname === link.link;
+                            console.log(`Link ${link.name}:`, { path: link.link, isCurrentPage });
+                            return (
+                                <Link 
+                                    key={index} 
+                                    to={link.link}
+                                    data-hover-text={isCurrentPage ? 'here' : 'open'}
+                                    className={isCurrentPage ? 'active' : ''}
+                                    onClick={() => {
+                                        setIsMenuOpen(false);
+                                        document.body.style.overflow = 'auto';
+                                    }}
+                                >
+                                    {link.name}
+                                </Link>
+                            );
+                        })}
+                    </div>
+                    <div className="social-links">
+                        <a 
+                            href="#" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            Instagram
+                        </a>
+                        <a 
+                            href="#" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            LinkedIn
+                        </a>
+                    </div>
                 </nav>
             </div>
         </header>
