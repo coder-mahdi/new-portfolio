@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 // Headings
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6 {
   margin-bottom: $spacing-md;
   font-weight: 600;
   line-height: 1.2;
@@ -20,10 +20,6 @@ h1 {
   text-transform: uppercase;
   color: #ffffff;
   text-align: center;
-}
-
-h2 {
-  font-size: 2rem;
 }
 
 h3 {
