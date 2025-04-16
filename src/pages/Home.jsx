@@ -56,7 +56,6 @@ function Home() {
                 </div>
 
                 <div className="about">
-
                     <h2>{homeData.about.title || "loading..."}</h2>
                     <div className="about-content">
                         <div className="left-column">
