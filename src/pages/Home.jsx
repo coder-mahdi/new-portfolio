@@ -11,6 +11,7 @@ function Home() {
     });
     
     const heroImageRef = useRef(null);
+    const graduationIconRef = useRef(null);
 
     useEffect(() => {
         fetch('/data/homeData.json')
@@ -26,6 +27,34 @@ function Home() {
                 const scale = Math.min(1.3, 1 + scrollPosition * 0.0003);
 
                 heroImageRef.current.style.transform = `scale(${scale})`;
+            }
+
+            if (graduationIconRef.current) {
+                const educationSection = document.getElementById('education-section');
+                if (educationSection) {
+                    const rect = educationSection.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                    
+                    if (isVisible) {
+                        graduationIconRef.current.classList.add('visible');
+                        
+                        // Calculate the position of the icon based on scroll position
+                        const educationList = educationSection.querySelector('.education-list');
+                        const listRect = educationList.getBoundingClientRect();
+                        const listHeight = educationList.offsetHeight;
+                        
+                        // Calculate how far through the section we've scrolled (0 to 1)
+                        const scrollProgress = Math.min(1, Math.max(0, 
+                            (window.innerHeight - rect.top) / (rect.height + window.innerHeight)
+                        ));
+                        
+                        // Position the icon along the vertical line
+                        const iconPosition = scrollProgress * listHeight;
+                        graduationIconRef.current.style.top = `${iconPosition}px`;
+                    } else {
+                        graduationIconRef.current.classList.remove('visible');
+                    }
+                }
             }
         };
 
@@ -92,23 +121,25 @@ function Home() {
 
                 <div className='education-section' id="education-section">
                     <div className='education-content'>
-
-                    <h2>{homeData.education?.title || "loading..."}</h2>
-                    <p>{homeData.education?.explanation || ""}</p>
+                        <h2>{homeData.education?.title || "loading..."}</h2>
+                        <p>{homeData.education?.explanation || ""}</p>
                     </div>
 
                     <div className='education-list'>
-                    <ul>
-                        {homeData.education?.universities?.map((edu, index) => (
-                            <li key={index}>
-                                <h3>{edu.name}</h3>
-                                <p>{edu.university}</p>
-                                <p>{edu.degree}</p>
-                                <p>{edu.duration}</p>
-                            </li>
-                        ))}
-                    </ul>
+                        <div className='education-container'>
+                            <i className="fas fa-graduation-cap graduation-icon" ref={graduationIconRef}></i>
+                            <ul>
+                                {homeData.education?.universities?.map((edu, index) => (
+                                    <li key={index}>
+                                        <h3>{edu.name}</h3>
+                                        <p>{edu.university}</p>
+                                        <p>{edu.degree}</p>
+                                        <p>{edu.duration}</p>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
+                    </div>
                 </div>
             </div>
         </Layout>

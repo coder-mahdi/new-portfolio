@@ -663,7 +663,45 @@ footer .footer-bottom button:hover {
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
-  border-radius: 8px;
+  border-radius: 0;
+  position: relative;
+}
+.education-section .education-list .education-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  background: rgba(10, 15, 25, 0.3);
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+.education-section .education-list .education-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+.education-section .education-list .education-container .graduation-icon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: #646cff;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2;
+  margin: 0;
+}
+.education-section .education-list .education-container .graduation-icon.visible {
+  opacity: 1;
 }
 .education-section .education-list ul {
   list-style: none;
@@ -673,6 +711,8 @@ footer .footer-bottom button:hover {
   display: flex;
   flex-direction: column;
   gap: 0;
+  position: relative;
+  align-items: center;
 }
 .education-section .education-list ul li {
   margin-bottom: 0;
@@ -686,13 +726,12 @@ footer .footer-bottom button:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  align-self: flex-start;
-  border-radius: 0;
+  position: relative;
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
-  position: relative;
   overflow: hidden;
+  margin-bottom: -1px; /* Connect boxes vertically */
 }
 .education-section .education-list ul li::before {
   content: "";
@@ -721,14 +760,17 @@ footer .footer-bottom button:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   background: linear-gradient(to bottom, rgba(30, 40, 60, 0.85), rgba(10, 15, 25, 0.95));
+  z-index: 10;
 }
 .education-section .education-list ul li:nth-child(odd) {
   align-self: flex-start;
-  border-radius: 8px 0 0 8px;
+  margin-right: -1px; /* Connect boxes horizontally */
+  margin-left: 0; /* Align with container left edge */
 }
 .education-section .education-list ul li:nth-child(even) {
   align-self: flex-end;
-  border-radius: 0 8px 8px 0;
+  margin-left: -1px; /* Connect boxes horizontally */
+  margin-right: 0; /* Align with container right edge */
 }
 .education-section .education-list ul li h3 {
   font-size: 18px;
