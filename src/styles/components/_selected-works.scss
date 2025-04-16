@@ -3,7 +3,7 @@
 
 .work-section {
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -14,20 +14,20 @@
   backdrop-filter: blur(10px);
 
   h2 {
-    font-size: 48px;
-    margin-bottom: 2rem;
-    align-self: flex-end;
+    font-size: 32px;
+    margin-bottom: 1.5rem;
+    align-self: flex-start;
     width: 100%;
-    text-align: right;
+    text-align: left;
   }
 
   p {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
     color: #666;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     align-self: flex-start;
-    max-width: 50%;
+    max-width: 100%;
   }
 
   button {
@@ -39,7 +39,7 @@
     color: #000000;
     text-decoration: none;
     font-family: "Roboto Mono", monospace;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     position: relative;
     margin: 1rem 0;
@@ -79,10 +79,10 @@
   ul {
     list-style: none;
     padding: 0;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     width: 100%;
 
     li {
@@ -94,13 +94,113 @@
       img {
         width: 100%;
         height: auto;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
       }
 
       h3 {
-        font-size: 20px;
+        font-size: 18px;
         margin: 0;
       }
+    }
+  }
+}
+
+// Small mobile devices (320px and up)
+@media screen and (min-width: 320px) {
+  .work-section {
+    padding: 2.5rem 1.25rem;
+    
+    h2 {
+      font-size: 36px;
+    }
+    
+    p {
+      font-size: 15px;
+    }
+    
+    ul {
+      li {
+        h3 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+// Medium mobile devices (375px and up)
+@media screen and (min-width: 375px) {
+  .work-section {
+    padding: 3rem 1.5rem;
+    
+    h2 {
+      font-size: 40px;
+    }
+    
+    p {
+      font-size: 16px;
+    }
+    
+    ul {
+      li {
+        h3 {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+// Tablet (768px and up)
+@media screen and (min-width: 768px) {
+  .work-section {
+    padding: 3.5rem 1.75rem;
+    
+    h2 {
+      font-size: 44px;
+      margin-bottom: 2rem;
+      align-self: flex-end;
+      text-align: right;
+    }
+    
+    p {
+      max-width: 70%;
+      margin-bottom: 2rem;
+    }
+    
+    button {
+      font-size: 14px;
+    }
+    
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: 2rem 0;
+      
+      li {
+        img {
+          margin-bottom: 1rem;
+        }
+        
+        h3 {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+// Desktop (1024px and up)
+@media screen and (min-width: 1024px) {
+  .work-section {
+    padding: 4rem 2rem;
+    
+    h2 {
+      font-size: 48px;
+    }
+    
+    p {
+      max-width: 50%;
     }
   }
 } 
