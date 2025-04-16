@@ -5,44 +5,82 @@
   width: 100%;
   padding: 4rem 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
   backdrop-filter: blur(10px);
+  min-height: 100vh;
+  gap: 4rem;
 
-  h2 {
-    font-size: 48px;
-    margin-bottom: 2rem;
-  }
+  .education-content {
+    position: sticky;
+    top: 120px;
+    width: 40%;
+    flex-shrink: 0;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    height: fit-content;
 
-  p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #666;
-    margin-bottom: 2rem;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
-    width: 100%;
-
-    li {
+    h2 {
+      font-size: 48px;
       margin-bottom: 2rem;
+      text-align: left;
+    }
 
-      h3 {
-        font-size: 24px;
-        margin-bottom: 0.5rem;
-      }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+  }
 
-      p {
-        font-size: 16px;
-        margin: 0.25rem 0;
-        color: #666;
+  .education-list {
+    width: 60%;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      li {
+        margin-bottom: 0;
+        padding: 1.5rem;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+
+        h3 {
+          font-size: 20px;
+          margin-bottom: 0.5rem;
+          color: #000000;
+        }
+
+        p {
+          font-size: 14px;
+          margin: 0.25rem 0;
+          color: #666;
+          max-width: 100%;
+        }
       }
     }
   }

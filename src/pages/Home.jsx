@@ -91,9 +91,13 @@ function Home() {
                 </div>
 
                 <div className='education-section' id="education-section">
+                    <div className='education-content'>
+
                     <h2>{homeData.education?.title || "loading..."}</h2>
                     <p>{homeData.education?.explanation || ""}</p>
+                    </div>
 
+                    <div className='education-list'>
                     <ul>
                         {homeData.education?.universities?.map((edu, index) => (
                             <li key={index}>
@@ -104,6 +108,7 @@ function Home() {
                             </li>
                         ))}
                     </ul>
+                        </div>
                 </div>
             </div>
         </Layout>
