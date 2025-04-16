@@ -305,6 +305,10 @@ a:hover {
   }
 }
 @media screen and (min-width: 1024px) {
+  .header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
   .header .main-nav {
     right: -33.33%;
     width: 33.33%;
@@ -459,7 +463,6 @@ footer .footer-bottom button:hover {
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -468,7 +471,8 @@ footer .footer-bottom button:hover {
 .about h2 {
   font-size: 32px;
   margin-bottom: 1.5rem;
-  text-align: center;
+  text-align: left;
+  width: 100%;
 }
 .about .about-content {
   display: flex;
@@ -480,7 +484,7 @@ footer .footer-bottom button:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 }
 .about .about-content .left-column button {
   display: inline-block;
@@ -526,8 +530,8 @@ footer .footer-bottom button:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
 }
 .about .about-content .right-column h3 {
   font-size: 20px;
@@ -576,7 +580,6 @@ footer .footer-bottom button:hover {
   .about h2 {
     font-size: 44px;
     margin-bottom: 2rem;
-    text-align: left;
   }
   .about .about-content {
     flex-direction: row;
@@ -595,7 +598,7 @@ footer .footer-bottom button:hover {
 }
 @media screen and (min-width: 1024px) {
   .about {
-    padding: 4rem 2rem;
+    padding: 4rem 3rem;
     margin-top: 8rem;
   }
   .about h2 {
@@ -610,11 +613,10 @@ footer .footer-bottom button:hover {
 }
 .work-section {
   width: 100%;
-  padding: 2rem 1rem;
+  padding: 4rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -623,7 +625,6 @@ footer .footer-bottom button:hover {
 .work-section h2 {
   font-size: 32px;
   margin-bottom: 1.5rem;
-  align-self: flex-start;
   width: 100%;
   text-align: left;
 }
@@ -632,8 +633,8 @@ footer .footer-bottom button:hover {
   line-height: 1.6;
   color: #666;
   margin-bottom: 1.5rem;
-  align-self: flex-start;
-  max-width: 100%;
+  width: 100%;
+  text-align: left;
 }
 .work-section button {
   align-self: flex-start;
@@ -679,94 +680,87 @@ footer .footer-bottom button:hover {
 .work-section ul {
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
 }
 .work-section ul li {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
 }
 .work-section ul li img {
   width: 100%;
   height: auto;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 .work-section ul li h3 {
   font-size: 18px;
   margin: 0;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 768px) {
   .work-section {
-    padding: 2.5rem 1.25rem;
+    padding: 4rem 2rem;
   }
   .work-section h2 {
-    font-size: 36px;
+    text-align: right;
+    font-size: 40px;
   }
   .work-section p {
     font-size: 15px;
   }
-  .work-section ul li h3 {
-    font-size: 20px;
+  .work-section button {
+    font-size: 13px;
+  }
+  .work-section ul {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  .work-section ul li {
+    align-items: center;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
   }
 }
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 1024px) {
   .work-section {
-    padding: 3rem 1.5rem;
+    padding: 4rem 3rem;
   }
   .work-section h2 {
-    font-size: 40px;
+    font-size: 48px;
+    margin-bottom: 2rem;
   }
   .work-section p {
     font-size: 16px;
-  }
-  .work-section ul li h3 {
-    font-size: 22px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .work-section {
-    padding: 3.5rem 1.75rem;
-  }
-  .work-section h2 {
-    font-size: 44px;
     margin-bottom: 2rem;
-    align-self: flex-end;
-    text-align: right;
-  }
-  .work-section p {
-    max-width: 70%;
-    margin-bottom: 2rem;
+    max-width: 50%;
   }
   .work-section button {
     font-size: 14px;
   }
   .work-section ul {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin: 2rem 0;
+    gap: 3rem;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 2rem auto;
+  }
+  .work-section ul li {
+    max-width: 500px;
+    width: 100%;
   }
   .work-section ul li img {
-    margin-bottom: 1rem;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
   .work-section ul li h3 {
-    font-size: 24px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .work-section {
-    padding: 4rem 2rem;
-  }
-  .work-section h2 {
-    font-size: 48px;
-  }
-  .work-section p {
-    max-width: 50%;
+    font-size: 20px;
   }
 }
 .education-section {
@@ -976,6 +970,8 @@ footer .footer-bottom button:hover {
   align-items: center;
   text-align: center;
   position: relative;
+}
+.main-content .hero-section p {
   padding: 0 1rem;
 }
 .main-content .hero-content {
@@ -1085,9 +1081,6 @@ footer .footer-bottom button:hover {
   .main-content {
     padding-top: 80px;
   }
-  .main-content .hero-section {
-    padding: 0 2rem;
-  }
   .main-content .hero-content {
     gap: 1rem;
     margin-bottom: 6rem;
@@ -1116,8 +1109,11 @@ footer .footer-bottom button:hover {
   .main-content {
     padding-top: 120px;
   }
-  .main-content .hero-section {
-    padding: 0 2rem;
+  .main-content .hero-section .location-text {
+    font-size: 14px;
+    margin-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
   .main-content .hero-content {
     gap: 1rem;
@@ -1131,10 +1127,6 @@ footer .footer-bottom button:hover {
   }
   .main-content .hero-content h2 {
     font-size: 48px;
-  }
-  .main-content .location-text {
-    font-size: 14px;
-    margin-bottom: 2rem;
   }
   .main-content .hero-image-container {
     height: 100vh;

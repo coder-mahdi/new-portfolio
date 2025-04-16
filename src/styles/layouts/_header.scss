@@ -240,6 +240,8 @@
 // Desktop styles (1024px and up)
 @media screen and (min-width: 1024px) {
   .header {
+    padding-left: 3rem;
+  padding-right: 3rem;
     .main-nav {
       right: -33.33%;
       width: 33.33%;

@@ -21,7 +21,11 @@
     align-items: center;
     text-align: center;
     position: relative;
-    padding: 0 1rem;
+
+    p{
+      padding: 0 1rem;
+    }
+    
   }
 
   .hero-content {
@@ -155,10 +159,6 @@
   .main-content {
     padding-top: 80px;
 
-    .hero-section {
-      padding: 0 2rem;
-    }
-
     .hero-content {
       gap: 1rem;
       margin-bottom: 6rem;
@@ -196,7 +196,12 @@
     padding-top: 120px;
 
     .hero-section {
-      padding: 0 2rem;
+      .location-text {
+        font-size: 14px;
+        margin-bottom: 2rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
     }
 
     .hero-content {
@@ -213,11 +218,6 @@
       h2 {
         font-size: 48px;
       }
-    }
-
-    .location-text {
-      font-size: 14px;
-      margin-bottom: 2rem;
     }
 
     .hero-image-container {

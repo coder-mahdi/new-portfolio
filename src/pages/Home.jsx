@@ -110,20 +110,26 @@ function Home() {
                 </div>
 
                 <div className='work-section'>
-                    <h2>{homeData.works.title || "loading..."}</h2>
-                    <p>{homeData.works.explanation}</p>
-                    <button>
+                    <div className='work-content'>
+                        <div className='right-column'>
+                        <h2>{homeData.works.title || "loading..."}</h2>
+                        </div>
+                        <div className='left-column'>
+                        <p>{homeData.works.explanation}</p>
+                        <button>
                         <a href="/works">View Works</a>
-                    </button>
-
-                    <ul>
+                        </button>
+                        </div>
+                        
+                         </div>
+                     <ul>
                         {homeData.works?.projects?.map((pro, index) => (
                             <li key={index}>
                                 <img src={pro.image} alt={pro.name} className="project-image" />
                                 <h3>{pro.name}</h3>
                             </li>
                         ))}
-                    </ul>
+                     </ul>
                 </div>
 
                 <div className='education-section' id="education-section">
