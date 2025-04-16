@@ -138,14 +138,71 @@
   }
 }
 
-// Desktop styles
-@include desktop {
+// Mobile styles (default)
+.header {
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: $background-color;
+    flex-direction: column;
+    justify-content: center;
+    padding: $spacing-xl;
+    transition: right 0.3s ease-in-out;
+    gap: $spacing-xl;
+    z-index: 100;
+
+    &.active {
+      right: 0;
+    }
+
+    .nav-links {
+      width: 100%;
+    }
+
+    .social-links {
+      width: 100%;
+      justify-content: center;
+    }
+
+    a {
+      font-size: 24px;
+      text-align: center;
+      width: 100%;
+      padding: $spacing-md 0;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 99;
+  }
+
+  &.menu-open::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Tablet styles (768px and up)
+@media screen and (min-width: 768px) {
   .header {
     .main-nav {
       position: fixed;
       top: 0;
-      right: -33.33%;
-      width: 33.33%;
+      right: -50%;
+      width: 50%;
       height: 100vh;
       background-color: $background-color;
       flex-direction: column;
@@ -171,69 +228,24 @@
       }
 
       a {
-        font-size: 18px;
+        font-size: 20px;
         text-align: center;
         width: 100%;
         padding: $spacing-md 0;
       }
-    }
-
-    &::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-      z-index: 99;
-    }
-
-    &.menu-open::before {
-      opacity: 1;
-      visibility: visible;
     }
   }
 }
 
-// Mobile styles
-@include mobile {
+// Desktop styles (1024px and up)
+@media screen and (min-width: 1024px) {
   .header {
     .main-nav {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 100%;
-      height: 100vh;
-      background-color: $background-color;
-      flex-direction: column;
-      justify-content: center;
-      padding: $spacing-xl;
-      transition: right 0.3s ease-in-out;
-      gap: $spacing-xl;
-      z-index: 100;
-
-      &.active {
-        right: 0;
-      }
-
-      .nav-links {
-        width: 100%;
-      }
-
-      .social-links {
-        width: 100%;
-        justify-content: center;
-      }
+      right: -33.33%;
+      width: 33.33%;
 
       a {
-        font-size: 24px;
-        text-align: center;
-        width: 100%;
-        padding: $spacing-md 0;
+        font-size: 18px;
       }
     }
   }

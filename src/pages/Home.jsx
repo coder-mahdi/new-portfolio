@@ -24,7 +24,7 @@ function Home() {
         const handleScroll = () => {
             if (heroImageRef.current) {
                 const scrollPosition = window.scrollY;
-                const scale = Math.min(1.3, 1 + scrollPosition * 0.0003);
+                const scale = Math.min(1.5, 1 + scrollPosition * 0.0003);
 
                 heroImageRef.current.style.transform = `scale(${scale})`;
             }
@@ -40,17 +40,24 @@ function Home() {
                         
                         // Calculate the position of the icon based on scroll position
                         const educationList = educationSection.querySelector('.education-list');
-                        const listRect = educationList.getBoundingClientRect();
                         const listHeight = educationList.offsetHeight;
                         
-                        // Calculate how far through the section we've scrolled (0 to 1)
-                        const scrollProgress = Math.min(1, Math.max(0, 
-                            (window.innerHeight - rect.top) / (rect.height + window.innerHeight)
-                        ));
+                        // Check if we've scrolled past the education section
+                        const isPastSection = rect.bottom < 0;
                         
-                        // Position the icon along the vertical line
-                        const iconPosition = scrollProgress * listHeight;
-                        graduationIconRef.current.style.top = `${iconPosition}px`;
+                        if (isPastSection) {
+                            // If we've scrolled past the section, stick to the bottom
+                            graduationIconRef.current.style.top = `${listHeight}px`;
+                        } else {
+                            // Calculate how far through the section we've scrolled (0 to 1)
+                            const scrollProgress = Math.min(4, Math.max(0, 
+                                (window.innerHeight - rect.top) / (rect.height + window.innerHeight)
+                            ));
+                            
+                            // Position the icon along the vertical line
+                            const iconPosition = scrollProgress * listHeight;
+                            graduationIconRef.current.style.top = `${iconPosition}px`;
+                        }
                     } else {
                         graduationIconRef.current.classList.remove('visible');
                     }

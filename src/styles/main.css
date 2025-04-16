@@ -222,12 +222,60 @@ a:hover {
   color: #646cff;
 }
 
-@media (min-width: 768px) {
+.header .main-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  transition: right 0.3s ease-in-out;
+  gap: 2rem;
+  z-index: 100;
+}
+.header .main-nav.active {
+  right: 0;
+}
+.header .main-nav .nav-links {
+  width: 100%;
+}
+.header .main-nav .social-links {
+  width: 100%;
+  justify-content: center;
+}
+.header .main-nav a {
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+}
+.header::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 99;
+}
+.header.menu-open::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media screen and (min-width: 768px) {
   .header .main-nav {
     position: fixed;
     top: 0;
-    right: -33.33%;
-    width: 33.33%;
+    right: -50%;
+    width: 50%;
     height: 100vh;
     background-color: #000000;
     flex-direction: column;
@@ -250,59 +298,19 @@ a:hover {
     justify-content: center;
   }
   .header .main-nav a {
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
     width: 100%;
     padding: 1rem 0;
-  }
-  .header::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    z-index: 99;
-  }
-  .header.menu-open::before {
-    opacity: 1;
-    visibility: visible;
   }
 }
-@media (max-width: 576px) {
+@media screen and (min-width: 1024px) {
   .header .main-nav {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background-color: #000000;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
-    transition: right 0.3s ease-in-out;
-    gap: 2rem;
-    z-index: 100;
-  }
-  .header .main-nav.active {
-    right: 0;
-  }
-  .header .main-nav .nav-links {
-    width: 100%;
-  }
-  .header .main-nav .social-links {
-    width: 100%;
-    justify-content: center;
+    right: -33.33%;
+    width: 33.33%;
   }
   .header .main-nav a {
-    font-size: 24px;
-    text-align: center;
-    width: 100%;
-    padding: 1rem 0;
+    font-size: 18px;
   }
 }
 footer {
@@ -659,7 +667,7 @@ footer .footer-bottom button:hover {
   text-align: left;
 }
 .education-section .education-list {
-  width: 60%;
+  width: 50%;
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
@@ -757,10 +765,10 @@ footer .footer-bottom button:hover {
   animation: particleFloat 12s infinite alternate;
 }
 .education-section .education-list ul li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(to bottom, rgba(30, 40, 60, 0.85), rgba(10, 15, 25, 0.95));
-  z-index: 10;
+  transform: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, rgba(20, 30, 50, 0.8), rgba(5, 10, 20, 0.95));
+  z-index: 1;
 }
 .education-section .education-list ul li:nth-child(odd) {
   align-self: flex-start;
@@ -815,9 +823,11 @@ footer .footer-bottom button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 120px;
+  padding-top: 60px;
   min-height: 100vh;
   position: relative;
+  width: 100%;
+  overflow-x: hidden;
 }
 .main-content .hero-section {
   width: 100%;
@@ -826,29 +836,29 @@ footer .footer-bottom button:hover {
   align-items: center;
   text-align: center;
   position: relative;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 .main-content .hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 8rem;
-  margin-top: 8rem;
-  max-width: 800px;
-  padding: 0 1rem;
+  gap: 0.5rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  max-width: 100%;
+  padding: 0 0.5rem;
   position: relative;
   z-index: 2;
 }
 .main-content .hero-content h1 {
-  font-size: 96px;
-  line-height: 1;
+  font-size: 48px;
+  line-height: 1.1;
   text-align: center;
   margin-bottom: 0;
-  white-space: nowrap;
+  white-space: normal;
 }
 .main-content .hero-content h2 {
-  font-size: 48px;
+  font-size: 24px;
   line-height: 1.2;
   text-align: center;
   margin-bottom: 0;
@@ -861,10 +871,10 @@ footer .footer-bottom button:hover {
   color: #000000;
   text-decoration: none;
   font-family: "Roboto Mono", monospace;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   position: relative;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
   overflow: hidden;
   transition: color 0.3s ease;
@@ -892,15 +902,15 @@ footer .footer-bottom button:hover {
 }
 .main-content .location-text {
   align-self: flex-start;
-  font-size: 14px;
+  font-size: 12px;
   color: rgb(163, 163, 163);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
   z-index: 2;
 }
 .main-content .hero-image-container {
   width: 100vw;
-  height: 100vh;
+  height: 60vh;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -916,6 +926,64 @@ footer .footer-bottom button:hover {
   min-width: 100vw;
 }
 
+@media screen and (min-width: 768px) {
+  .main-content {
+    padding-top: 80px;
+  }
+  .main-content .hero-section {
+    padding: 0 2rem;
+  }
+  .main-content .hero-content {
+    gap: 1rem;
+    margin-bottom: 6rem;
+    margin-top: 6rem;
+    max-width: 90%;
+  }
+  .main-content .hero-content h1 {
+    font-size: 72px;
+  }
+  .main-content .hero-content h2 {
+    font-size: 36px;
+  }
+  .main-content .hero-content .learn-more-btn {
+    font-size: 14px;
+  }
+  .main-content .location-text {
+    font-size: 14px;
+    margin-bottom: 2rem;
+  }
+  .main-content .hero-image-container {
+    height: 80vh;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .main-content {
+    padding-top: 120px;
+  }
+  .main-content .hero-section {
+    padding: 0 2rem;
+  }
+  .main-content .hero-content {
+    gap: 1rem;
+    margin-bottom: 8rem;
+    margin-top: 8rem;
+    max-width: 800px;
+  }
+  .main-content .hero-content h1 {
+    font-size: 96px;
+    white-space: nowrap;
+  }
+  .main-content .hero-content h2 {
+    font-size: 48px;
+  }
+  .main-content .location-text {
+    font-size: 14px;
+    margin-bottom: 2rem;
+  }
+  .main-content .hero-image-container {
+    height: 100vh;
+  }
+}
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
