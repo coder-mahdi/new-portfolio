@@ -456,29 +456,31 @@ footer .footer-bottom button:hover {
 
 .about {
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  margin-top: 8rem;
+  margin-top: 4rem;
 }
 .about h2 {
-  font-size: 48px;
-  margin-bottom: 2rem;
+  font-size: 32px;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 .about .about-content {
   display: flex;
-  gap: 4rem;
+  flex-direction: column;
+  gap: 2rem;
   width: 100%;
 }
 .about .about-content .left-column {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 .about .about-content .left-column button {
   display: inline-block;
@@ -488,7 +490,7 @@ footer .footer-bottom button:hover {
   color: #000000;
   text-decoration: none;
   font-family: "Roboto Mono", monospace;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   position: relative;
   margin: 1rem 0;
@@ -524,18 +526,88 @@ footer .footer-bottom button:hover {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
 }
 .about .about-content .right-column h3 {
-  font-size: 24px;
-  margin: 2rem 0 1rem;
+  font-size: 20px;
+  margin: 1.5rem 0 0.75rem;
 }
 .about .about-content .right-column p {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   color: #666;
+  max-width: 100%;
 }
 
+@media screen and (min-width: 320px) {
+  .about {
+    padding: 2.5rem 1.25rem;
+  }
+  .about h2 {
+    font-size: 36px;
+  }
+  .about .about-content .right-column h3 {
+    font-size: 22px;
+  }
+  .about .about-content .right-column p {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 375px) {
+  .about {
+    padding: 3rem 1.5rem;
+  }
+  .about h2 {
+    font-size: 40px;
+  }
+  .about .about-content .right-column h3 {
+    font-size: 24px;
+  }
+  .about .about-content .right-column p {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about {
+    padding: 3.5rem 1.75rem;
+    margin-top: 6rem;
+  }
+  .about h2 {
+    font-size: 44px;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+  .about .about-content {
+    flex-direction: row;
+    gap: 3rem;
+  }
+  .about .about-content .left-column {
+    align-items: flex-start;
+  }
+  .about .about-content .right-column {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .about .about-content .right-column h3 {
+    margin: 2rem 0 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about {
+    padding: 4rem 2rem;
+    margin-top: 8rem;
+  }
+  .about h2 {
+    font-size: 48px;
+  }
+  .about .about-content {
+    gap: 4rem;
+  }
+  .about .about-content .left-column button {
+    font-size: 14px;
+  }
+}
 .work-section {
   width: 100%;
   padding: 4rem 2rem;
