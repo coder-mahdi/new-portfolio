@@ -52,20 +52,20 @@ function About() {
                     </div>
                 </div>
 
-                {/* My Story */}
-                <section>
+               
+                <section className="story">
                     <h3>My Story</h3>
                     <p>{aboutData.myStory || "loading..."}</p>
                 </section>
 
-                {/* Hobbies */}
-                <section>
+               
+                <section className="hobbies">
                     <h3>Hobbies</h3>
                     <p>{aboutData.hobbies || "loading..."}</p>
                 </section>
 
-                {/* Gallery */}
-                <section>
+           
+                <section className="gallery">
                     <h3>Gallery</h3>
                     <div className="gallery">
                         {aboutData.gallery.map((item, index) => (
@@ -75,7 +75,7 @@ function About() {
                 </section>
 
                 {/* Skills */}
-                <section>
+                <section className="skills">
                     <h3>Skills</h3>
                     <ul>
                         {aboutData.skills.map((skill, index) => (
@@ -88,7 +88,7 @@ function About() {
                 </section>
 
                 {/* Experience */}
-                <section>
+                <section className="experience">
                     <h3>Experience</h3>
                     <ul>
                         {aboutData.experience.map((exp, index) => (
