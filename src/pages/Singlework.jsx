@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from '../Layout/Layout.jsx';
-import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 
 function SingleWork() {
-    const { id } = useParams(); 
+    const { id } = useParams();
     const [project, setProject] = useState(null);
 
     useEffect(() => {
@@ -88,15 +87,21 @@ function SingleWork() {
                             </div>
                         )}
 
-                        <motion.div
-                            animate={{ rotate: [0, 15, -15, 0] }}
-                            transition={{ duration: 0.6, repeat: 3, repeatDelay: 0.5 }}
-                            className="see-more-container"
-                        >
-                            <Link to="/works" className="see-more-works">
-                                see more works
-                            </Link>
-                        </motion.div>
+                        <div className="single-work__see-more">
+                            <div className="single-work__see-more-blur left"></div>
+                            <div className="single-work__see-more-text">
+                                {[...Array(20)].map((_, index) => (
+                                    <Link 
+                                        key={index} 
+                                        to="/works" 
+                                        className="single-work__see-more-link"
+                                    >
+                                        see more works
+                                    </Link>
+                                ))}
+                            </div>
+                            <div className="single-work__see-more-blur right"></div>
+                        </div>
 
                         {Object.entries(sections).map(([sectionTitle, items], index) => (
                             <div key={index} className="section-container">
