@@ -43,7 +43,8 @@ $mobile-spacing: (
   padding: 1rem,
   gap: 0.5rem,
   margin: 2rem,
-  section-margin: 4rem
+  section-margin: 4rem,
+  h1-line-gap: 0.05rem
 );
 
 $mobile-layout: (
@@ -65,10 +66,34 @@ $tablet-spacing: (
   padding: 1.5rem,
   gap: 1rem,
   margin: 3rem,
-  section-margin: 6rem
+  section-margin: 6rem,
+  h1-line-gap: 0.5rem
 );
 
 $tablet-layout: (
   grid-columns: 2,
   max-width: 90%
+);
+
+// Desktop Default Settings
+$desktop-font-sizes: (
+  h1: 96px,
+  h2: 48px,
+  h3: 32px,
+  button: 14px,
+  text: 16px,
+  small-text: 14px
+);
+
+$desktop-spacing: (
+  padding: 3rem,
+  gap: 3rem,
+  margin: 4rem,
+  section-margin: 8rem,
+  h1-line-gap: 1rem
+);
+
+$desktop-layout: (
+  grid-columns: 2,
+  max-width: 40%
 ); 

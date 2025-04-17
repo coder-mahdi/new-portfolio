@@ -41,8 +41,7 @@ function Works() {
             <div className="main-content">
                 <div className='works-content'>
                     <h1>
-                        <span className="line-1">{firstLine}</span>
-                        <span className="line-2">{secondLine}</span>
+                        {firstLine}<br />{secondLine}
                     </h1>
                     <p className='works-explanation'>{worksData.explanation}</p>
                 </div>

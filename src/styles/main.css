@@ -618,23 +618,24 @@ footer .footer-bottom button:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  gap: 0.5rem;
 }
 .works-content h1 {
   width: 100%;
   text-align: right;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
+  font-size: 48px;
+  margin-bottom: 2rem;
 }
-.works-content h1 .line-1, .works-content h1 .line-2 {
+.works-content h1 br {
+  content: "";
   display: block;
+  margin: -0.5em 0;
 }
 .works-content .works-explanation {
   align-self: flex-start;
   max-width: 100%;
   margin-left: auto;
+  font-size: 14px;
 }
 
 .projects-list {
@@ -642,7 +643,7 @@ footer .footer-bottom button:hover {
   padding: 0;
   margin: 2rem 0;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
@@ -658,12 +659,12 @@ footer .footer-bottom button:hover {
 .projects-list li img {
   width: 100%;
   height: auto;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   object-fit: cover;
 }
 .projects-list li h3 {
   font-size: 20px;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
 }
 .projects-list li .learn-more-btn {
   display: inline-block;
@@ -673,10 +674,10 @@ footer .footer-bottom button:hover {
   color: #000000;
   text-decoration: none;
   font-family: "Roboto Mono", monospace;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   position: relative;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
   overflow: hidden;
   transition: color 0.3s ease;
@@ -704,16 +705,32 @@ footer .footer-bottom button:hover {
   .works-content {
     padding: 1.5rem;
     margin-top: 6rem;
-    gap: 2.5rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
+  .works-content h1 {
+    font-size: 72px;
+  }
+  .works-content h1 br {
+    margin: -0.4em 0;
   }
   .works-content .works-explanation {
-    max-width: 60%;
+    max-width: 90%;
+    font-size: 16px;
   }
   .projects-list {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    gap: 3rem;
     margin: 3rem auto;
     padding-bottom: 3rem;
+  }
+  .projects-list li h3 {
+    font-size: 24px;
+  }
+  .projects-list li .learn-more-btn {
+    font-size: 14px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -722,13 +739,27 @@ footer .footer-bottom button:hover {
     margin-top: 8rem;
     gap: 3rem;
   }
+  .works-content h1 {
+    font-size: 96px;
+  }
+  .works-content h1 br {
+    margin: -0.3em 0;
+  }
   .works-content .works-explanation {
     max-width: 40%;
+    font-size: 16px;
   }
   .projects-list {
-    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
     margin: 4rem auto;
     padding-bottom: 4rem;
+  }
+  .projects-list li h3 {
+    font-size: 32px;
+  }
+  .projects-list li .learn-more-btn {
+    font-size: 14px;
   }
 }
 .work-section {

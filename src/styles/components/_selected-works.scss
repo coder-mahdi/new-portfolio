@@ -2,45 +2,46 @@
 @use '../mixins/mixins' as *;
 
 .works-content {
-  padding: 1rem;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  padding: map-get($mobile-spacing, padding);
+  margin-top: map-get($mobile-spacing, section-margin);
+  margin-bottom: map-get($mobile-spacing, margin);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 2rem;
+  gap: map-get($mobile-spacing, gap);
 
   h1 {
     width: 100%;
     text-align: right;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.5rem;
-
-    .line-1, .line-2 {
+    font-size: map-get($mobile-font-sizes, h1);
+    margin-bottom: 2rem;
+    
+    br {
+      content: "";
       display: block;
+      margin: -0.5em 0;
     }
   }
 
   .works-explanation {
     align-self: flex-start;
-    max-width: 100%;
+    max-width: map-get($mobile-layout, max-width);
     margin-left: auto;
+    font-size: map-get($mobile-font-sizes, text);
   }
 }
 
 .projects-list {
   list-style: none;
   padding: 0;
-  margin: 2rem 0;
+  margin: map-get($mobile-spacing, margin) 0;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(map-get($mobile-layout, grid-columns), 1fr);
+  gap: map-get($mobile-spacing, margin);
   width: 100%;
   max-width: 1200px;
-  margin: 2rem auto;
-  padding-bottom: 2rem;
+  margin: map-get($mobile-spacing, margin) auto;
+  padding-bottom: map-get($mobile-spacing, margin);
 
   li {
     display: flex;
@@ -51,13 +52,13 @@
     img {
       width: 100%;
       height: auto;
-      margin-bottom: 1.5rem;
+      margin-bottom: map-get($mobile-spacing, gap);
       object-fit: cover;
     }
 
     h3 {
-      font-size: 20px;
-      margin: 0 0 1rem 0;
+      font-size: map-get($mobile-font-sizes, h3);
+      margin: 0 0 map-get($mobile-spacing, gap) 0;
     }
 
     .learn-more-btn {
@@ -68,10 +69,10 @@
       color: #000000;
       text-decoration: none;
       font-family: "Roboto Mono", monospace;
-      font-size: 14px;
+      font-size: map-get($mobile-font-sizes, button);
       text-transform: uppercase;
       position: relative;
-      margin: 1rem 0;
+      margin: map-get($mobile-spacing, gap) 0;
       clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
       overflow: hidden;
       transition: color 0.3s ease;
@@ -101,41 +102,83 @@
 }
 
 // Tablet styles (768px and up)
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   .works-content {
-    padding: 1.5rem;
-    margin-top: 6rem;
-    gap: 2.5rem;
+    padding: map-get($tablet-spacing, padding);
+    margin-top: map-get($tablet-spacing, section-margin);
+    gap: map-get($tablet-spacing, gap);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+
+    h1 {
+      font-size: map-get($tablet-font-sizes, h1);
+      
+      br {
+        margin: -0.4em 0;
+      }
+    }
 
     .works-explanation {
-      max-width: 60%;
+      max-width: map-get($tablet-layout, max-width);
+      font-size: map-get($tablet-font-sizes, text);
     }
   }
 
   .projects-list {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-    margin: 3rem auto;
-    padding-bottom: 3rem;
+    grid-template-columns: repeat(map-get($tablet-layout, grid-columns), 1fr);
+    gap: map-get($tablet-spacing, margin);
+    margin: map-get($tablet-spacing, margin) auto;
+    padding-bottom: map-get($tablet-spacing, margin);
+
+    li {
+      h3 {
+        font-size: map-get($tablet-font-sizes, h3);
+      }
+
+      .learn-more-btn {
+        font-size: map-get($tablet-font-sizes, button);
+      }
+    }
   }
 }
 
 // Desktop styles (1024px and up)
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: $desktop) {
   .works-content {
-    padding: 3rem;
-    margin-top: 8rem;
-    gap: 3rem;
+    padding: map-get($desktop-spacing, padding);
+    margin-top: map-get($desktop-spacing, section-margin);
+    gap: map-get($desktop-spacing, gap);
+
+    h1 {
+      font-size: map-get($desktop-font-sizes, h1);
+      
+      br {
+        margin: -0.3em 0;
+      }
+    }
 
     .works-explanation {
-      max-width: 40%;
+      max-width: map-get($desktop-layout, max-width);
+      font-size: map-get($desktop-font-sizes, text);
     }
   }
 
   .projects-list {
-    gap: 3rem;
-    margin: 4rem auto;
-    padding-bottom: 4rem;
+    grid-template-columns: repeat(map-get($desktop-layout, grid-columns), 1fr);
+    gap: map-get($desktop-spacing, margin);
+    margin: map-get($desktop-spacing, margin) auto;
+    padding-bottom: map-get($desktop-spacing, margin);
+
+    li {
+      h3 {
+        font-size: map-get($desktop-font-sizes, h3);
+      }
+
+      .learn-more-btn {
+        font-size: map-get($desktop-font-sizes, button);
+      }
+    }
   }
 }
 
