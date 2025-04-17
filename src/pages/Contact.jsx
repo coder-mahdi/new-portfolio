@@ -25,8 +25,7 @@ function Contact() {
                 <div className="hero-section">
                     <div className="hero-content">
                         <h1>{contactData.hero.title || "loading..."}</h1>
-                        <h2>{contactData.hero.subtitle || "loading..."}</h2>
-                        <p>{contactData.hero.location || "loading..."}</p>
+                        <p>{contactData.hero.explanation || "loading..."}</p>
                         <button className="contact-button" onClick={handleEmailClick}>Send me a message</button>
                     </div>
                     <img src={contactData.hero.image} alt="Hero" />
