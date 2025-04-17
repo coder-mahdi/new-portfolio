@@ -12,6 +12,8 @@ function Home() {
     
     const heroImageRef = useRef(null);
     const graduationIconRef = useRef(null);
+    const educationContentRef = useRef(null);
+    const educationSectionRef = useRef(null);
 
     useEffect(() => {
         fetch('/data/homeData.json')
@@ -25,7 +27,6 @@ function Home() {
             if (heroImageRef.current) {
                 const scrollPosition = window.scrollY;
                 const scale = Math.min(1.5, 1 + scrollPosition * 0.0003);
-
                 heroImageRef.current.style.transform = `scale(${scale})`;
             }
 
@@ -38,23 +39,18 @@ function Home() {
                     if (isVisible) {
                         graduationIconRef.current.classList.add('visible');
                         
-                        // Calculate the position of the icon based on scroll position
                         const educationList = educationSection.querySelector('.education-list');
                         const listHeight = educationList.offsetHeight;
                         
-                        // Check if we've scrolled past the education section
                         const isPastSection = rect.bottom < 0;
                         
                         if (isPastSection) {
-                            // If we've scrolled past the section, stick to the bottom
                             graduationIconRef.current.style.top = `${listHeight}px`;
                         } else {
-                            // Calculate how far through the section we've scrolled (0 to 1)
                             const scrollProgress = Math.min(4, Math.max(0, 
                                 (window.innerHeight - rect.top) / (rect.height + window.innerHeight)
                             ));
                             
-                            // Position the icon along the vertical line
                             const iconPosition = scrollProgress * listHeight;
                             graduationIconRef.current.style.top = `${iconPosition}px`;
                         }
@@ -132,8 +128,8 @@ function Home() {
                      </ul>
                 </div>
 
-                <div className='education-section' id="education-section">
-                    <div className='education-content'>
+                <div className='education-section' id="education-section" ref={educationSectionRef}>
+                    <div className='education-content' ref={educationContentRef}>
                         <h2>{homeData.education?.title || "loading..."}</h2>
                         <p>{homeData.education?.explanation || ""}</p>
                     </div>

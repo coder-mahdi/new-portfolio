@@ -18,21 +18,34 @@ function Works() {
     };
 
     useEffect(() => {
-
         fetchData();
-        
- 
         const intervalId = setInterval(fetchData, 5000);
-        
-
         return () => clearInterval(intervalId);
     }, []); 
+
+    // Split title into two lines
+    const splitTitle = (title) => {
+        if (!title) return { firstLine: "loading...", secondLine: "" };
+        const words = title.split(' ');
+        const midPoint = Math.ceil(words.length / 2);
+        return {
+            firstLine: words.slice(0, midPoint).join(' '),
+            secondLine: words.slice(midPoint).join(' ')
+        };
+    };
+
+    const { firstLine, secondLine } = splitTitle(worksData.title);
 
     return (
         <Layout> 
             <div className="main-content">
-                <h1>{worksData.title || "loading..."}</h1>
-                <p>{worksData.explanation}</p>
+                <div className='works-content'>
+                    <h1>
+                        <span className="line-1">{firstLine}</span>
+                        <span className="line-2">{secondLine}</span>
+                    </h1>
+                    <p className='works-explanation'>{worksData.explanation}</p>
+                </div>
 
                 <ul className='projects-list'>
                     {worksData.projects?.map((projects, index) => (

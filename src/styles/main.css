@@ -611,30 +611,58 @@ footer .footer-bottom button:hover {
     font-size: 14px;
   }
 }
-.work-section {
-  width: 100%;
-  padding: 4rem 1rem;
+.works-content {
+  padding-right: 3rem;
+  padding-left: 3rem;
+  margin-top: 8rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 3rem;
+}
+.works-content h1 {
+  width: 100%;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.works-content h1 .line-1, .works-content h1 .line-2 {
+  display: block;
+}
+.works-content .works-explanation {
+  align-self: flex-start;
+  max-width: 40%;
+  margin-left: auto;
+}
+
+.work-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
   backdrop-filter: blur(10px);
 }
 .work-section h2 {
-  font-size: 32px;
-  margin-bottom: 1.5rem;
+  font-size: 48px;
+  margin-bottom: 2rem;
+  align-self: flex-end;
   width: 100%;
-  text-align: left;
+  text-align: right;
 }
 .work-section p {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   color: #666;
-  margin-bottom: 1.5rem;
-  width: 100%;
-  text-align: left;
+  margin-bottom: 2rem;
+  align-self: flex-start;
+  max-width: 50%;
 }
 .work-section button {
   align-self: flex-start;
@@ -645,7 +673,7 @@ footer .footer-bottom button:hover {
   color: #000000;
   text-decoration: none;
   font-family: "Roboto Mono", monospace;
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   position: relative;
   margin: 1rem 0;
@@ -682,15 +710,15 @@ footer .footer-bottom button:hover {
   padding: 0;
   margin: 2rem 0;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   width: 100%;
 }
 .work-section ul li {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
 }
 .work-section ul li img {
   width: 100%;
@@ -698,95 +726,35 @@ footer .footer-bottom button:hover {
   margin-bottom: 1rem;
 }
 .work-section ul li h3 {
-  font-size: 18px;
+  font-size: 20px;
   margin: 0;
 }
 
-@media screen and (min-width: 768px) {
-  .work-section {
-    padding: 4rem 2rem;
-  }
-  .work-section h2 {
-    text-align: right;
-    font-size: 40px;
-  }
-  .work-section p {
-    font-size: 15px;
-  }
-  .work-section button {
-    font-size: 13px;
-  }
-  .work-section ul {
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-  }
-  .work-section ul li {
-    align-items: center;
-    text-align: center;
-    max-width: 500px;
-    width: 100%;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .work-section {
-    padding: 4rem 3rem;
-  }
-  .work-section h2 {
-    font-size: 48px;
-    margin-bottom: 2rem;
-  }
-  .work-section p {
-    font-size: 16px;
-    margin-bottom: 2rem;
-    max-width: 50%;
-  }
-  .work-section button {
-    font-size: 14px;
-  }
-  .work-section ul {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 3rem;
-    justify-items: center;
-    max-width: 1200px;
-    margin: 2rem auto;
-  }
-  .work-section ul li {
-    max-width: 500px;
-    width: 100%;
-  }
-  .work-section ul li img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  .work-section ul li h3 {
-    font-size: 20px;
-  }
-}
 .education-section {
   width: 100%;
   padding: 4rem 2rem;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
   backdrop-filter: blur(10px);
   min-height: 100vh;
   gap: 4rem;
+  overflow: hidden;
 }
 .education-section .education-content {
-  position: sticky;
+  position: fixed;
   top: 120px;
-  width: 40%;
-  flex-shrink: 0;
-  padding: 2rem;
+  left: 3rem;
+  width: calc(50% - 2rem);
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
   border-radius: 8px;
   height: fit-content;
+  z-index: 10;
+  padding: 2rem;
 }
 .education-section .education-content h2 {
   font-size: 48px;
@@ -802,11 +770,19 @@ footer .footer-bottom button:hover {
 }
 .education-section .education-list {
   width: 50%;
-  padding: 2rem;
+  margin-left: auto;
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(5px);
   border-radius: 0;
   position: relative;
+  height: calc(100vh - 240px);
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 2rem;
+}
+.education-section .education-list::-webkit-scrollbar {
+  display: none;
 }
 .education-section .education-list .education-container {
   width: 100%;
@@ -832,9 +808,10 @@ footer .footer-bottom button:hover {
   z-index: 1;
 }
 .education-section .education-list .education-container .graduation-icon {
-  position: absolute;
+  position: fixed;
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
   font-size: 24px;
   color: #646cff;
   opacity: 0;
@@ -852,7 +829,7 @@ footer .footer-bottom button:hover {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 2rem;
   position: relative;
   align-items: center;
 }
@@ -873,7 +850,6 @@ footer .footer-bottom button:hover {
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
   overflow: hidden;
-  margin-bottom: -1px; /* Connect boxes vertically */
 }
 .education-section .education-list ul li::before {
   content: "";
@@ -906,13 +882,13 @@ footer .footer-bottom button:hover {
 }
 .education-section .education-list ul li:nth-child(odd) {
   align-self: flex-start;
-  margin-right: -1px; /* Connect boxes horizontally */
-  margin-left: 0; /* Align with container left edge */
+  margin-right: -1px;
+  margin-left: 0;
 }
 .education-section .education-list ul li:nth-child(even) {
   align-self: flex-end;
-  margin-left: -1px; /* Connect boxes horizontally */
-  margin-right: 0; /* Align with container right edge */
+  margin-left: -1px;
+  margin-right: 0;
 }
 .education-section .education-list ul li h3 {
   font-size: 18px;
@@ -931,6 +907,56 @@ footer .footer-bottom button:hover {
   z-index: 2;
 }
 
+@media screen and (min-width: 1024px) {
+  .education-section {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .education-section .education-content {
+    left: 3rem;
+    width: calc(50% - 3rem);
+  }
+}
+@media screen and (max-width: 767px) {
+  .education-section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    min-height: auto;
+    overflow: visible;
+  }
+  .education-section .education-content {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .education-section .education-content h2 {
+    font-size: 32px;
+    margin-bottom: 1.5rem;
+  }
+  .education-section .education-content p {
+    font-size: 14px;
+    margin-bottom: 1.5rem;
+  }
+  .education-section .education-list {
+    width: 100%;
+    padding: 1rem;
+    height: auto;
+    max-height: none;
+    overflow-y: visible;
+  }
+  .education-section .education-list .education-container ul li {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 1rem;
+  }
+  .education-section .education-list .education-container ul li:nth-child(odd), .education-section .education-list .education-container ul li:nth-child(even) {
+    align-self: center;
+    margin: 0 auto 1rem;
+  }
+}
 @keyframes particleMove {
   0% {
     transform: translate(0, 0);

@@ -7,24 +7,25 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
   backdrop-filter: blur(10px);
   min-height: 100vh;
   gap: 4rem;
+  overflow: hidden;
 
   .education-content {
-    position: sticky;
+    position: fixed;
     top: 120px;
-    width: 40%;
-    flex-shrink: 0;
-    padding: 2rem;
+    left: 3rem;
+    width: calc(50% - 2rem);
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     border-radius: 8px;
     height: fit-content;
+    z-index: 10;
+    padding: 2rem;
 
     h2 {
       font-size: 48px;
@@ -43,11 +44,20 @@
 
   .education-list {
     width: 50%;
-    padding: 2rem;
+    margin-left: auto;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
     border-radius: 0;
     position: relative;
+    height: calc(100vh - 240px);
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 2rem;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .education-container {
       width: 100%;
@@ -74,16 +84,17 @@
       }
 
       .graduation-icon {
-        position: absolute;
+        position: fixed;
         left: 50%;
-        transform: translateX(-50%);
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
         font-size: 24px;
         color: #646cff;
         opacity: 0;
         transition: all 0.3s ease;
         z-index: 2;
         margin: 0;
-        
+
         &.visible {
           opacity: 1;
         }
@@ -97,7 +108,7 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: 2rem;
       position: relative;
       align-items: center;
 
@@ -118,7 +129,6 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(5px);
         overflow: hidden;
-        margin-bottom: -1px; /* Connect boxes vertically */
 
         &::before {
           content: '';
@@ -158,14 +168,14 @@
 
         &:nth-child(odd) {
           align-self: flex-start;
-          margin-right: -1px; /* Connect boxes horizontally */
-          margin-left: 0; /* Align with container left edge */
+          margin-right: -1px;
+          margin-left: 0;
         }
 
         &:nth-child(even) {
           align-self: flex-end;
-          margin-left: -1px; /* Connect boxes horizontally */
-          margin-right: 0; /* Align with container right edge */
+          margin-left: -1px;
+          margin-right: 0;
         }
 
         h3 {
@@ -184,6 +194,70 @@
           text-align: center;
           position: relative;
           z-index: 2;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .education-section {
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    .education-content {
+      left: 3rem;
+      width: calc(50% - 3rem);
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .education-section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    min-height: auto;
+    overflow: visible;
+
+    .education-content {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1.5rem;
+
+      h2 {
+        font-size: 32px;
+        margin-bottom: 1.5rem;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .education-list {
+      width: 100%;
+      padding: 1rem;
+      height: auto;
+      max-height: none;
+      overflow-y: visible;
+
+      .education-container {
+        ul {
+          li {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 1rem;
+            
+            &:nth-child(odd),
+            &:nth-child(even) {
+              align-self: center;
+              margin: 0 auto 1rem;
+            }
+          }
         }
       }
     }
