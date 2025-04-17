@@ -2,43 +2,47 @@
 @use '../mixins/mixins' as *;
 
 footer {
-  padding: $spacing-xl;
+  padding: map-get($mobile-spacing, padding);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $spacing-lg;
-  gap: 0.5rem;
+  gap: map-get($mobile-spacing, gap);
   position: relative;
-  margin-top: $spacing-xl;
+  margin-top: map-get($mobile-spacing, section-margin);
   min-height: 300px;
   background-color: $background-color;
 
   // Social links section
   .social-links {
     display: flex;
-    gap: $spacing-lg;
-    margin-bottom: $spacing-xl;
+    gap: map-get($mobile-spacing, gap);
+    margin-bottom: map-get($mobile-spacing, margin);
 
     a {
       color: #ffffff;
       text-decoration: none;
-      transition: $transition-base;
-      font-size: 14px;
+      transition: color 0.3s ease;
+      font-size: map-get($mobile-font-sizes, button);
       text-transform: uppercase;
       position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: #ffffff;
+        transition: width 0.3s ease;
+        transform: translateY(-50%);
+      }
 
       &:hover {
         color: #ffffff;
 
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          top: 50%;
-          transform: translateY(-50%);
+        &::before {
           width: 100%;
-          height: 1px;
-          background-color: #ffffff;
         }
       }
     }
@@ -48,20 +52,28 @@ footer {
   h2, h3 {
     text-align: center;
     width: 100%;
-    margin-bottom: $spacing-md;
+    margin-bottom: map-get($mobile-spacing, gap);
+  }
+
+  h2 {
+    font-size: map-get($mobile-font-sizes, h1);
+  }
+
+  h3 {
+    font-size: map-get($mobile-font-sizes, h2);
   }
 
   // Navigation section
   .footer-nav {
     display: flex;
-    gap: $spacing-md;
-    margin-bottom: $spacing-xl;
+    gap: map-get($mobile-spacing, gap);
+    margin-bottom: map-get($mobile-spacing, margin);
 
     a {
       color: $text-color;
       text-decoration: none;
       transition: $transition-base;
-      font-size: 14px;
+      font-size: map-get($mobile-font-sizes, button);
       text-transform: uppercase;
 
       &:hover {
@@ -76,12 +88,12 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: $spacing-xl;
+    padding: map-get($mobile-spacing, padding);
     margin-top: auto;
     border-top: 1px solid rgba($text-color, 0.1);
 
     p {
-      font-size: 14px;
+      font-size: map-get($mobile-font-sizes, small-text);
       color: $text-color;
     }
 
@@ -91,11 +103,105 @@ footer {
       background: none;
       border: none;
       cursor: pointer;
-      font-size: 14px;
+      font-size: map-get($mobile-font-sizes, button);
       text-transform: uppercase;
 
       &:hover {
         color: #ffffff;
+      }
+    }
+  }
+}
+
+// Tablet styles (768px and up)
+@media screen and (min-width: $tablet) {
+  footer {
+    padding: map-get($tablet-spacing, padding);
+    gap: map-get($tablet-spacing, gap);
+    margin-top: map-get($tablet-spacing, section-margin);
+
+    .social-links {
+      gap: map-get($tablet-spacing, gap);
+      margin-bottom: map-get($tablet-spacing, margin);
+
+      a {
+        font-size: map-get($tablet-font-sizes, button);
+      }
+    }
+
+    h2 {
+      font-size: map-get($tablet-font-sizes, h1);
+    }
+
+    h3 {
+      font-size: map-get($tablet-font-sizes, h2);
+    }
+
+    .footer-nav {
+      gap: map-get($tablet-spacing, gap);
+      margin-bottom: map-get($tablet-spacing, margin);
+
+      a {
+        font-size: map-get($tablet-font-sizes, button);
+      }
+    }
+
+    .footer-bottom {
+      padding: map-get($tablet-spacing, padding);
+
+      p {
+        font-size: map-get($tablet-font-sizes, small-text);
+      }
+
+      button {
+        font-size: map-get($tablet-font-sizes, button);
+      }
+    }
+  }
+}
+
+// Desktop styles (1024px and up)
+@media screen and (min-width: $desktop) {
+  footer {
+    padding: map-get($desktop-spacing, padding);
+    gap: map-get($desktop-spacing, gap);
+    margin-top: map-get($desktop-spacing, section-margin);
+
+    .social-links {
+      gap: map-get($desktop-spacing, gap);
+      margin-bottom: map-get($desktop-spacing, margin);
+
+      a {
+        font-size: map-get($desktop-font-sizes, button);
+      }
+    }
+
+    h2 {
+      font-size: map-get($desktop-font-sizes, h1);
+    }
+
+    h3 {
+      font-size: map-get($desktop-font-sizes, h2);
+    }
+
+    .footer-nav {
+      gap: map-get($desktop-spacing, gap);
+      margin-bottom: map-get($desktop-spacing, margin);
+
+      a {
+        font-size: map-get($desktop-font-sizes, button);
+      }
+    }
+
+    .footer-bottom {
+      padding: map-get($desktop-spacing, padding);
+
+      p {
+        font-size: map-get($desktop-font-sizes, small-text);
+      }
+
+      button {
+        font-size: map-get($desktop-font-sizes, button);
       }
     }
   }
