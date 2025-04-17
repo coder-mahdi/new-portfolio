@@ -77,14 +77,24 @@ function About() {
                 {/* Skills */}
                 <section className="skills">
                     <h3>Skills</h3>
-                    <ul>
+                    <div className="skills-grid">
                         {aboutData.skills.map((skill, index) => (
-                            <li key={index}>
-                                {skill.soft && <p><strong>Soft Skills:</strong> {skill.soft}</p>}
-                                {skill.languages && <p><strong>Languages:</strong> {skill.languages}</p>}
-                            </li>
+                            <div className="skill-box" key={index}>
+                                {skill.soft && (
+                                    <div className="skill-content">
+                                        <h4>Soft Skills</h4>
+                                        <p>{skill.soft}</p>
+                                    </div>
+                                )}
+                                {skill.languages && (
+                                    <div className="skill-content">
+                                        <h4>Languages</h4>
+                                        <p>{skill.languages}</p>
+                                    </div>
+                                )}
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 </section>
 
                 {/* Experience */}
