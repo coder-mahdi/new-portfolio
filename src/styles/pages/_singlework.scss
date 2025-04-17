@@ -94,12 +94,14 @@
   }
 
   &__see-more {
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
     margin-top: 2rem;
     position: relative;
     display: flex;
     align-items: center;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
   }
 
   &__see-more-blur {
@@ -110,12 +112,12 @@
 
     &.left {
       left: 0;
-      background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     }
 
     &.right {
       right: 0;
-      background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     }
   }
 
