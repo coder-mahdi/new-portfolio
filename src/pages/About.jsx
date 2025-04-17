@@ -65,14 +65,14 @@ function About() {
                 </section>
 
            
-                <section className="gallery">
-                    <h3>Gallery</h3>
+   
+    
                     <div className="gallery">
                         {aboutData.gallery.map((item, index) => (
                             <img key={index} src={item.image} alt={`Gallery ${index}`} />
                         ))}
                     </div>
-                </section>
+
 
                 {/* Skills */}
                 <section className="skills">
