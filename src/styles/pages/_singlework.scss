@@ -1,0 +1,320 @@
+@use '../base/variables' as *;
+@use '../mixins/mixins' as *;
+
+.single-work {
+  padding: map-get($mobile-spacing, padding);
+  margin-bottom: map-get($mobile-spacing, section-margin);
+  width: 100%;
+  overflow-x: hidden;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($mobile-spacing, gap);
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($mobile-spacing, gap);
+    width: 100%;
+  }
+
+  &__text-content {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($mobile-spacing, gap);
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: map-get($mobile-spacing, gap);
+    width: 100%;
+  }
+
+  h1 {
+    font-size: map-get($mobile-font-sizes, h1);
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: map-get($mobile-font-sizes, text);
+    color: $text-color;
+  }
+
+  &__details {
+    display: flex;
+    gap: 2rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__details-labels,
+  &__details-values {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-end;
+  }
+
+  &__details-label,
+  &__details-value {
+    font-size: map-get($mobile-font-sizes, text);
+    color: $text-color;
+  }
+
+  &__details-value {
+    a {
+      color: $text-color;
+      text-decoration: underline;
+      
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__image-container {
+    width: 100vw;
+    height: 30vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: 2rem;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform-origin: center;
+    transition: transform 0.5s ease-out;
+    will-change: transform;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__see-more {
+    width: 100vw;
+    overflow: hidden;
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
+  &__see-more-blur {
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+
+    &.left {
+      left: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    }
+
+    &.right {
+      right: 0;
+      background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    }
+  }
+
+  &__see-more-text {
+    display: inline-flex;
+    animation: marquee 45s linear infinite;
+    white-space: nowrap;
+    will-change: transform;
+    padding: 0 100px;
+  }
+
+  &__see-more-link {
+    display: inline-block;
+    text-decoration: none;
+    color: $text-color;
+    font-family: "Roboto Mono", monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+    margin-right: 4rem;
+    cursor: pointer;
+    
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  // Dynamic sections
+  .section-container {
+    margin-top: map-get($mobile-spacing, section-margin);
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .section-title {
+    font-size: map-get($mobile-font-sizes, h2);
+    color: $text-color;
+    font-weight: 600;
+    margin-bottom: map-get($mobile-spacing, gap);
+  }
+
+  .section-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .section-item {
+    font-size: map-get($mobile-font-sizes, text);
+    color: $text-color;
+    line-height: 1.6;
+  }
+
+  @media (min-width: $tablet) {
+    padding: map-get($tablet-spacing, padding);
+    margin-bottom: 0;
+
+    &__container {
+      gap: map-get($tablet-spacing, gap);
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: map-get($tablet-spacing, gap);
+    }
+
+    &__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: map-get($tablet-spacing, gap);
+    }
+
+    &__text-content {
+      gap: map-get($tablet-spacing, gap);
+    }
+
+    h1 {
+      font-size: map-get($tablet-font-sizes, h1);
+    }
+
+    p {
+      font-size: map-get($tablet-font-sizes, text);
+    }
+
+    &__details-label,
+    &__details-value {
+      font-size: map-get($tablet-font-sizes, text);
+    }
+
+    &__image-container {
+      height: 40vh;
+      margin-top: 3rem;
+    }
+
+    .section-container {
+      margin-top: map-get($tablet-spacing, section-margin);
+
+      &:last-child {
+        margin-bottom: 3rem;
+      }
+    }
+
+    .section-title {
+      font-size: map-get($tablet-font-sizes, h2);
+    }
+
+    .section-item {
+      font-size: map-get($tablet-font-sizes, text);
+    }
+  }
+
+  @media (min-width: $desktop) {
+    padding: map-get($desktop-spacing, padding);
+    margin-bottom: 0;
+
+    &__container {
+      gap: map-get($desktop-spacing, gap);
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: map-get($desktop-spacing, gap);
+    }
+
+    &__header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: map-get($desktop-spacing, gap);
+    }
+
+    &__text-content {
+      align-items: flex-start;
+      gap: map-get($desktop-spacing, gap);
+    }
+
+    h1 {
+      font-size: map-get($desktop-font-sizes, h1);
+    }
+
+    p {
+      font-size: map-get($desktop-font-sizes, text);
+    }
+
+    &__details {
+      gap: 3rem;
+      align-items: self-end;
+    }
+
+    &__details-label,
+    &__details-value {
+      font-size: map-get($desktop-font-sizes, text);
+    }
+
+    &__image-container {
+      height: 100vh;
+      margin-top: 4rem;
+    }
+
+    .section-container {
+      margin-top: map-get($desktop-spacing, section-margin);
+
+      &:last-child {
+        margin-bottom: 4rem;
+      }
+    }
+
+    .section-title {
+      font-size: map-get($desktop-font-sizes, h2);
+    }
+
+    .section-item {
+      font-size: map-get($desktop-font-sizes, text);
+    }
+  }
+}

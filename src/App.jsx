@@ -1,20 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes  } from 'react-router-dom';
-import Home from './components/Home';
-import Works from './components/Works';
-import Singlework from './components/Singlework';
-import About from './components/About';
-import Contact from './components/Contact';
-
-
-
-
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Works from './pages/Works';
+import Singlework from './pages/Singlework';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 function App() {
-
   return (
-
     <Router basename="/">
       <Routes>
         <Route path="/" element={<Home />} />
@@ -27,4 +20,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

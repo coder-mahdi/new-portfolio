@@ -1,9 +1,9 @@
- {
+{
      "hero": {
          "title": "RING A BELL!",
-         "subtitle": "Reach out and Let’s create something amazing together. Let’s Achieve greatness. ",
+         "explanation": "Reach out and Let's create something amazing together. Let's Achieve greatness. ",
          "location": "Based in Vancouver, Canada",
-         "image": "/images/projects/callmeguide.jpg"
+         "image": "/images/projects/callmeguide.jpg",
+         "email": "mahdi.roozbahani@gmail.com"
        }
-
- }
+}
