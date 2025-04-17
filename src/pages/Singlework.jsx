@@ -34,58 +34,81 @@ function SingleWork() {
     return (
         <Layout>
             <div className="main-content">
-                <div className="singlework-content">
-                    <div className="singlework-header">
-                        <h1 className="singlework-title">{project.name}</h1>
-                        <p className="singlework-overview">{details.overview || project.overview || 'No overview available'}</p>
+                <div className="single-work">
+                    <div className="single-work__container">
+                        <div className="single-work__content">
+                            <div className="single-work__text-content">
+                                <h1>{project.name}</h1>
+                                <p>{details.overview || project.overview || 'No overview available'}</p>
+                            </div>
+
+                            {project.details && (
+                                <div className="single-work__details">
+                                    <div className="single-work__details-labels">
+                                        {["Client", "Year", "Category", "ProjectLink", "Live Project"].map((key) => (
+                                            <div key={key} className="single-work__details-label">
+                                                {key}
+                                            </div>
+                                        ))}
+                                    </div>
+                                    <div className="single-work__details-values">
+                                        {["Client", "Year", "Category", "ProjectLink", "Live Project"].map((key) => (
+                                            <div key={key} className="single-work__details-value">
+                                                {project.details[key]?.toString().startsWith("http") ? (
+                                                    <a href={project.details[key]} target="_blank" rel="noopener noreferrer">
+                                                        {project.details[key]}
+                                                    </a>
+                                                ) : (
+                                                    project.details[key]
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        {project.image && (
+                            <div className="single-work__image-container">
+                                <picture>
+                                    <source 
+                                        media="(min-width: 1024px)" 
+                                        srcSet={project.desktopImage || project.image} 
+                                    />
+                                    <source 
+                                        media="(min-width: 768px)" 
+                                        srcSet={project.tabletImage || project.image} 
+                                    />
+                                    <img 
+                                        src={project.mobileImage || project.image} 
+                                        alt={project.alt || project.name} 
+                                        className="single-work__image" 
+                                    />
+                                </picture>
+                            </div>
+                        )}
+
+                        <motion.div
+                            animate={{ rotate: [0, 15, -15, 0] }}
+                            transition={{ duration: 0.6, repeat: 3, repeatDelay: 0.5 }}
+                            className="see-more-container"
+                        >
+                            <Link to="/works" className="see-more-works">
+                                see more works
+                            </Link>
+                        </motion.div>
+
+                        {Object.entries(sections).map(([sectionTitle, items], index) => (
+                            <div key={index} className="section-container">
+                                <h2 className="section-title">{sectionTitle}</h2>
+                                <ul className="section-list">
+                                    {items.map((item, idx) => (
+                                        <li key={idx} className="section-item">{item}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
-
-                    {project.details && (
-                        <div className="project-details">
-                            <h2 className="details-title">Project Details</h2>
-                            <ul className="details-list">
-                                {["Client", "Year", "Category", "ProjectLink", "Live Project"].map((key) => (
-                                    <li key={key} className="details-item">
-                                        <strong>{key}:</strong>{" "}
-                                        {project.details[key]?.toString().startsWith("http") ? (
-                                            <a href={project.details[key]} target="_blank" rel="noopener noreferrer" className="details-link">
-                                                {project.details[key]}
-                                            </a>
-                                        ) : (
-                                            project.details[key]
-                                        )}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
-
-                    {project.image && (
-                        <div className="singlework-hero">
-                            <img src={project.image} alt={project.alt || project.name} className="hero-image" />
-                        </div>
-                    )}
-
-                    <motion.div
-                        animate={{ rotate: [0, 15, -15, 0] }}
-                        transition={{ duration: 0.6, repeat: 3, repeatDelay: 0.5 }}
-                        className="see-more-container"
-                    >
-                        <Link to="/works" className="see-more-works">
-                            see more works
-                        </Link>
-                    </motion.div>
-
-                    {Object.entries(sections).map(([sectionTitle, items], index) => (
-                        <div key={index} className="section-container">
-                            <h2 className="section-title">{sectionTitle}</h2>
-                            <ul className="section-list">
-                                {items.map((item, idx) => (
-                                    <li key={idx} className="section-item">{item}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
                 </div>
             </div>
         </Layout>

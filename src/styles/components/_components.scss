@@ -2,4 +2,5 @@
 @use '../mixins/mixins' as *;
 @use 'navigation';
 @use 'buttons';
-@use 'cursor'; 
+@use 'cursor';
+@use 'selected-works'; 
