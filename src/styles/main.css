@@ -2214,10 +2214,11 @@ footer .footer-bottom button:hover {
 
 .contact {
   width: 100%;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
   margin: 0;
   position: relative;
   background-color: #000000;
@@ -2235,9 +2236,9 @@ footer .footer-bottom button:hover {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  max-width: 50%;
-  padding-right: 2rem;
+  gap: 1rem;
+  padding: 1rem;
+  margin-top: 4rem;
 }
 .contact .contact-content h1 {
   font-size: 48px;
@@ -2292,16 +2293,14 @@ footer .footer-bottom button:hover {
   color: #ffffff;
 }
 .contact .contact-image {
-  width: 40%;
-  height: 80vh;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  margin: 0;
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  margin: 2rem 0;
   padding: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .contact .contact-image img {
   width: 100%;
@@ -2313,11 +2312,15 @@ footer .footer-bottom button:hover {
 
 @media screen and (min-width: 768px) {
   .contact {
+    flex-direction: row;
+    align-items: center;
     padding: 1.5rem;
   }
   .contact .contact-content {
+    width: 50%;
     padding-right: 1.5rem;
     gap: 1rem;
+    margin-top: 0;
   }
   .contact .contact-content h1 {
     font-size: 72px;
@@ -2327,6 +2330,15 @@ footer .footer-bottom button:hover {
   }
   .contact .contact-content .contact-btn {
     font-size: 14px;
+  }
+  .contact .contact-image {
+    width: 40%;
+    height: 80vh;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 @media screen and (min-width: 1024px) {
