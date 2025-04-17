@@ -20,14 +20,15 @@ function Contact() {
 
     return (
         <Layout>
-            <div className="main-content">
-                {/* Hero Section */}
-                <div className="hero-section">
-                    <div className="hero-content">
-                        <h1>{contactData.hero.title || "loading..."}</h1>
-                        <p>{contactData.hero.explanation || "loading..."}</p>
-                        <button className="contact-button" onClick={handleEmailClick}>Send me a message</button>
-                    </div>
+            <div className="contact">
+                <div className="contact-content">
+                    <h1>{contactData.hero.title || "loading..."}</h1>
+                    <p>{contactData.hero.explanation || "loading..."}</p>
+                    <button className="contact-btn" onClick={handleEmailClick}>
+                        <span>Send me a message</span>
+                    </button>
+                </div>
+                <div className="contact-image">
                     <img src={contactData.hero.image} alt="Hero" />
                 </div>
             </div>

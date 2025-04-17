@@ -66,9 +66,9 @@ const Header = () => {
         <header className={`header ${isMenuOpen ? 'menu-open' : ''}`}>
             <div className="header-left">
                 <div className="local-time">LOCAL/{currentTime}</div>
-                <a href="tel:+1234567890" className="phone-icon">
+                <Link to="/contact" className="phone-icon">
                     <i className="fas fa-phone"></i>
-                </a>
+                </Link>
             </div>
 
             <div className="header-right">
