@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Layout from '../Layout/Layout.jsx';
 
 function About() {
@@ -10,6 +10,8 @@ function About() {
         skills: [],
         experience: []
     });
+    
+    const heroImageRef = useRef(null);
 
     useEffect(() => {
         fetch('/data/aboutData.json')
@@ -18,15 +20,38 @@ function About() {
             .catch(error => console.error("Error fetching data:", error));
     }, []);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (heroImageRef.current) {
+                const scrollPosition = window.scrollY;
+                const scale = Math.min(1.5, 1 + scrollPosition * 0.0003);
+                heroImageRef.current.style.transform = `scale(${scale})`;
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
         <Layout>
             <div className="main-content">
-                {/* Hero Section */}
-                <h1>{aboutData.hero.title || "loading..."}</h1>
-                <h2>{aboutData.hero.subtitle || "loading..."}</h2>
-                <p>{aboutData.hero.location || "loading..."}</p>
-                <img src={aboutData.hero.image} alt="Hero" />
-                
+                <div className="hero-section">
+                    <div className="hero-content">
+                        <h1>{aboutData.hero.title || "loading..."}</h1>
+                        <h2>{aboutData.hero.subtitle || "loading..."}</h2>
+                    </div>
+                    <p className="location-text">{aboutData.hero.location || "loading..."}</p>
+                    <div className="hero-image-container">
+                        <img
+                            ref={heroImageRef}
+                            src={aboutData.hero.image} 
+                            alt="Hero" 
+                            className="hero-image"
+                        />
+                    </div>
+                </div>
+
                 {/* My Story */}
                 <section>
                     <h3>My Story</h3>
