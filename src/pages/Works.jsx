@@ -40,9 +40,12 @@ function Works() {
         <Layout> 
             <div className="main-content">
                 <div className='works-content'>
+
+                    <div className='works-title'> 
                     <h1>
-                        {firstLine}<br />{secondLine}
+                        {firstLine} {secondLine}
                     </h1>
+                    </div>
                     <p className='works-explanation'>{worksData.explanation}</p>
                 </div>
 

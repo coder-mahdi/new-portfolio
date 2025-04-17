@@ -15,18 +15,15 @@
     text-align: right;
     font-size: map-get($mobile-font-sizes, h1);
     margin-bottom: 2rem;
-    
-    br {
-      content: "";
-      display: block;
-      margin: -0.5em 0;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: map-get($mobile-spacing, h1-line-gap);
   }
 
   .works-explanation {
     align-self: flex-start;
     max-width: map-get($mobile-layout, max-width);
-    margin-left: auto;
+    // margin-left: auto;
     font-size: map-get($mobile-font-sizes, text);
   }
 }
@@ -113,10 +110,9 @@
 
     h1 {
       font-size: map-get($tablet-font-sizes, h1);
-      
-      br {
-        margin: -0.4em 0;
-      }
+      display: flex;
+      flex-direction: column;
+      gap: map-get($tablet-spacing, h1-line-gap);
     }
 
     .works-explanation {
@@ -150,12 +146,15 @@
     margin-top: map-get($desktop-spacing, section-margin);
     gap: map-get($desktop-spacing, gap);
 
+    .works-title{
+      width: 100%;
+    }
+
     h1 {
       font-size: map-get($desktop-font-sizes, h1);
-      
-      br {
-        margin: -0.3em 0;
-      }
+      display: flex;
+      flex-direction: column;
+      gap: map-get($desktop-spacing, h1-line-gap);
     }
 
     .works-explanation {

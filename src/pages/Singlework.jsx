@@ -4,7 +4,6 @@ import Layout from '../Layout/Layout.jsx';
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 
-
 function SingleWork() {
     const { id } = useParams(); 
     const [project, setProject] = useState(null);
@@ -30,63 +29,64 @@ function SingleWork() {
     }
 
     const details = project.details || project.detailedDescription || {};
-    
     const sections = details.sections || project.sections || {};
 
     return (
         <Layout>
             <div className="main-content">
-                <h1>{project.name}</h1>
-                {project.image && (
-                    <img src={project.image} alt={project.alt || project.name} />
-                )}
-                <p>{details.overview || project.overview || 'No overview available'}</p>
-
-          
-
-                {project.details && (
-  <div className="project-details mt-6">
-    <h2 className="text-xl font-semibold mb-4">Project Details</h2>
-    <ul className="space-y-2 text-base">
-      {["Client", "Year", "Category", "ProjectLink", "Live Project"].map((key) => (
-        <li key={key}>
-          <strong>{key}:</strong>{" "}
-          {project.details[key]?.toString().startsWith("http") ? (
-            <a href={project.details[key]} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">
-              {project.details[key]}
-            </a>
-          ) : (
-            project.details[key]
-          )}
-        </li>
-      ))}
-    </ul>
-  </div>
-)}
-
-<motion.div
-  animate={{ rotate: [0, 15, -15, 0] }}
-  transition={{ duration: 0.6, repeat: 3, repeatDelay: 0.5 }}
->
-  <Link to={`/works`} className="see-more-works">
-    see more works
-  </Link>
-</motion.div>
-
-
-
-                {Object.entries(sections).map(([sectionTitle, items], index) => (
-                    <div key={index}>
-                        <h2>{sectionTitle}</h2>
-                        <ul>
-                            {items.map((item, idx) => (
-                                <li key={idx}>{item}</li>
-                            ))}
-                        </ul>
+                <div className="singlework-content">
+                    <div className="singlework-header">
+                        <h1 className="singlework-title">{project.name}</h1>
+                        <p className="singlework-overview">{details.overview || project.overview || 'No overview available'}</p>
                     </div>
-                ))}
 
+                    {project.details && (
+                        <div className="project-details">
+                            <h2 className="details-title">Project Details</h2>
+                            <ul className="details-list">
+                                {["Client", "Year", "Category", "ProjectLink", "Live Project"].map((key) => (
+                                    <li key={key} className="details-item">
+                                        <strong>{key}:</strong>{" "}
+                                        {project.details[key]?.toString().startsWith("http") ? (
+                                            <a href={project.details[key]} target="_blank" rel="noopener noreferrer" className="details-link">
+                                                {project.details[key]}
+                                            </a>
+                                        ) : (
+                                            project.details[key]
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
 
+                    {project.image && (
+                        <div className="singlework-hero">
+                            <img src={project.image} alt={project.alt || project.name} className="hero-image" />
+                        </div>
+                    )}
+
+                    <motion.div
+                        animate={{ rotate: [0, 15, -15, 0] }}
+                        transition={{ duration: 0.6, repeat: 3, repeatDelay: 0.5 }}
+                        className="see-more-container"
+                    >
+                        <Link to="/works" className="see-more-works">
+                            see more works
+                        </Link>
+                    </motion.div>
+
+                    {Object.entries(sections).map(([sectionTitle, items], index) => (
+                        <div key={index} className="section-container">
+                            <h2 className="section-title">{sectionTitle}</h2>
+                            <ul className="section-list">
+                                {items.map((item, idx) => (
+                                    <li key={idx} className="section-item">{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
             </div>
         </Layout>
     );
