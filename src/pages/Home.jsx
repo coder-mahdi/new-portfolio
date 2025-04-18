@@ -10,6 +10,10 @@ function Home() {
         education: { universities: [] }
     });
     
+    const [worksData, setWorksData] = useState({
+        projects: []
+    });
+    
     const heroImageRef = useRef(null);
     const graduationIconRef = useRef(null);
     const educationContentRef = useRef(null);
@@ -21,6 +25,11 @@ function Home() {
             .then(response => response.json())
             .then(data => setHomeData(data))
             .catch(error => console.error("Error fetching data:", error));
+            
+        fetch('/data/worksData.json')
+            .then(response => response.json())
+            .then(data => setWorksData(data))
+            .catch(error => console.error("Error fetching works data:", error));
     }, []);
 
     // Handle scrolling to education section when navigating from another page
@@ -81,6 +90,9 @@ function Home() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Get the latest 4 projects from worksData
+    const latestProjects = worksData.projects.slice(0, 4);
+
     return (
         <Layout>
             <div className="main-content">
@@ -124,20 +136,22 @@ function Home() {
                 <div className='work-section'>
                     <div className='work-content'>
                         <div className='right-column'>
-                        <h2>{homeData.works.title || "loading..."}</h2>
+                        <h2>{worksData.title || "Selected Works"}</h2>
                         </div>
                         <div className='left-column'>
-                        <p>{homeData.works.explanation}</p>
+                        <p>{worksData.explanation || ""}</p>
                         <button>
                         <a href="/works">View Works</a>
                         </button>
                         </div>
                          </div>
                      <ul>
-                        {homeData.works?.projects?.map((pro, index) => (
+                        {latestProjects.map((pro, index) => (
                             <li key={index}>
-                                <img src={pro.image} alt={pro.name} className="project-image" />
-                                <h3>{pro.name}</h3>
+                                <img src={pro.image} alt={pro.alt || pro.name} className="project-image" />
+                                <h3>
+                                    <Link to={`/singlework/${pro.id}`}>{pro.name}</Link>
+                                </h3>
                             </li>
                         ))}
                      </ul>

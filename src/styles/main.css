@@ -572,7 +572,6 @@ footer .footer-bottom button:hover {
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
   width: 100%;
-  max-width: 1200px;
   margin: 2rem auto;
   padding-bottom: 2rem;
 }
@@ -682,7 +681,7 @@ footer .footer-bottom button:hover {
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem;
     margin: 4rem auto;
-    padding-bottom: 4rem;
+    padding: 0 3rem 4rem 3rem;
   }
   .projects-list li h3 {
     font-size: 32px;
@@ -697,7 +696,6 @@ footer .footer-bottom button:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -784,6 +782,12 @@ footer .footer-bottom button:hover {
   margin: 0;
 }
 
+@media screen and (min-width: 1024px) {
+  .work-section {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
 .about {
   width: 100%;
   padding: 2rem 1rem;
@@ -1811,7 +1815,6 @@ footer .footer-bottom button:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
