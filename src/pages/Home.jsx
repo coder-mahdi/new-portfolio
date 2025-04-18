@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Layout from '../Layout/Layout.jsx';
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 function Home() {
     const [homeData, setHomeData] = useState({
@@ -10,17 +10,43 @@ function Home() {
         education: { universities: [] }
     });
     
+    const [worksData, setWorksData] = useState({
+        projects: []
+    });
+    
     const heroImageRef = useRef(null);
     const graduationIconRef = useRef(null);
     const educationContentRef = useRef(null);
     const educationSectionRef = useRef(null);
+    const projectItemsRef = useRef([]);
+    const location = useLocation();
 
     useEffect(() => {
         fetch('/data/homeData.json')
             .then(response => response.json())
             .then(data => setHomeData(data))
             .catch(error => console.error("Error fetching data:", error));
+            
+        fetch('/data/worksData.json')
+            .then(response => response.json())
+            .then(data => setWorksData(data))
+            .catch(error => console.error("Error fetching works data:", error));
     }, []);
+
+    // Handle scrolling to education section when navigating from another page
+    useEffect(() => {
+        if (location.state?.scrollTo === 'education-section') {
+            const educationSection = document.getElementById('education-section');
+            if (educationSection) {
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: educationSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
+        }
+    }, [location]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -59,11 +85,33 @@ function Home() {
                     }
                 }
             }
+
+            // Check if project items are in view
+            projectItemsRef.current.forEach((item, index) => {
+                if (item) {
+                    const rect = item.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+                    
+                    if (isVisible) {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 200); // Add delay based on index
+                    }
+                }
+            });
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Get the latest 4 projects from worksData
+    const latestProjects = worksData.projects.slice(0, 4);
+
+    // Update projectItemsRef when latestProjects changes
+    useEffect(() => {
+        projectItemsRef.current = projectItemsRef.current.slice(0, latestProjects.length);
+    }, [latestProjects]);
 
     return (
         <Layout>
@@ -92,15 +140,15 @@ function Home() {
                     <div className="about-content">
                         <div className="left-column">
                             <button>
-                                <a href="#works">View Works</a>
+                                <a href="#works">Read More</a>
                             </button>
                         </div>
                         <div className="right-column">
-                            <h3>Skills</h3>
-                            <p>{homeData.about.skills}</p>
+                            <h3>More THan Just Code</h3>
+                            <p>{homeData.about["More Than Just Code"]}</p>
 
-                            <h3>Hobbies</h3>
-                            <p>{homeData.about.hobbies}</p>
+                            <h3>What Drives Me</h3>
+                            <p>{homeData.about["What Drives Me"]}</p>
                         </div>
                     </div>
                 </div>
@@ -108,24 +156,29 @@ function Home() {
                 <div className='work-section'>
                     <div className='work-content'>
                         <div className='right-column'>
-                        <h2>{homeData.works.title || "loading..."}</h2>
+                            <h2>{worksData.title || "Selected Works"}</h2>
                         </div>
                         <div className='left-column'>
-                        <p>{homeData.works.explanation}</p>
-                        <button>
-                        <a href="/works">View Works</a>
-                        </button>
+                            <p>{homeData.works.explanation || ""}</p>
+                            <button>
+                                <a href="/works">View Works</a>
+                            </button>
                         </div>
-                        
-                         </div>
-                     <ul>
-                        {homeData.works?.projects?.map((pro, index) => (
-                            <li key={index}>
-                                <img src={pro.image} alt={pro.name} className="project-image" />
-                                <h3>{pro.name}</h3>
+                    </div>
+                    <ul className="projects-list">
+                        {latestProjects.map((pro, index) => (
+                            <li 
+                                key={index} 
+                                className="project-item"
+                                ref={el => projectItemsRef.current[index] = el}
+                            >
+                                <h3>
+                                    <Link to={`/singlework/${pro.id}`}>{pro.name}</Link>
+                                </h3>
+                                <img src={pro.image} alt={pro.alt || pro.name} />
                             </li>
                         ))}
-                     </ul>
+                    </ul>
                 </div>
 
                 <div className='education-section' id="education-section" ref={educationSectionRef}>
@@ -137,16 +190,45 @@ function Home() {
                     <div className='education-list'>
                         <div className='education-container'>
                             <i className="fas fa-graduation-cap graduation-icon" ref={graduationIconRef}></i>
-                            <ul>
-                                {homeData.education?.universities?.map((edu, index) => (
-                                    <li key={index}>
-                                        <h3>{edu.name}</h3>
-                                        <p>{edu.university}</p>
-                                        <p>{edu.degree}</p>
-                                        <p>{edu.duration}</p>
-                                    </li>
-                                ))}
-                            </ul>
+                            <div className="education-items">
+                                {homeData.education?.universities?.map((edu, index) => {
+                                    // Create a strict alternating pattern
+                                    const rowNumber = index + 1;
+                                    const isFirstRow = rowNumber === 1;
+                                    const isThirdRow = rowNumber === 3;
+                                    const isFifthRow = rowNumber === 5;
+                                    
+                                    // Empty box should be on left for rows 1, 3, 5...
+                                    // Empty box should be on right for rows 2, 4, 6...
+                                    const emptyBoxOnLeft = isFirstRow || isThirdRow || isFifthRow || rowNumber % 2 === 1;
+                                    
+                                    return (
+                                        <div key={index} className={`education-row row-${rowNumber}`}>
+                                            {emptyBoxOnLeft ? (
+                                                <>
+                                                    <div className="empty-box"></div>
+                                                    <div className="content-box">
+                                                        <h3>{edu.name}</h3>
+                                                        <p>{edu.university}</p>
+                                                        <p>{edu.degree}</p>
+                                                        <p>{edu.duration}</p>
+                                                    </div>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <div className="content-box">
+                                                        <h3>{edu.name}</h3>
+                                                        <p>{edu.university}</p>
+                                                        <p>{edu.degree}</p>
+                                                        <p>{edu.duration}</p>
+                                                    </div>
+                                                    <div className="empty-box"></div>
+                                                </>
+                                            )}
+                                        </div>
+                                    );
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>

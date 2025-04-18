@@ -1,0 +1,9 @@
+// Animations mixins
+@mixin apply-dune-animation {
+    animation: duneSlideUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@mixin apply-dune-animation-delay($delay) {
+    animation-delay: $delay;
+} 

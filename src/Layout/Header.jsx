@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
 const Header = () => {
@@ -9,6 +9,7 @@ const Header = () => {
     const menuRef = useRef(null);
     const buttonRef = useRef(null);
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         console.log('Current path:', location.pathname);
@@ -60,6 +61,40 @@ const Header = () => {
         document.body.style.overflow = !isMenuOpen ? 'hidden' : 'auto';
     };
 
+    const handleEducationClick = (e) => {
+        e.preventDefault();
+        setIsMenuOpen(false);
+        document.body.style.overflow = 'auto';
+        
+        if (location.pathname !== '/') {
+            // When on other pages, navigate to home with state to scroll to education
+            navigate('/', { 
+                state: { scrollTo: 'education-section' }
+            });
+        } else {
+            const educationSection = document.getElementById('education-section');
+            if (educationSection) {
+                // Force scroll to education section with offset
+                window.scrollTo({
+                    top: educationSection.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    };
+
+    // Check if we're currently on the education section
+    const isOnEducationSection = () => {
+        if (location.pathname === '/') {
+            const educationSection = document.getElementById('education-section');
+            if (educationSection) {
+                const rect = educationSection.getBoundingClientRect();
+                return rect.top <= 100 && rect.bottom >= 100;
+            }
+        }
+        return false;
+    };
+
     if (!headerData) return null;
 
     return (
@@ -79,8 +114,27 @@ const Header = () => {
                 <nav className={`main-nav menu-box ${isMenuOpen ? 'active' : ''}`} ref={menuRef}>
                     <div className="nav-links">
                         {headerData.navLink.map((link, index) => {
-                            const isCurrentPage = location.pathname === link.link;
+                            const isCurrentPage = link.name === "Education" 
+                                ? isOnEducationSection() 
+                                : location.pathname === link.link;
+                            
                             console.log(`Link ${link.name}:`, { path: link.link, isCurrentPage });
+                            
+                            // Special case for Education link
+                            if (link.name === "Education") {
+                                return (
+                                    <a 
+                                        key={index} 
+                                        href="#education-section"
+                                        data-hover-text={isCurrentPage ? 'here' : 'open'}
+                                        className={isCurrentPage ? 'active' : ''}
+                                        onClick={handleEducationClick}
+                                    >
+                                        {link.name}
+                                    </a>
+                                );
+                            }
+                            
                             return (
                                 <Link 
                                     key={index} 
@@ -90,6 +144,8 @@ const Header = () => {
                                     onClick={() => {
                                         setIsMenuOpen(false);
                                         document.body.style.overflow = 'auto';
+                                        // Scroll to top when navigating to a new page
+                                        window.scrollTo(0, 0);
                                     }}
                                 >
                                     {link.name}

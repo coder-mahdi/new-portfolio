@@ -1,6 +1,6 @@
 @use '../base/variables' as *;
 @use '../mixins/mixins' as *;
-
+@use '../mixins/animations' as *;
 .single-work {
   padding: map-get($mobile-spacing, padding);
   margin-bottom: map-get($mobile-spacing, section-margin);
@@ -37,6 +37,8 @@
   h1 {
     font-size: map-get($mobile-font-sizes, h1);
     line-height: 1.2;
+    @include apply-dune-animation;
+    animation-delay: 0.2s;
   }
 
   p {
@@ -71,7 +73,7 @@
       text-decoration: underline;
       
       &:hover {
-        color: $primary-color;
+        color: rgb(0, 153, 255);
       }
     }
   }

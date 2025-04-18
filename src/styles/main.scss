@@ -2,10 +2,22 @@
 @use 'base/reset';
 @use 'base/typography';
 @use 'mixins/mixins';
+@use 'mixins/animations';
 @use 'layouts/layouts';
 @use 'components/components';
 @use 'pages/pages';
 
+// Define animations
+@keyframes duneSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 // Basic styles
 :root {
