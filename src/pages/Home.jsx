@@ -29,8 +29,11 @@ function Home() {
             const educationSection = document.getElementById('education-section');
             if (educationSection) {
                 setTimeout(() => {
-                    educationSection.scrollIntoView({ behavior: 'smooth' });
-                }, 500); // Small delay to ensure the component is fully rendered
+                    window.scrollTo({
+                        top: educationSection.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }, 100);
             }
         }
     }, [location]);
@@ -105,15 +108,15 @@ function Home() {
                     <div className="about-content">
                         <div className="left-column">
                             <button>
-                                <a href="#works">View Works</a>
+                                <a href="#works">Read More</a>
                             </button>
                         </div>
                         <div className="right-column">
-                            <h3>Skills</h3>
-                            <p>{homeData.about.skills}</p>
+                            <h3>More THan Just Code</h3>
+                            <p>{homeData.about["More Than Just Code"]}</p>
 
-                            <h3>Hobbies</h3>
-                            <p>{homeData.about.hobbies}</p>
+                            <h3>What Drives Me</h3>
+                            <p>{homeData.about["What Drives Me"]}</p>
                         </div>
                     </div>
                 </div>

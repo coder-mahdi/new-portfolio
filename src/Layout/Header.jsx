@@ -67,13 +67,32 @@ const Header = () => {
         document.body.style.overflow = 'auto';
         
         if (location.pathname !== '/') {
-            navigate('/', { state: { scrollTo: 'education-section' } });
+            // When on other pages, navigate to home with state to scroll to education
+            navigate('/', { 
+                state: { scrollTo: 'education-section' }
+            });
         } else {
             const educationSection = document.getElementById('education-section');
             if (educationSection) {
-                educationSection.scrollIntoView({ behavior: 'smooth' });
+                // Force scroll to education section with offset
+                window.scrollTo({
+                    top: educationSection.offsetTop - 100,
+                    behavior: 'smooth'
+                });
             }
         }
+    };
+
+    // Check if we're currently on the education section
+    const isOnEducationSection = () => {
+        if (location.pathname === '/') {
+            const educationSection = document.getElementById('education-section');
+            if (educationSection) {
+                const rect = educationSection.getBoundingClientRect();
+                return rect.top <= 100 && rect.bottom >= 100;
+            }
+        }
+        return false;
     };
 
     if (!headerData) return null;
@@ -95,7 +114,10 @@ const Header = () => {
                 <nav className={`main-nav menu-box ${isMenuOpen ? 'active' : ''}`} ref={menuRef}>
                     <div className="nav-links">
                         {headerData.navLink.map((link, index) => {
-                            const isCurrentPage = location.pathname === link.link;
+                            const isCurrentPage = link.name === "Education" 
+                                ? isOnEducationSection() 
+                                : location.pathname === link.link;
+                            
                             console.log(`Link ${link.name}:`, { path: link.link, isCurrentPage });
                             
                             // Special case for Education link
@@ -122,6 +144,8 @@ const Header = () => {
                                     onClick={() => {
                                         setIsMenuOpen(false);
                                         document.body.style.overflow = 'auto';
+                                        // Scroll to top when navigating to a new page
+                                        window.scrollTo(0, 0);
                                     }}
                                 >
                                     {link.name}

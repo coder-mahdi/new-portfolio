@@ -3,6 +3,7 @@
 @use '../components/about-section';
 @use '../components/selected-works';
 @use '../components/education-section';
+@use '../mixins/animations' as *;
 
 .main-content {
   display: flex;
@@ -46,6 +47,8 @@
       text-align: center;
       margin-bottom: 0;
       white-space: normal;
+      @include apply-dune-animation;
+      animation-delay: 0.2s;
     }
 
     h2 {
@@ -53,6 +56,8 @@
       line-height: 1.2;
       text-align: center;
       margin-bottom: 0;
+      @include apply-dune-animation;
+      animation-delay: 0.4s;
     }
 
     .learn-more-btn {
@@ -224,5 +229,26 @@
       height: 100vh;
       margin-top: 4rem;
     }
+  }
+}
+
+.about {
+  h1 {
+    @include apply-dune-animation;
+    animation-delay: 0.4s;
+  }
+}
+
+.work-section {
+  h1 {
+    @include apply-dune-animation;
+    animation-delay: 0.6s;
+  }
+}
+
+.education-section {
+  h1 {
+    @include apply-dune-animation;
+    animation-delay: 0.8s;
   }
 } 

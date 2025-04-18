@@ -1,6 +1,6 @@
 @use '../base/variables' as *;
 @use '../mixins/mixins' as *;
-
+@use '../mixins/animations' as *;
 .contact {
   width: 100%;
   min-height: 100vh;
@@ -34,6 +34,8 @@
       font-size: map-get($mobile-font-sizes, h1);
       text-align: left;
       margin-bottom: 1rem;
+      @include apply-dune-animation;
+      animation-delay: 0.2s;
     }
 
     p {

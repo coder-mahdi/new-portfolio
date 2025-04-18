@@ -1225,12 +1225,18 @@ footer .footer-bottom button:hover {
   text-align: center;
   margin-bottom: 0;
   white-space: normal;
+  animation: duneSlideUp 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
 }
 .main-content .hero-content h2 {
   font-size: 24px;
   line-height: 1.2;
   text-align: center;
   margin-bottom: 0;
+  animation: duneSlideUp 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.4s;
 }
 .main-content .hero-content .learn-more-btn {
   display: inline-block;
@@ -1366,6 +1372,24 @@ footer .footer-bottom button:hover {
     margin-top: 4rem;
   }
 }
+.about h1 {
+  animation: duneSlideUp 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.4s;
+}
+
+.work-section h1 {
+  animation: duneSlideUp 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+
+.education-section h1 {
+  animation: duneSlideUp 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.8s;
+}
+
 .single-work {
   padding: 1rem;
   margin-bottom: 4rem;
@@ -1398,6 +1422,9 @@ footer .footer-bottom button:hover {
 .single-work h1 {
   font-size: 48px;
   line-height: 1.2;
+  animation: duneSlideUp 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
 }
 .single-work p {
   font-size: 14px;
@@ -1911,12 +1938,18 @@ footer .footer-bottom button:hover {
   text-align: center;
   margin-bottom: 0;
   white-space: normal;
+  animation: duneSlideUp 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
 }
 .main-content .hero-content h2 {
   font-size: 24px;
   line-height: 1.2;
   text-align: center;
   margin-bottom: 0;
+  animation: duneSlideUp 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
 }
 .main-content .location-text {
   align-self: flex-start;
@@ -2245,6 +2278,9 @@ footer .footer-bottom button:hover {
   font-size: 48px;
   text-align: left;
   margin-bottom: 1rem;
+  animation: duneSlideUp 0.8s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
 }
 .contact .contact-content p {
   font-size: 14px;
@@ -2357,6 +2393,16 @@ footer .footer-bottom button:hover {
   }
   .contact .contact-content .contact-btn {
     font-size: 14px;
+  }
+}
+@keyframes duneSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 :root {
