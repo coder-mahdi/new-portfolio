@@ -953,10 +953,10 @@ footer .footer-bottom button:hover {
   backdrop-filter: blur(10px);
   min-height: 100vh;
   gap: 4rem;
-  overflow: hidden;
+  overflow: visible;
 }
 .education-section .education-content {
-  position: fixed;
+  position: sticky;
   top: 120px;
   left: 3rem;
   width: calc(50% - 2rem);
@@ -966,6 +966,10 @@ footer .footer-bottom button:hover {
   height: fit-content;
   z-index: 10;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
 }
 .education-section .education-content h2 {
   font-size: 48px;
@@ -991,6 +995,11 @@ footer .footer-bottom button:hover {
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  overflow: visible;
 }
 .education-section .education-list::-webkit-scrollbar {
   display: none;
@@ -1006,20 +1015,10 @@ footer .footer-bottom button:hover {
   background: rgba(10, 15, 25, 0.3);
   border-radius: 0;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-}
-.education-section .education-list .education-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 1px;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
-  z-index: 1;
+  overflow: visible;
 }
 .education-section .education-list .education-container .graduation-icon {
-  position: fixed;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
@@ -1033,89 +1032,55 @@ footer .footer-bottom button:hover {
 .education-section .education-list .education-container .graduation-icon.visible {
   opacity: 1;
 }
-.education-section .education-list ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.education-section .education-list .education-container .education-items {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  position: relative;
-  align-items: center;
+  padding: 0;
+  margin: 0;
 }
-.education-section .education-list ul li {
-  margin-bottom: 0;
+.education-section .education-list .education-container .education-items .education-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.education-section .education-list .education-container .education-items .education-row .empty-box {
+  width: 250px;
+  height: 250px;
+  background: rgba(20, 30, 50, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  opacity: 0.5;
+  margin: 0;
+  padding: 0;
+}
+.education-section .education-list .education-container .education-items .education-row .content-box {
+  width: 250px;
+  height: 250px;
   padding: 1.5rem;
   background: linear-gradient(to bottom, rgba(20, 30, 50, 0.8), rgba(5, 10, 20, 0.95));
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  width: 250px;
-  height: 250px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  overflow: hidden;
+  margin: 0;
+  padding: 1.5rem;
 }
-.education-section .education-list ul li::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(40, 60, 100, 0.3) 0%, transparent 70%);
-  opacity: 0.7;
-  z-index: 1;
-  animation: particleMove 8s infinite alternate;
-}
-.education-section .education-list ul li::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: radial-gradient(circle at 20% 30%, rgba(60, 80, 120, 0.2) 0%, transparent 5%), radial-gradient(circle at 80% 70%, rgba(60, 80, 120, 0.2) 0%, transparent 5%), radial-gradient(circle at 40% 60%, rgba(60, 80, 120, 0.2) 0%, transparent 5%), radial-gradient(circle at 70% 20%, rgba(60, 80, 120, 0.2) 0%, transparent 5%);
-  z-index: 1;
-  animation: particleFloat 12s infinite alternate;
-}
-.education-section .education-list ul li:hover {
-  transform: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(to bottom, rgba(20, 30, 50, 0.8), rgba(5, 10, 20, 0.95));
-  z-index: 1;
-}
-.education-section .education-list ul li:nth-child(odd) {
-  align-self: flex-start;
-  margin-right: -1px;
-  margin-left: 0;
-}
-.education-section .education-list ul li:nth-child(even) {
-  align-self: flex-end;
-  margin-left: -1px;
-  margin-right: 0;
-}
-.education-section .education-list ul li h3 {
+.education-section .education-list .education-container .education-items .education-row .content-box h3 {
   font-size: 18px;
-  margin-bottom: 0.5rem;
   color: #ffffff;
-  position: relative;
-  z-index: 2;
+  margin-bottom: 0.5rem;
 }
-.education-section .education-list ul li p {
+.education-section .education-list .education-container .education-items .education-row .content-box p {
   font-size: 14px;
-  margin: 0.25rem 0;
   color: #cccccc;
-  max-width: 100%;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+  margin: 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -1126,6 +1091,12 @@ footer .footer-bottom button:hover {
   .education-section .education-content {
     left: 3rem;
     width: calc(50% - 3rem);
+  }
+}
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .education-section .education-list .education-container .education-items .education-row .empty-box, .education-section .education-list .education-container .education-items .education-row .content-box {
+    width: 200px;
+    height: 200px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1158,14 +1129,16 @@ footer .footer-bottom button:hover {
     max-height: none;
     overflow-y: visible;
   }
-  .education-section .education-list .education-container ul li {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto 1rem;
+  .education-section .education-list .education-container .education-items .education-row {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
   }
-  .education-section .education-list .education-container ul li:nth-child(odd), .education-section .education-list .education-container ul li:nth-child(even) {
-    align-self: center;
-    margin: 0 auto 1rem;
+  .education-section .education-list .education-container .education-items .education-row .empty-box, .education-section .education-list .education-container .education-items .education-row .content-box {
+    width: 250px;
+    height: 250px;
+    margin: 0;
+    padding: 1.5rem;
   }
 }
 @keyframes particleMove {
