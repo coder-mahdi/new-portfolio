@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Layout from '../Layout/Layout.jsx';
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 function Home() {
     const [homeData, setHomeData] = useState({
@@ -14,6 +14,7 @@ function Home() {
     const graduationIconRef = useRef(null);
     const educationContentRef = useRef(null);
     const educationSectionRef = useRef(null);
+    const location = useLocation();
 
     useEffect(() => {
         fetch('/data/homeData.json')
@@ -21,6 +22,18 @@ function Home() {
             .then(data => setHomeData(data))
             .catch(error => console.error("Error fetching data:", error));
     }, []);
+
+    // Handle scrolling to education section when navigating from another page
+    useEffect(() => {
+        if (location.state?.scrollTo === 'education-section') {
+            const educationSection = document.getElementById('education-section');
+            if (educationSection) {
+                setTimeout(() => {
+                    educationSection.scrollIntoView({ behavior: 'smooth' });
+                }, 500); // Small delay to ensure the component is fully rendered
+            }
+        }
+    }, [location]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -116,7 +129,6 @@ function Home() {
                         <a href="/works">View Works</a>
                         </button>
                         </div>
-                        
                          </div>
                      <ul>
                         {homeData.works?.projects?.map((pro, index) => (
