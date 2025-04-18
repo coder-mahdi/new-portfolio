@@ -18,6 +18,7 @@ function Home() {
     const graduationIconRef = useRef(null);
     const educationContentRef = useRef(null);
     const educationSectionRef = useRef(null);
+    const projectItemsRef = useRef([]);
     const location = useLocation();
 
     useEffect(() => {
@@ -84,6 +85,20 @@ function Home() {
                     }
                 }
             }
+
+            // Check if project items are in view
+            projectItemsRef.current.forEach((item, index) => {
+                if (item) {
+                    const rect = item.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
+                    
+                    if (isVisible) {
+                        setTimeout(() => {
+                            item.classList.add('visible');
+                        }, index * 200); // Add delay based on index
+                    }
+                }
+            });
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -92,6 +107,11 @@ function Home() {
 
     // Get the latest 4 projects from worksData
     const latestProjects = worksData.projects.slice(0, 4);
+
+    // Update projectItemsRef when latestProjects changes
+    useEffect(() => {
+        projectItemsRef.current = projectItemsRef.current.slice(0, latestProjects.length);
+    }, [latestProjects]);
 
     return (
         <Layout>
@@ -136,25 +156,29 @@ function Home() {
                 <div className='work-section'>
                     <div className='work-content'>
                         <div className='right-column'>
-                        <h2>{worksData.title || "Selected Works"}</h2>
+                            <h2>{worksData.title || "Selected Works"}</h2>
                         </div>
                         <div className='left-column'>
-                        <p>{worksData.explanation || ""}</p>
-                        <button>
-                        <a href="/works">View Works</a>
-                        </button>
+                            <p>{homeData.works.explanation || ""}</p>
+                            <button>
+                                <a href="/works">View Works</a>
+                            </button>
                         </div>
-                         </div>
-                     <ul>
+                    </div>
+                    <ul className="projects-list">
                         {latestProjects.map((pro, index) => (
-                            <li key={index}>
-                                <img src={pro.image} alt={pro.alt || pro.name} className="project-image" />
+                            <li 
+                                key={index} 
+                                className="project-item"
+                                ref={el => projectItemsRef.current[index] = el}
+                            >
                                 <h3>
                                     <Link to={`/singlework/${pro.id}`}>{pro.name}</Link>
                                 </h3>
+                                <img src={pro.image} alt={pro.alt || pro.name} />
                             </li>
                         ))}
-                     </ul>
+                    </ul>
                 </div>
 
                 <div className='education-section' id="education-section" ref={educationSectionRef}>

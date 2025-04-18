@@ -9,13 +9,13 @@
 
   "about":{
     "title": "About Me",
-    "More Than Just Code": "The code I write today is shaped by a background in journalism, communication, and real-world experiences across cultures. For years, I told stories, taught, and developed strategies in political and commercial spaces — all while exploring life across Africa, Europe, and Asia. This journey has shaped how I think about design, storytelling, and the user experience. To me, good code is more than just function — it’s about feeling, clarity, and connection. Now, I bring that blend of logic, empathy, and creativity into every line I write.",
+    "More Than Just Code": "The code I write today is shaped by a background in journalism, communication, and real-world experiences across cultures. For years, I told stories, taught, and developed strategies in political and commercial spaces — all while exploring life across Africa, Europe, and Asia. This journey has shaped how I think about design, storytelling, and the user experience. To me, good code is more than just function it’s about feeling, clarity, and connection. Now, I bring that blend of logic, empathy, and creativity into every line I write.",
     "What Drives Me": "I’m driven by the need to give my best  always. When I take on a project, I go all in: starting early, staying late, and making sure every detail gets the attention it deserves. I believe that if something doesn’t work out, it should never be because of a lack of effort. I’m motivated by creativity, variety, and progress. Repetition bores me. I constantly look for smarter, better, more meaningful ways to do things. Growth, both personal and professional, is what keeps me moving."
   },
 
   "works": {
     "title": "Selected Works",
-    "explanation": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here',",
+    "explanation": "A selection of projects where I turned ideas into clean, working code, blending logic, creativity, and user experience. These examples reflect my background in front-end development and my ability to build responsive, dynamic interfaces using tools like React and WordPress. From styling with Sass and Tailwind to managing data flow and component logic, each project shows a piece of what I do best: crafting seamless, user-focused digital experiences.",
     "projects": [
       {
         "name":"Call Me Guide",
