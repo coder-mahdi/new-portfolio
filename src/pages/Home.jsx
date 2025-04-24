@@ -70,56 +70,11 @@ function Home() {
                             (window.innerHeight - rect.top) / (rect.height + window.innerHeight)
                         ));
                         
-
                         const scale = 1 + (scrollProgress * 0.1);
                         img.style.transform = `scale(${scale})`;
                     } else {
                         // Reset scale when not visible
                         img.style.transform = 'scale(1)';
-                    }
-                }
-            });
-
-            if (graduationIconRef.current) {
-                const educationSection = document.getElementById('education-section');
-                if (educationSection) {
-                    const rect = educationSection.getBoundingClientRect();
-                    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-                    
-                    if (isVisible) {
-                        graduationIconRef.current.classList.add('visible');
-                        
-                        const educationList = educationSection.querySelector('.education-list');
-                        const listHeight = educationList.offsetHeight;
-                        
-                        const isPastSection = rect.bottom < 0;
-                        
-                        if (isPastSection) {
-                            graduationIconRef.current.style.top = `${listHeight}px`;
-                        } else {
-                            const scrollProgress = Math.min(4, Math.max(0, 
-                                (window.innerHeight - rect.top) / (rect.height + window.innerHeight)
-                            ));
-                            
-                            const iconPosition = scrollProgress * listHeight;
-                            graduationIconRef.current.style.top = `${iconPosition}px`;
-                        }
-                    } else {
-                        graduationIconRef.current.classList.remove('visible');
-                    }
-                }
-            }
-
-            // Check if project items are in view
-            projectItemsRef.current.forEach((item, index) => {
-                if (item) {
-                    const rect = item.getBoundingClientRect();
-                    const isVisible = rect.top < window.innerHeight * 0.8 && rect.bottom > 0;
-                    
-                    if (isVisible) {
-                        setTimeout(() => {
-                            item.classList.add('visible');
-                        }, index * 200); // Add delay based on index
                     }
                 }
             });
@@ -133,31 +88,33 @@ function Home() {
         <Layout>
             <div className="main-content">
                 <div className="hero-section">
+                    <div className="location-text">Based in Tehran, Iran</div>
                     <div className="hero-content">
-                        <h1>{homeData.hero.title || "loading..."}</h1>
-                        <h2>{homeData.hero.subtitle || ""}</h2>
+                        <h1>{homeData.hero?.title || "loading..."}</h1>
+                        <h2>{homeData.hero?.subtitle || ""}</h2>
                         <Link to="/about" className="learn-more-btn">
                             <span>Learn More</span>
                         </Link>
                     </div>
-                    <p className="location-text">{homeData.hero.location}</p>
                     <div className="hero-image-container">
-                        <img
+                        <img 
                             ref={heroImageRef}
-                            src="/images/home/hero.jpg" 
-                            alt="Mahdi's photo" 
+                            src={homeData.hero?.image || ""} 
+                            alt="Hero" 
                             className="hero-image"
                         />
                     </div>
                 </div>
 
                 <About homeData={homeData} />
-                <Worksection
-                    homeData={homeData} 
-                    worksData={worksData} 
+                
+                <Worksection 
+                    homeData={homeData}
+                    worksData={worksData}
                     projectItemsRef={projectItemsRef}
                     projectImagesRef={projectImagesRef}
                 />
+                
                 <Education 
                     homeData={homeData}
                     graduationIconRef={graduationIconRef}
