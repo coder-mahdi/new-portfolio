@@ -7,9 +7,9 @@ function About({ homeData }) {
             <h2>{homeData.about.title || "loading..."}</h2>
             <div className="about-content">
                 <div className="left-column">
-                    <Link to="/about">
-                        <button>Read More</button>
-                    </Link>
+                    <button>
+                        <Link to="/about">Read More</Link>
+                    </button>
                 </div>
                 <div className="right-column">
                     <h3>More THan Just Code</h3>

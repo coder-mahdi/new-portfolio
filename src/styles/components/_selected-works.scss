@@ -1,199 +1,290 @@
 @use '../base/variables' as *;
 @use '../mixins/mixins' as *;
 
-.works-content {
-  padding: map-get($mobile-spacing, padding);
-  margin-top: map-get($mobile-spacing, section-margin);
-  margin-bottom: map-get($mobile-spacing, margin);
+.home-work-section {
+  width: 100%;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: map-get($mobile-spacing, gap);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  margin-top: 4rem;
 
-  h1 {
-    width: 100%;
-    text-align: right;
-    font-size: map-get($mobile-font-sizes, h1);
-    margin-bottom: 2rem;
+  .home-work-content {
     display: flex;
     flex-direction: column;
-    gap: map-get($mobile-spacing, h1-line-gap);
-    
-  }
-
-  .works-explanation {
-    align-self: flex-start;
-    max-width: map-get($mobile-layout, max-width);
-    font-size: map-get($mobile-font-sizes, text);
-  }
-}
-
-.projects-list {
-  list-style: none;
-  padding: 0;
-  margin: map-get($mobile-spacing, margin) 0;
-  display: grid;
-  grid-template-columns: repeat(map-get($mobile-layout, grid-columns), 1fr);
-  gap: map-get($mobile-spacing, margin);
-  width: 100%;
-  margin: map-get($mobile-spacing, margin) auto;
-  padding-bottom: map-get($mobile-spacing, margin);
-
-  li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
+    gap: 2rem;
     width: 100%;
 
-    .image-container {
+    .home-work-right-column {
       width: 100%;
-      height: 200px;
-      overflow: hidden;
-      margin-bottom: map-get($mobile-spacing, gap);
-      position: relative;
-    }
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
 
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform-origin: center;
-      transition: transform 0.3s ease-out;
-      
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-
-    h3 {
-      font-size: map-get($mobile-font-sizes, h3);
-      margin: 0 0 map-get($mobile-spacing, gap) 0;
-      width: 100%;
-    }
-
-    .learn-more-btn {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background-color: #ffffff;
-      border: none;
-      color: #000000;
-      text-decoration: none;
-      font-family: "Roboto Mono", monospace;
-      font-size: map-get($mobile-font-sizes, button);
-      text-transform: uppercase;
-      position: relative;
-      margin: map-get($mobile-spacing, gap) 0;
-      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
-      overflow: hidden;
-      transition: color 0.3s ease;
-      cursor: pointer;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
+      h2 {
+        font-size: 32px;
+        margin-bottom: 1.5rem;
         width: 100%;
-        height: 100%;
-        background-color: rgb(0, 153, 255);
-        transition: left 0.3s ease;
-        z-index: 1;
+        text-align: right;
+      }
+    }
+
+    .home-work-left-column {
+      width: 100%;
+
+      .home-work-explanation {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #666;
+        margin-bottom: 1.5rem;
+        max-width: 100%;
+        width: 100%;
       }
 
-      &:hover {
-        color: #ffffff;
+      .home-work-button {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: #ffffff;
+        border: none;
+        color: #000000;
+        text-decoration: none;
+        font-family: "Roboto Mono", monospace;
+        font-size: 12px;
+        text-transform: uppercase;
+        position: relative;
+        margin: 1rem 0;
+        clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+        overflow: hidden;
+        transition: color 0.3s ease;
+        cursor: pointer;
 
         &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background-color: rgb(0, 153, 255);
+          transition: left 0.3s ease;
+          z-index: 1;
+        }
+
+        span {
+          position: relative;
+          z-index: 2;
+          color: inherit;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        a {
+          position: relative;
+          z-index: 2;
+          color: inherit;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        &:hover {
+          color: #ffffff;
+
+          span {
+            color: #ffffff;
+          }
+
+          a {
+            color: #ffffff;
+          }
+
+          &::before {
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .home-projects-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    width: 100%;
+
+    .home-project-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      width: 100%;
+
+      .home-project-image-container {
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        position: relative;
+
+        img {
+          position: absolute;
+          top: 0;
           left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transform-origin: center;
+          transition: transform 0.3s ease-out;
+          
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .home-project-title {
+        font-size: 20px;
+        margin: 0 0 1rem 0;
+        width: 100%;
+        position: relative;
+        
+        a {
+          color: inherit;
+          text-decoration: none;
+          position: relative;
+          transition: color 0.3s ease;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #ffffff;
+            transition: width 0.3s ease;
+          }
+          
+          &:hover {
+            color: rgb(0, 153, 255);
+            
+            &::after {
+              width: 100%;
+            }
+          }
         }
       }
     }
   }
 }
 
-// Tablet styles (768px and up)
-@media screen and (min-width: $tablet) {
-  .works-content {
-    padding: map-get($tablet-spacing, padding);
-    margin-top: map-get($tablet-spacing, section-margin);
-    gap: map-get($tablet-spacing, gap);
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: flex-start;
-
-    h1 {
-      font-size: map-get($tablet-font-sizes, h1);
-      display: flex;
-      flex-direction: column;
-      gap: map-get($tablet-spacing, h1-line-gap);
-    }
-
-    .works-explanation {
-      max-width: map-get($tablet-layout, max-width);
-      font-size: map-get($tablet-font-sizes, text);
-    }
-  }
-
-  .projects-list {
-    grid-template-columns: repeat(map-get($tablet-layout, grid-columns), 1fr);
-    gap: map-get($tablet-spacing, margin);
-    margin: map-get($tablet-spacing, margin) auto;
-    padding-bottom: map-get($tablet-spacing, margin);
-
-    li {
-      h3 {
-        font-size: map-get($tablet-font-sizes, h3);
+@media screen and (min-width: 320px) {
+  .home-work-section {
+    padding: 2.5rem 1.25rem;
+    
+    .home-work-content {
+      .home-work-right-column {
+        h2 {
+          font-size: 36px;
+        }
       }
-
-      .learn-more-btn {
-        font-size: map-get($tablet-font-sizes, button);
+      
+      .home-work-left-column {
+        .home-work-explanation {
+          font-size: 15px;
+        }
       }
     }
   }
 }
 
-// Desktop styles (1024px and up)
-@media screen and (min-width: $desktop) {
-  .works-content {
-    padding: 3rem;
-    margin-top: map-get($desktop-spacing, section-margin);
-    gap: map-get($desktop-spacing, gap);
-
-    .works-title{
-      width: 100%;
-    }
-
-    h1 {
-      font-size: map-get($desktop-font-sizes, h1);
-      display: flex;
-      flex-direction: column;
-      gap: map-get($desktop-spacing, h1-line-gap);
-    }
-
-    .works-explanation {
-      max-width: map-get($desktop-layout, max-width);
-      font-size: map-get($desktop-font-sizes, text);
+@media screen and (min-width: 375px) {
+  .home-work-section {
+    padding: 3rem 1.5rem;
+    
+    .home-work-content {
+      .home-work-right-column {
+        h2 {
+          font-size: 40px;
+        }
+      }
+      
+      .home-work-left-column {
+        .home-work-explanation {
+          font-size: 16px;
+        }
+      }
     }
   }
+}
 
-  .projects-list {
-    grid-template-columns: repeat(map-get($desktop-layout, grid-columns), 1fr);
-    gap: map-get($desktop-spacing, margin);
-    margin: map-get($desktop-spacing, margin) auto;
-    padding: 0 3rem map-get($desktop-spacing, margin) 3rem;
-
-    li {
-      h3 {
-        font-size: map-get($desktop-font-sizes, h3);
+@media screen and (min-width: 768px) {
+  .home-work-section {
+    padding: 3.5rem 1.75rem;
+    margin-top: 6rem;
+    
+    .home-work-content {
+      flex-direction: row-reverse;
+      gap: 3rem;
+      
+      .home-work-right-column {
+        h2 {
+          font-size: 44px;
+          margin-bottom: 2rem;
+        }
       }
+      
+      .home-work-left-column {
+        max-width: 50%;
+        
+        .home-work-explanation {
+          font-size: 16px;
+        }
+        
+        .home-work-button {
+          font-size: 14px;
+        }
+      }
+    }
+    
+    .home-projects-list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
 
-      .learn-more-btn {
-        font-size: map-get($desktop-font-sizes, button);
+      .home-project-item {
+        .home-project-image-container {
+          height: 250px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home-work-section {
+    padding: 4rem 3rem;
+    margin-top: 8rem;
+    
+    .home-work-content {
+      gap: 4rem;
+      
+      .home-work-right-column {
+        h2 {
+          font-size: 48px;
+        }
+      }
+    }
+
+    .home-projects-list {
+      .home-project-item {
+        .home-project-image-container {
+          height: 300px;
+        }
       }
     }
   }
@@ -224,7 +315,7 @@
     color: #666;
     margin-bottom: 2rem;
     align-self: flex-start;
-    max-width: 50%;
+    max-width: 100%;
   }
 
   button {
