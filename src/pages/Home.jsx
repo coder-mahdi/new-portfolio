@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Layout from '../Layout/Layout.jsx';
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom';
+import About from '../components/About';
+import Work from '../components/Work';
+import Education from '../components/Education';
 
 function Home() {
     const [homeData, setHomeData] = useState({
@@ -19,6 +22,7 @@ function Home() {
     const educationContentRef = useRef(null);
     const educationSectionRef = useRef(null);
     const projectItemsRef = useRef([]);
+    const projectImagesRef = useRef([]);
     const location = useLocation();
 
     useEffect(() => {
@@ -55,6 +59,26 @@ function Home() {
                 const scale = Math.min(1.5, 1 + scrollPosition * 0.0003);
                 heroImageRef.current.style.transform = `scale(${scale})`;
             }
+
+            projectImagesRef.current.forEach((img, index) => {
+                if (img) {
+                    const rect = img.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                    
+                    if (isVisible) {
+                        const scrollProgress = Math.min(1, Math.max(0, 
+                            (window.innerHeight - rect.top) / (rect.height + window.innerHeight)
+                        ));
+                        
+
+                        const scale = 1 + (scrollProgress * 0.1);
+                        img.style.transform = `scale(${scale})`;
+                    } else {
+                        // Reset scale when not visible
+                        img.style.transform = 'scale(1)';
+                    }
+                }
+            });
 
             if (graduationIconRef.current) {
                 const educationSection = document.getElementById('education-section');
@@ -105,14 +129,6 @@ function Home() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Get the latest 4 projects from worksData
-    const latestProjects = worksData.projects.slice(0, 4);
-
-    // Update projectItemsRef when latestProjects changes
-    useEffect(() => {
-        projectItemsRef.current = projectItemsRef.current.slice(0, latestProjects.length);
-    }, [latestProjects]);
-
     return (
         <Layout>
             <div className="main-content">
@@ -135,103 +151,19 @@ function Home() {
                     </div>
                 </div>
 
-                <div className="about">
-                    <h2>{homeData.about.title || "loading..."}</h2>
-                    <div className="about-content">
-                        <div className="left-column">
-                            <Link to="/about">
-                                <button>Read More</button>
-                            </Link>
-                        </div>
-                        <div className="right-column">
-                            <h3>More THan Just Code</h3>
-                            <p>{homeData.about["More Than Just Code"]}</p>
-
-                            <h3>What Drives Me</h3>
-                            <p>{homeData.about["What Drives Me"]}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className='work-section'>
-                    <div className='work-content'>
-                        <div className='right-column'>
-                            <h2>{worksData.title || "Selected Works"}</h2>
-                        </div>
-                        <div className='left-column'>
-                            <p>{homeData.works.explanation || ""}</p>
-                            <button>
-                                <a href="/works">View Works</a>
-                            </button>
-                        </div>
-                    </div>
-                    <ul className="projects-list">
-                        {latestProjects.map((pro, index) => (
-                            <li 
-                                key={index} 
-                                className="project-item"
-                                ref={el => projectItemsRef.current[index] = el}
-                            >
-                                <h3>
-                                    <Link to={`/singlework/${pro.id}`}>{pro.name}</Link>
-                                </h3>
-                                <img src={pro.image} alt={pro.alt || pro.name} />
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                <div className='education-section' id="education-section" ref={educationSectionRef}>
-                    <div className='education-content' ref={educationContentRef}>
-                        <h2>{homeData.education?.title || "loading..."}</h2>
-                        <p>{homeData.education?.explanation || ""}</p>
-                    </div>
-
-                    <div className='education-list'>
-                        <div className='education-container'>
-                            <i className="fas fa-graduation-cap graduation-icon" ref={graduationIconRef}></i>
-                            <div className="education-items">
-                                {homeData.education?.universities?.map((edu, index) => {
-                                    // Create a strict alternating pattern
-                                    const rowNumber = index + 1;
-                                    const isFirstRow = rowNumber === 1;
-                                    const isThirdRow = rowNumber === 3;
-                                    const isFifthRow = rowNumber === 5;
-                                    
-                                 
-                                    // Empty box should be on right for rows 2, 4, 6...
-                                    const emptyBoxOnLeft = isFirstRow || isThirdRow || isFifthRow || rowNumber % 2 === 1;
-                                    
-                                    return (
-                                        <div key={index} className={`education-row row-${rowNumber}`}>
-                                            {emptyBoxOnLeft ? (
-                                                <>
-                                                    <div className="empty-box"></div>
-                                                    <div className="content-box">
-                                                        <h3>{edu.name}</h3>
-                                                        <p>{edu.university}</p>
-                                                        <p>{edu.degree}</p>
-                                                        <p>{edu.duration}</p>
-                                                    </div>
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <div className="content-box">
-                                                        <h3>{edu.name}</h3>
-                                                        <p>{edu.university}</p>
-                                                        <p>{edu.degree}</p>
-                                                        <p>{edu.duration}</p>
-                                                    </div>
-                                                    <div className="empty-box"></div>
-                                                </>
-                                            )}
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <About homeData={homeData} />
+                <Work 
+                    homeData={homeData} 
+                    worksData={worksData} 
+                    projectItemsRef={projectItemsRef}
+                    projectImagesRef={projectImagesRef}
+                />
+                <Education 
+                    homeData={homeData}
+                    graduationIconRef={graduationIconRef}
+                    educationSectionRef={educationSectionRef}
+                    educationContentRef={educationContentRef}
+                />
             </div>
         </Layout>
     );
