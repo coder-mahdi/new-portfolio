@@ -14,7 +14,7 @@
 
   .education-content {
     position: sticky;
-    top: 120px;
+    top: 100px;
     width: 50%;
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
@@ -46,7 +46,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
     position: relative;
-    padding: 2rem;
+    padding: 8rem;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -70,10 +70,12 @@
         font-size: 24px;
         color: #646cff;
         opacity: 0;
-        transition: all 0.3s ease;
+        transition: opacity 0.3s ease;
         z-index: 2;
         margin: 0;
         pointer-events: none;
+        will-change: transform, top;
+        top: 0;
 
         &.visible {
           opacity: 1;
@@ -84,7 +86,6 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
         padding: 0;
         margin: 0;
 
@@ -95,7 +96,6 @@
           justify-content: center;
           margin: 0;
           padding: 0;
-          gap: 2rem;
 
           .empty-box {
             width: 250px;
@@ -157,6 +157,20 @@
             .empty-box, .content-box {
               width: 200px;
               height: 200px;
+            }
+            
+            .content-box {
+              padding: 1rem;
+              
+              h3 {
+                font-size: 16px;
+                margin-bottom: 0.3rem;
+              }
+              
+              p {
+                font-size: 12px;
+                line-height: 1.4;
+              }
             }
           }
         }
