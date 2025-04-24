@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Layout from '../Layout/Layout.jsx';
 import { Link, useLocation } from 'react-router-dom';
 import About from '../components/About';
-import Work from '../components/Work';
+import Worksection from '../components/Worksection';
 import Education from '../components/Education';
 
 function Home() {
@@ -152,7 +152,7 @@ function Home() {
                 </div>
 
                 <About homeData={homeData} />
-                <Work 
+                <Worksection
                     homeData={homeData} 
                     worksData={worksData} 
                     projectItemsRef={projectItemsRef}

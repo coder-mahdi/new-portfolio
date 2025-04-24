@@ -12,33 +12,33 @@ function Work({ homeData, worksData, projectItemsRef, projectImagesRef }) {
     }, [latestProjects, projectItemsRef, projectImagesRef]);
 
     return (
-        <div className='work-section'>
-            <div className='work-content'>
-                <div className='right-column'>
+        <div className='home-work-section'>
+            <div className='home-work-content'>
+                <div className='home-work-right-column'>
                     <h2>{worksData.title || "Selected Works"}</h2>
                 </div>
-                <div className='left-column'>
-                    <p>{homeData.works.explanation || ""}</p>
-                    <button>
+                <div className='home-work-left-column'>
+                    <p className='home-work-explanation'>{homeData.works.explanation || ""}</p>
+                    <button className='home-work-button'>
                         <a href="/works">View Works</a>
                     </button>
                 </div>
             </div>
-            <ul className="projects-list">
+            <ul className="home-projects-list">
                 {latestProjects.map((pro, index) => (
                     <li 
                         key={index} 
-                        className="project-item"
+                        className="home-project-item"
                         ref={el => projectItemsRef.current[index] = el}
                     >
-                        <div className="image-container">
+                        <div className="home-project-image-container">
                             <img 
                                 src={pro.image} 
                                 alt={pro.alt || pro.name} 
                                 ref={el => projectImagesRef.current[index] = el}
                             />
                         </div>
-                        <h3>
+                        <h3 className='home-project-title'>
                             <Link to={`/singlework/${pro.id}`}>{pro.name}</Link>
                         </h3>
                     </li>
