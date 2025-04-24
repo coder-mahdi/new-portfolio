@@ -4,23 +4,20 @@
 .education-section {
   width: 100%;
   padding: 4rem 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
   margin: 0 auto;
   position: relative;
   z-index: 1;
   backdrop-filter: blur(10px);
   min-height: 100vh;
+  gap: 4rem;
 
   .education-content {
     position: sticky;
     top: 120px;
-    left: 3rem;
-    width: 100%;
+    width: 50%;
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
-    border-radius: 8px;
     height: fit-content;
     z-index: 2;
     padding: 2rem;
@@ -45,37 +42,25 @@
   }
 
   .education-list {
-    width: 100%;
+    width: 50%;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
-    border-radius: 0;
     position: relative;
-    height: calc(100vh - 240px);
-    overflow-y: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     padding: 2rem;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: flex-end;
     z-index: 1;
-    
-    &::-webkit-scrollbar {
-      display: none;
-    }
 
     .education-container {
       width: 100%;
-      height: 100%;
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 0;
       background: rgba(10, 15, 25, 0.3);
-      border-radius: 0;
-      border: 1px solid rgba(255, 255, 255, 0.1);
       overflow: visible;
 
       .graduation-icon {
@@ -99,6 +84,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
+        gap: 2rem;
         padding: 0;
         margin: 0;
 
@@ -109,13 +95,14 @@
           justify-content: center;
           margin: 0;
           padding: 0;
+          gap: 2rem;
 
           .empty-box {
             width: 250px;
             height: 250px;
+            flex-shrink: 0;
             background: rgba(20, 30, 50, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
             opacity: 0.5;
             margin: 0;
             padding: 0;
@@ -124,12 +111,12 @@
           .content-box {
             width: 250px;
             height: 250px;
+            flex-shrink: 0;
             padding: 1.5rem;
             background: linear-gradient(to bottom, rgba(20, 30, 50, 0.8), rgba(5, 10, 20, 0.95));
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
-            border-radius: 8px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -158,12 +145,6 @@
   .education-section {
     padding-left: 3rem;
     padding-right: 3rem;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-
-    .education-content {
-      left: 3rem;
-    }
   }
 }
 
@@ -195,7 +176,6 @@
     .education-content {
       position: relative;
       top: 0;
-      left: 0;
       width: 100%;
       padding: 1.5rem;
       pointer-events: auto;
@@ -214,9 +194,6 @@
     .education-list {
       width: 100%;
       padding: 1rem;
-      height: auto;
-      max-height: none;
-      overflow-y: visible;
 
       .education-container {
         .education-items {
@@ -224,6 +201,7 @@
             flex-direction: column;
             margin: 0;
             padding: 0;
+            gap: 1rem;
 
             .empty-box, .content-box {
               width: 250px;
