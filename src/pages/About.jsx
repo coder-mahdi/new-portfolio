@@ -14,6 +14,11 @@ function About() {
     const heroImageRef = useRef(null);
 
     useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         fetch('/data/aboutData.json')
             .then(response => response.json())
             .then(data => setAboutData(data))
