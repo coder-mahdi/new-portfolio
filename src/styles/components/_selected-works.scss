@@ -44,17 +44,36 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
+    width: 100%;
+
+    .image-container {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      margin-bottom: map-get($mobile-spacing, gap);
+      position: relative;
+    }
 
     img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: auto;
-      margin-bottom: map-get($mobile-spacing, gap);
+      height: 100%;
       object-fit: cover;
+      transform-origin: center;
+      transition: transform 0.3s ease-out;
+      
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
     h3 {
       font-size: map-get($mobile-font-sizes, h3);
       margin: 0 0 map-get($mobile-spacing, gap) 0;
+      width: 100%;
     }
 
     .learn-more-btn {
