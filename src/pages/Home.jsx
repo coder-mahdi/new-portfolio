@@ -139,9 +139,9 @@ function Home() {
                     <h2>{homeData.about.title || "loading..."}</h2>
                     <div className="about-content">
                         <div className="left-column">
-                            <button>
-                                <a href="#works">Read More</a>
-                            </button>
+                            <Link to="/about">
+                                <button>Read More</button>
+                            </Link>
                         </div>
                         <div className="right-column">
                             <h3>More THan Just Code</h3>
@@ -198,7 +198,7 @@ function Home() {
                                     const isThirdRow = rowNumber === 3;
                                     const isFifthRow = rowNumber === 5;
                                     
-                                    // Empty box should be on left for rows 1, 3, 5...
+                                 
                                     // Empty box should be on right for rows 2, 4, 6...
                                     const emptyBoxOnLeft = isFirstRow || isThirdRow || isFifthRow || rowNumber % 2 === 1;
                                     
