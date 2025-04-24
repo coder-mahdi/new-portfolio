@@ -135,6 +135,7 @@ function Home() {
                     </div>
                 </div>
 
+                              {/* about section */}
                 <div className="about">
                     <h2>{homeData.about.title || "loading..."}</h2>
                     <div className="about-content">
@@ -153,6 +154,7 @@ function Home() {
                     </div>
                 </div>
 
+                                         {/* works section */}
                 <div className='work-section'>
                     <div className='work-content'>
                         <div className='right-column'>
@@ -172,15 +174,16 @@ function Home() {
                                 className="project-item"
                                 ref={el => projectItemsRef.current[index] = el}
                             >
+                                <img src={pro.image} alt={pro.alt || pro.name} />
                                 <h3>
                                     <Link to={`/singlework/${pro.id}`}>{pro.name}</Link>
                                 </h3>
-                                <img src={pro.image} alt={pro.alt || pro.name} />
                             </li>
                         ))}
                     </ul>
                 </div>
 
+                                    {/* education section */}
                 <div className='education-section' id="education-section" ref={educationSectionRef}>
                     <div className='education-content' ref={educationContentRef}>
                         <h2>{homeData.education?.title || "loading..."}</h2>
