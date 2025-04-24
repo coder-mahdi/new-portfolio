@@ -20,7 +20,7 @@ function Work({ homeData, worksData, projectItemsRef, projectImagesRef }) {
                 <div className='home-work-left-column'>
                     <p className='home-work-explanation'>{homeData.works.explanation || ""}</p>
                     <button className='home-work-button'>
-                        <a href="/works">View Works</a>
+                        <Link to="/works">View Works</Link>
                     </button>
                 </div>
             </div>
