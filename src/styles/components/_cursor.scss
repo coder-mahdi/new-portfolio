@@ -7,4 +7,12 @@
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
+    display: none; /* Hide by default */
+}
+
+/* Show pointer only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+    .pointer {
+        display: block;
+    }
 } 

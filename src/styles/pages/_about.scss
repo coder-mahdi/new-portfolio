@@ -67,6 +67,7 @@
       align-items: center;
       justify-content: center;
       z-index: 1;
+      overflow: hidden;
 
       .about-hero-image {
         width: 100%;
@@ -74,6 +75,11 @@
         object-fit: cover;
         object-position: center;
         aspect-ratio: 2/3;
+        transition: transform 0.3s ease-out;
+        
+        &:hover {
+          transform: scale(1.05);
+        }
       }
     }
   }
@@ -402,6 +408,16 @@
         right: 0;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 1;
+        overflow: hidden;
+
+        .about-hero-image {
+          transition: transform 0.3s ease-out;
+          
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
       }
     }
 
@@ -534,6 +550,25 @@
 
         h2 {
           font-size: map-get($desktop-font-sizes, h2);
+        }
+      }
+      
+      .about-hero-image-container {
+        width: 40%;
+        height: 80vh;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        overflow: hidden;
+
+        .about-hero-image {
+          transition: transform 0.3s ease-out;
+          
+          &:hover {
+            transform: scale(1.05);
+          }
         }
       }
     }

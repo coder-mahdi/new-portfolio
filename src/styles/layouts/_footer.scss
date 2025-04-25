@@ -1,28 +1,28 @@
-@use '../base/variables' as *;
-@use '../mixins/mixins' as *;
+@use '../base/variables' as vars;
+@use '../mixins/mixins' as mix;
 
 footer {
-  padding: map-get($mobile-spacing, padding);
+  padding: map-get(vars.$mobile-spacing, padding);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: map-get($mobile-spacing, gap);
+  gap: map-get(vars.$mobile-spacing, gap);
   position: relative;
-  margin-top: map-get($mobile-spacing, section-margin);
+  margin-top: map-get(vars.$mobile-spacing, section-margin);
   min-height: 300px;
-  background-color: $background-color;
+  background-color: vars.$background-color;
 
   // Social links section
   .social-links {
     display: flex;
-    gap: map-get($mobile-spacing, gap);
-    margin-bottom: map-get($mobile-spacing, section-margin);
+    gap: map-get(vars.$mobile-spacing, gap);
+    margin-bottom: map-get(vars.$mobile-spacing, section-margin);
 
     a {
       color: #ffffff;
       text-decoration: none;
       transition: color 0.3s ease;
-      font-size: map-get($mobile-font-sizes, button);
+      font-size: map-get(vars.$mobile-font-sizes, button);
       text-transform: uppercase;
       position: relative;
 
@@ -52,28 +52,28 @@ footer {
   h2, h3 {
     text-align: center;
     width: 100%;
-    margin-bottom: map-get($mobile-spacing, gap);
+    margin-bottom: map-get(vars.$mobile-spacing, gap);
   }
 
   h2 {
-    font-size: map-get($mobile-font-sizes, h1);
+    font-size: map-get(vars.$mobile-font-sizes, h1);
   }
 
   h3 {
-    font-size: map-get($mobile-font-sizes, h2);
+    font-size: map-get(vars.$mobile-font-sizes, h2);
   }
 
   // Navigation section
   .footer-nav {
     display: flex;
-    gap: map-get($mobile-spacing, gap);
-    margin-bottom: map-get($mobile-spacing, margin);
+    gap: map-get(vars.$mobile-spacing, gap);
+    margin-bottom: map-get(vars.$mobile-spacing, margin);
 
     a {
-      color: $text-color;
+      color: vars.$text-color;
       text-decoration: none;
-      transition: $transition-base;
-      font-size: map-get($mobile-font-sizes, button);
+      transition: vars.$transition-base;
+      font-size: map-get(vars.$mobile-font-sizes, button);
       text-transform: uppercase;
 
       &:hover {
@@ -88,22 +88,22 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: map-get($mobile-spacing, padding);
+    padding: map-get(vars.$mobile-spacing, padding);
     margin-top: auto;
-    border-top: 1px solid rgba($text-color, 0.1);
+    border-top: 1px solid rgba(vars.$text-color, 0.1);
 
     p {
-      font-size: map-get($mobile-font-sizes, small-text);
-      color: $text-color;
+      font-size: map-get(vars.$mobile-font-sizes, small-text);
+      color: vars.$text-color;
     }
 
     button {
-      color: $text-color;
-      transition: $transition-base;
+      color: vars.$text-color;
+      transition: vars.$transition-base;
       background: none;
       border: none;
       cursor: pointer;
-      font-size: map-get($mobile-font-sizes, button);
+      font-size: map-get(vars.$mobile-font-sizes, button);
       text-transform: uppercase;
 
       &:hover {
@@ -114,94 +114,94 @@ footer {
 }
 
 // Tablet styles (768px and up)
-@media screen and (min-width: $tablet) {
+@media screen and (min-width: vars.$tablet) {
   footer {
-    padding: map-get($tablet-spacing, padding);
-    gap: map-get($tablet-spacing, gap);
-    margin-top: map-get($tablet-spacing, section-margin);
+    padding: map-get(vars.$tablet-spacing, padding);
+    gap: map-get(vars.$tablet-spacing, gap);
+    margin-top: map-get(vars.$tablet-spacing, section-margin);
 
     .social-links {
-      gap: map-get($tablet-spacing, gap);
-      margin-bottom: map-get($tablet-spacing, margin);
+      gap: map-get(vars.$tablet-spacing, gap);
+      margin-bottom: map-get(vars.$tablet-spacing, margin);
 
       a {
-        font-size: map-get($tablet-font-sizes, button);
+        font-size: map-get(vars.$tablet-font-sizes, button);
       }
     }
 
     h2 {
-      font-size: map-get($tablet-font-sizes, h1);
+      font-size: map-get(vars.$tablet-font-sizes, h1);
     }
 
     h3 {
-      font-size: map-get($tablet-font-sizes, h2);
+      font-size: map-get(vars.$tablet-font-sizes, h2);
     }
 
     .footer-nav {
-      gap: map-get($tablet-spacing, gap);
-      margin-bottom: map-get($tablet-spacing, margin);
+      gap: map-get(vars.$tablet-spacing, gap);
+      margin-bottom: map-get(vars.$tablet-spacing, margin);
 
       a {
-        font-size: map-get($tablet-font-sizes, button);
+        font-size: map-get(vars.$tablet-font-sizes, button);
       }
     }
 
     .footer-bottom {
-      padding: map-get($tablet-spacing, padding);
+      padding: map-get(vars.$tablet-spacing, padding);
 
       p {
-        font-size: map-get($tablet-font-sizes, small-text);
+        font-size: map-get(vars.$tablet-font-sizes, small-text);
       }
 
       button {
-        font-size: map-get($tablet-font-sizes, button);
+        font-size: map-get(vars.$tablet-font-sizes, button);
       }
     }
   }
 }
 
 // Desktop styles (1024px and up)
-@media screen and (min-width: $desktop) {
+@media screen and (min-width: vars.$desktop) {
   footer {
-    padding: map-get($desktop-spacing, padding);
-    gap: map-get($desktop-spacing, gap);
-    margin-top: map-get($desktop-spacing, section-margin);
+    padding: map-get(vars.$desktop-spacing, padding);
+    gap: map-get(vars.$desktop-spacing, gap);
+    margin-top: map-get(vars.$desktop-spacing, section-margin);
 
     .social-links {
-      gap: map-get($desktop-spacing, gap);
-      margin-bottom: map-get($desktop-spacing, margin);
+      gap: map-get(vars.$desktop-spacing, gap);
+      margin-bottom: map-get(vars.$desktop-spacing, margin);
 
       a {
-        font-size: map-get($desktop-font-sizes, button);
+        font-size: map-get(vars.$desktop-font-sizes, button);
       }
     }
 
     h2 {
-      font-size: map-get($desktop-font-sizes, h1);
+      font-size: map-get(vars.$desktop-font-sizes, h1);
     }
 
     h3 {
-      font-size: map-get($desktop-font-sizes, h2);
+      font-size: map-get(vars.$desktop-font-sizes, h2);
     }
 
     .footer-nav {
-      gap: map-get($desktop-spacing, gap);
-      margin-bottom: map-get($desktop-spacing, margin);
+      gap: map-get(vars.$desktop-spacing, gap);
+      margin-bottom: map-get(vars.$desktop-spacing, margin);
 
       a {
-        font-size: map-get($desktop-font-sizes, button);
+        font-size: map-get(vars.$desktop-font-sizes, button);
       }
     }
 
     .footer-bottom {
-      padding: map-get($desktop-spacing, padding);
+      padding: map-get(vars.$desktop-spacing, padding);
 
       p {
-        font-size: map-get($desktop-font-sizes, small-text);
+        font-size: map-get(vars.$desktop-font-sizes, small-text);
       }
 
       button {
-        font-size: map-get($desktop-font-sizes, button);
+        font-size: map-get(vars.$desktop-font-sizes, button);
       }
     }
   }
