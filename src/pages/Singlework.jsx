@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Layout from '../Layout/Layout.jsx';
+import { FaGithub } from 'react-icons/fa';
 
 function SingleWork() {
     const { id } = useParams();
@@ -47,6 +48,11 @@ function SingleWork() {
                                             {["Client", "Year", "Category", "Live Project"].map((key) => (
                                                 <div key={key} className="single-work__details-label">{key}</div>
                                             ))}
+                                            {project.details["ProjectLink"] && (
+                                                <div className="single-work__details-label">
+                                                    <FaGithub className="github-icon" />
+                                                </div>
+                                            )}
                                         </div>
                                         <div className="single-work__details-values">
                                             {["Client", "Year", "Category", "Live Project"].map((key) => (
@@ -60,6 +66,18 @@ function SingleWork() {
                                                     )}
                                                 </div>
                                             ))}
+                                            {project.details["ProjectLink"] && (
+                                                <div className="single-work__details-value">
+                                                    <a 
+                                                        href={project.details["ProjectLink"]} 
+                                                        target="_blank" 
+                                                        rel="noopener noreferrer"
+                                                        className="github-link"
+                                                    >
+                                                        View Code
+                                                    </a>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 )}
