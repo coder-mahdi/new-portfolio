@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../Layout/Layout.jsx';
 
 function Works() {
     const [worksData, setWorksData] = useState({ title: "", explanation: "", projects: [] });
+    const projectImagesRef = useRef([]);
 
     const fetchData = () => {
         fetch('/data/worksData.json') 
@@ -23,6 +24,32 @@ function Works() {
         return () => clearInterval(intervalId);
     }, []); 
 
+    useEffect(() => {
+        const handleScroll = () => {
+            projectImagesRef.current.forEach((img, index) => {
+                if (img) {
+                    const rect = img.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                    
+                    if (isVisible) {
+                        const scrollProgress = Math.min(1, Math.max(0, 
+                            (window.innerHeight - rect.top) / (rect.height + window.innerHeight)
+                        ));
+                        
+                        const scale = 1 + (scrollProgress * 0.1);
+                        img.style.transform = `scale(${scale})`;
+                    } else {
+                        // Reset scale when not visible
+                        img.style.transform = 'scale(1)';
+                    }
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     // Split title into two lines
     const splitTitle = (title) => {
         if (!title) return { firstLine: "loading...", secondLine: "" };
@@ -40,11 +67,10 @@ function Works() {
         <Layout> 
             <div className="main-content">
                 <div className='works-content'>
-
                     <div className='works-title'> 
-                    <h1>
-                        {firstLine} {secondLine}
-                    </h1>
+                        <h1>
+                            {firstLine} {secondLine}
+                        </h1>
                     </div>
                     <p className='works-explanation'>{worksData.explanation}</p>
                 </div>
@@ -53,7 +79,15 @@ function Works() {
                     {worksData.projects?.map((projects, index) => (
                         <li key={index}>
                             <h3>{projects.name || "No name"}</h3>
-                            {projects.image && <img src={projects.image} alt={projects.name} />}
+                            {projects.image && (
+                                <div className="image-container">
+                                    <img 
+                                        src={projects.image} 
+                                        alt={projects.name}
+                                        ref={el => projectImagesRef.current[index] = el}
+                                    />
+                                </div>
+                            )}
                             <p>
                                 <Link to={`/singlework/${projects.id}`} className="learn-more-btn">
                                     Learn More
