@@ -96,7 +96,6 @@ function Home() {
         <Layout>
             <div className="main-content">
                 <div className="hero-section">
-                    <div className="location-text">Based in Tehran, Iran</div>
                     <div className="hero-content">
                         <h1>{homeData.hero?.title || "loading..."}</h1>
                         <h2>{homeData.hero?.subtitle || ""}</h2>
@@ -104,6 +103,7 @@ function Home() {
                             <span>Learn More</span>
                         </Link>
                     </div>
+                    <div className="location-text">{homeData.hero?.location || ""}</div>
                     <div className="hero-image-container">
                         {console.log("Image path in render:", homeData.hero?.image)}
                         <img 

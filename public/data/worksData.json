@@ -1,13 +1,13 @@
 {
   "title": "Selected Works",
-  "explanation": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'.",
+  "explanation": "Here you'll find a selection of projects that represent my journey as a web developer with more than three years of experience. This portfolio includes both freelance work and collaborations with companies, all centered around modern front-end and CMS development. My focus areas include React, JavaScript, Sass, WordPress (including custom theme development with PHP), and headless CMS architecture. Each project reflects my commitment to building responsive, user-friendly, and technically solid digital experiences.",
   "projects": [
     {
       "id": 1,
       "name": "Call Me Guide",
       "image": "/images/projects/callmeguide.jpg",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
-      "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
+      "shortDescription": "Call Me Guide: A platform offering real-time travel guidance with a user-friendly interface and secure payment integration.",
       "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
        
       "details": {
