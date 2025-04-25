@@ -10,10 +10,11 @@
       "shortDescription": "Call Me Guide: A platform offering real-time travel guidance with a user-friendly interface and secure payment integration.",
       "overview": "This is a platform offering real-time travel guidance with a user-friendly interface and secure payment integration.",
        
-      "details": {
+     "details": {
         "Client": ["Call Me Guide Tourism Service Inc"],
         "Year": " 2023",
         "Category": "Tourism",
+        "ProjectLink": "https://github.com/coder-mahdi/redtattoo",
         "Live Project": "https://callmeguide.com"
       },
 
@@ -47,14 +48,22 @@
       "image": "/images/projects/redtattoo.jpg",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
-      "detailedDescription": {
-        "overview": "Red Tattoo is a custom-built website designed for a tattoo studio, functioning as both an online portfolio and a booking platform. The site allows potential customers to browse past work, learn more about the artist, book appointments, and complete payments seamlessly — all in one place. It's crafted to reflect the unique style of the artist while offering a smooth and modern user experience.",
+      "overview": "Red Tattoo is a custom-built website designed for a tattoo studio, functioning as both an online portfolio and a booking platform. The site allows potential customers to browse past work, learn more about the artist, book appointments, and complete payments seamlessly — all in one place. It's crafted to reflect the unique style of the artist while offering a smooth and modern user experience.",
+        
+        "details": {
+        "Client": ["Redtattoo Studio Ltd"],
+        "Year": " 2024",
+        "Category": "tattoo",
+        "ProjectLink": "https://github.com/coder-mahdi/redtattoo",
+        "Live Project": "https://redtattoo.ca"
+      },
+
         "sections": {
           "Technologies": [
             "CMS: WordPress 6.8",
             "E-commerce: WooCommerce 9.4.1",
             "JavaScript Frameworks & Libraries: Svelte, jQuery, jQuery UI, jQuery Migrate",
-            "Styling & UI: Tailwind CSS, Bootstrap Icons, Google Font API",
+             "Styling & UI: Tailwind CSS, Bootstrap Icons, Google Font API",
             "Backend & Logic: PHP",
             "Database: MySQL",
             "Hosting: SiteGround"
@@ -76,7 +85,7 @@
             "Provided post-launch support and documentation"  
           ]
         }
-      }
+      
     },
 
     {
