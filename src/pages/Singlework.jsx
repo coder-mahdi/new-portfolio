@@ -44,12 +44,12 @@ function SingleWork() {
                                 {project.details && (
                                     <div className="single-work__details">
                                         <div className="single-work__details-labels">
-                                            {["Client", "Year", "Category", "ProjectLink", "Live Project"].map((key) => (
+                                            {["Client", "Year", "Category", "Live Project"].map((key) => (
                                                 <div key={key} className="single-work__details-label">{key}</div>
                                             ))}
                                         </div>
                                         <div className="single-work__details-values">
-                                            {["Client", "Year", "Category", "ProjectLink", "Live Project"].map((key) => (
+                                            {["Client", "Year", "Category", "Live Project"].map((key) => (
                                                 <div key={key} className="single-work__details-value">
                                                     {project.details[key]?.toString().startsWith("http") ? (
                                                         <a href={project.details[key]} target="_blank" rel="noopener noreferrer">
