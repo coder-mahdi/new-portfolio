@@ -1,44 +1,45 @@
-@use '../base/variables' as *;
-@use '../mixins/mixins' as *;
+@use '../base/variables' as vars;
+@use '../mixins/mixins' as mix;
+@use "sass:map";
 
 .works-content {
-  padding: map-get($mobile-spacing, padding);
-  margin-top: map-get($mobile-spacing, section-margin);
-  margin-bottom: map-get($mobile-spacing, margin);
+  padding: map.get(vars.$mobile-spacing, padding);
+  margin-top: map.get(vars.$mobile-spacing, section-margin);
+  margin-bottom: map.get(vars.$mobile-spacing, margin);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: map-get($mobile-spacing, gap);
+  gap: map.get(vars.$mobile-spacing, gap);
 
   h1 {
     width: 100%;
     text-align: right;
-    font-size: map-get($mobile-font-sizes, h1);
+    font-size: map.get(vars.$mobile-font-sizes, h1);
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    gap: map-get($mobile-spacing, h1-line-gap);
+    gap: map.get(vars.$mobile-spacing, h1-line-gap);
   }
 
   .works-explanation {
     align-self: flex-start;
-    max-width: map-get($mobile-layout, max-width);
+    max-width: map.get(vars.$mobile-layout, max-width);
     // margin-left: auto;
-    font-size: map-get($mobile-font-sizes, text);
+    font-size: map.get(vars.$mobile-font-sizes, text);
   }
 }
 
 .projects-list {
   list-style: none;
   padding: 0;
-  margin: map-get($mobile-spacing, margin) 0;
+  margin: map.get(vars.$mobile-spacing, margin) 0;
   display: grid;
-  grid-template-columns: repeat(map-get($mobile-layout, grid-columns), 1fr);
-  gap: map-get($mobile-spacing, margin);
+  grid-template-columns: repeat(map.get(vars.$mobile-layout, grid-columns), 1fr);
+  gap: map.get(vars.$mobile-spacing, margin);
   width: 100%;
   max-width: 1200px;
-  margin: map-get($mobile-spacing, margin) auto;
-  padding-bottom: map-get($mobile-spacing, margin);
+  margin: map.get(vars.$mobile-spacing, margin) auto;
+  padding-bottom: map.get(vars.$mobile-spacing, margin);
 
   li {
     display: flex;
@@ -49,27 +50,27 @@
     img {
       width: 100%;
       height: auto;
-      margin-bottom: map-get($mobile-spacing, gap);
+      margin-bottom: map.get(vars.$mobile-spacing, gap);
       object-fit: cover;
     }
 
     h3 {
-      font-size: map-get($mobile-font-sizes, h3);
-      margin: 0 0 map-get($mobile-spacing, gap) 0;
+      font-size: map.get(vars.$mobile-font-sizes, h3);
+      margin: 0 0 map.get(vars.$mobile-spacing, gap) 0;
     }
 
     .learn-more-btn {
       display: inline-block;
-      padding: 0.5rem 1rem;
+      padding: 0.2rem 0.6rem;
       background-color: #ffffff;
       border: none;
       color: #000000;
       text-decoration: none;
       font-family: "Roboto Mono", monospace;
-      font-size: map-get($mobile-font-sizes, button);
+      font-size: 10px;
       text-transform: uppercase;
       position: relative;
-      margin: map-get($mobile-spacing, gap) 0;
+      margin: map.get(vars.$mobile-spacing, gap) 0;
       clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
       overflow: hidden;
       transition: color 0.3s ease;
@@ -83,7 +84,7 @@
         left: -100%;
         width: 100%;
         height: 100%;
-        background-color: $button-hover-color;
+        background-color: vars.$button-hover-color;
         transition: left 0.3s ease;
         z-index: -1;
       }
@@ -100,84 +101,100 @@
 }
 
 // Tablet styles (768px and up)
-@media screen and (min-width: $tablet) {
+@media screen and (min-width: vars.$tablet) {
   .works-content {
-    padding: map-get($tablet-spacing, padding);
-    margin-top: map-get($tablet-spacing, section-margin);
-    gap: map-get($tablet-spacing, gap);
+    padding: map.get(vars.$tablet-spacing, padding);
+    margin-top: map.get(vars.$tablet-spacing, section-margin);
+    gap: map.get(vars.$tablet-spacing, gap);
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-start;
 
     h1 {
-      font-size: map-get($tablet-font-sizes, h1);
+      font-size: map.get(vars.$tablet-font-sizes, h1);
       display: flex;
       flex-direction: column;
-      gap: map-get($tablet-spacing, h1-line-gap);
+      gap: map.get(vars.$tablet-spacing, h1-line-gap);
     }
 
     .works-explanation {
-      max-width: map-get($tablet-layout, max-width);
-      font-size: map-get($tablet-font-sizes, text);
+      max-width: map.get(vars.$tablet-layout, max-width);
+      font-size: map.get(vars.$tablet-font-sizes, text);
     }
   }
 
   .projects-list {
-    grid-template-columns: repeat(map-get($tablet-layout, grid-columns), 1fr);
-    gap: map-get($tablet-spacing, margin);
-    margin: map-get($tablet-spacing, margin) auto;
-    padding-bottom: map-get($tablet-spacing, margin);
+    grid-template-columns: repeat(map.get(vars.$tablet-layout, grid-columns), 1fr);
+    gap: map.get(vars.$tablet-spacing, margin);
+    margin: map.get(vars.$tablet-spacing, margin) auto;
+    padding-bottom: map.get(vars.$tablet-spacing, margin);
 
     li {
       h3 {
-        font-size: map-get($tablet-font-sizes, h3);
+        font-size: map.get(vars.$tablet-font-sizes, h3);
       }
 
       .learn-more-btn {
-        font-size: map-get($tablet-font-sizes, button);
+        padding: 0.3rem 0.8rem;
+        font-size: 12px;
       }
+    }
+  }
+
+  .work-section {
+    button {
+      padding: 0.4rem 1rem;
+      font-size: 14px;
     }
   }
 }
 
 // Desktop styles (1024px and up)
-@media screen and (min-width: $desktop) {
+@media screen and (min-width: vars.$desktop) {
   .works-content {
-    padding: map-get($desktop-spacing, padding);
-    margin-top: map-get($desktop-spacing, section-margin);
-    gap: map-get($desktop-spacing, gap);
+    padding: map.get(vars.$desktop-spacing, padding);
+    margin-top: map.get(vars.$desktop-spacing, section-margin);
+    gap: map.get(vars.$desktop-spacing, gap);
 
     .works-title{
       width: 100%;
     }
 
     h1 {
-      font-size: map-get($desktop-font-sizes, h1);
+      font-size: map.get(vars.$desktop-font-sizes, h1);
       display: flex;
       flex-direction: column;
-      gap: map-get($desktop-spacing, h1-line-gap);
+      gap: map.get(vars.$desktop-spacing, h1-line-gap);
     }
 
     .works-explanation {
-      max-width: map-get($desktop-layout, max-width);
-      font-size: map-get($desktop-font-sizes, text);
+      max-width: map.get(vars.$desktop-layout, max-width);
+      font-size: map.get(vars.$desktop-font-sizes, text);
     }
   }
 
   .projects-list {
-    grid-template-columns: repeat(map-get($desktop-layout, grid-columns), 1fr);
-    gap: map-get($desktop-spacing, margin);
-    margin: map-get($desktop-spacing, margin) auto;
-    padding-bottom: map-get($desktop-spacing, margin);
+    grid-template-columns: repeat(map.get(vars.$desktop-layout, grid-columns), 1fr);
+    gap: map.get(vars.$desktop-spacing, margin);
+    margin: map.get(vars.$desktop-spacing, margin) auto;
+    padding-bottom: map.get(vars.$desktop-spacing, margin);
 
     li {
       h3 {
-        font-size: map-get($desktop-font-sizes, h3);
+        font-size: map.get(vars.$desktop-font-sizes, h3);
       }
 
       .learn-more-btn {
-        font-size: map-get($desktop-font-sizes, button);
+        padding: 0.3rem 0.8rem;
+        font-size: 12px;
       }
+    }
+  }
+
+  .work-section {
+    button {
+      padding: 0.4rem 1rem;
+      font-size: 14px;
     }
   }
 }
@@ -213,13 +230,13 @@
   button {
     align-self: flex-start;
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.8rem;
     background-color: #ffffff;
     border: none;
     color: #000000;
     text-decoration: none;
     font-family: "Roboto Mono", monospace;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     position: relative;
     margin: 1rem 0;
@@ -235,7 +252,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background-color: $button-hover-color;
+      background-color: vars.$button-hover-color;
       transition: left 0.3s ease;
       z-index: 1;
     }
