@@ -48,26 +48,32 @@
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
       "detailedDescription": {
-        "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
+        "overview": "Red Tattoo is a custom-built website designed for a tattoo studio, functioning as both an online portfolio and a booking platform. The site allows potential customers to browse past work, learn more about the artist, book appointments, and complete payments seamlessly — all in one place. It's crafted to reflect the unique style of the artist while offering a smooth and modern user experience.",
         "sections": {
           "Technologies": [
-            "React: Used for dynamic component management and to create an interactive user experience.",
-            "SASS: Applied for clean, maintainable, and responsive styling.",
-            "SiteGround: The website is hosted on SiteGround, ensuring reliable performance and uptime.",
-            "Vite: Deployed with Vite for fast build times and efficient development."
+            "CMS: WordPress 6.8",
+            "E-commerce: WooCommerce 9.4.1",
+            "JavaScript Frameworks & Libraries: Svelte, jQuery, jQuery UI, jQuery Migrate",
+            "Styling & UI: Tailwind CSS, Bootstrap Icons, Google Font API",
+            "Backend & Logic: PHP",
+            "Database: MySQL",
+            "Hosting: SiteGround"
           ],
           "Features": [
-            "Project Showcase: Includes an interactive slider to showcase projects with smooth navigation.",
-            "Responsive Design: Ensures compatibility across all devices, from desktops to smartphones.",
-            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience.",
-            "JSON-based Content: All content is dynamically sourced from JSON files, allowing easy updates without modifying the code."
+            "Custom WordPress theme tailored to the tattoo studio's branding",
+            "Portfolio section to showcase artwork",
+            "Appointment booking system with calendar and time slot integration (Bookly)",
+            "E-commerce functionality via WooCommerce for deposits and payment processing",
+            "Fully responsive design, mobile-optimized"
           ],
           "Contributions": [
-            "Designed and developed the entire site structure and layout.",
-            "Created custom React components for dynamic and reusable UI elements.",
-            "Styled all UI elements using SASS, ensuring design consistency and responsiveness.",
-            "Implemented a JSON-based content management system for easier future updates.",
-            "Ensured cross-browser compatibility and optimized performance for faster load times."
+            "Designed and developed a custom WordPress theme from scratch",
+            "Implemented both frontend and backend logic using PHP",
+            "Integrated WooCommerce for payments and Bookly for appointment scheduling",
+            "Handled database structure and optimization (MySQL)",
+            "Customized plugin behavior for specific client needs",
+            "Ensured the site is SEO-ready and performance-tuned",
+            "Provided post-launch support and documentation"  
           ]
         }
       }
