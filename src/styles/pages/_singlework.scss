@@ -248,7 +248,7 @@
     }
 
     p {
-      font-size: map-get($tablet-font-sizes, text);
+      font-size: 20px;
     }
 
     &__details-label,
@@ -278,6 +278,8 @@
     }
     .section-list {
       width: 50%;
+      font-size: 20px;
+    
     }
   }
 
@@ -311,7 +313,7 @@
     }
 
     p {
-      font-size: map-get($desktop-font-sizes, text);
+      font-size: 24px;
     }
 
     &__details {
@@ -346,6 +348,7 @@
     }
     .section-list {
       width: 50%;
+      font-size: 24px;
     }
   }
 }
