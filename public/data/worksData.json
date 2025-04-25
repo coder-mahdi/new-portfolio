@@ -8,35 +8,35 @@
       "image": "/images/projects/callmeguide.jpg",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "Call Me Guide: A platform offering real-time travel guidance with a user-friendly interface and secure payment integration.",
-      "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
+      "overview": "This is a platform offering real-time travel guidance with a user-friendly interface and secure payment integration.",
        
       "details": {
         "Client": ["Call Me Guide Tourism Service Inc"],
         "Year": " 2023",
         "Category": "Tourism",
-        "ProjectLink": "https://callmeguide.com",
-        "Live Project": "View Now"
+        "Live Project": "https://callmeguide.com"
       },
 
         "sections": {
           "Technologies": [
-            "React: Used for dynamic component management and to create an interactive user experience.",
-            "SASS: Applied for clean, maintainable, and responsive styling.",
-            "SiteGround: The website is hosted on SiteGround, ensuring reliable performance and uptime.",
-            "Vite: Deployed with Vite for fast build times and efficient development."
+            "JavaScript Frameworks: React (used for building dynamic user interfaces), Emotion (CSS-in-JS styling for modular and scalable components)",
+            "Web Frameworks: Laravel (used for backend functionality, routing, and RESTful APIs)",
+            "Programming Languages: PHP (applied in WordPress theme development and backend logic), JavaScript (core language for frontend interactivity and logic)",
+            "Security: Google reCAPTCHA (implemented for spam protection in forms)"
+
           ],
           "Features": [
-            "Project Showcase: Includes an interactive slider to showcase projects with smooth navigation.",
-            "Responsive Design: Ensures compatibility across all devices, from desktops to smartphones.",
-            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience.",
-            "JSON-based Content: All content is dynamically sourced from JSON files, allowing easy updates without modifying the code."
+            "Secure payments via Stripe: Providing seamless and secure payment processing for users.",
+            "Interactive maps using the Google Maps API: Enabling users to explore travel destinations in real-time.",
+            "Real-time travel guidance and support: Offering travelers immediate and accurate travel assistance."
           ],
           "Contributions": [
-            "Designed and developed the entire site structure and layout.",
-            "Created custom React components for dynamic and reusable UI elements.",
-            "Styled all UI elements using SASS, ensuring design consistency and responsiveness.",
-            "Implemented a JSON-based content management system for easier future updates.",
-            "Ensured cross-browser compatibility and optimized performance for faster load times."
+            "Founder and main architect of the platform",
+            "Led the overall project management and development",
+            "Coordinated collaboration between frontend, backend, and design teams",
+            "Oversaw the entire project lifecycle to ensure business and technical alignment",
+            "Enhanced user experience through real-time updates and intuitive navigation",
+            "Worked on frontend design and interactivity using React"
           ]
       }
     },
