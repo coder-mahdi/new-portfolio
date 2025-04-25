@@ -4,7 +4,7 @@
       "title": "Mahdi Roozbahani",
       "subtitle": "Web Developer",
       "location": "Based in Vancouver, Canada",
-      "image": "/images/projects/callmeguide.jpg"
+      "image": "/images/about/hero.jpg"
     },
   
     "myStory": "It is a long established fact that a reader will be distracted by the readable content of a It is a long established fact that a reader will be distracted by the readable content of a ",
@@ -12,9 +12,9 @@
    
   
       "gallery": [
-        { "image": "/images/projects/callmeguide.jpg" },
-        { "image": "/images/projects/callmeguide.jpg" },
-        { "image": "/images/projects/callmeguide.jpg" }
+        { "image": "/images/about/1.jpg" },
+        { "image": "/images/about/2.jpg" },
+        { "image": "/images/about/3.jpg" }
       ],
   
       "skills": [
