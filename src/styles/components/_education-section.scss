@@ -146,6 +146,12 @@
   }
 }
 
+.education-content {
+  p {
+    font-size: 24px;
+  }
+}
+
 @media screen and (max-width: 1023px) and (min-width: 768px) {
   .education-section {
     .education-list {
@@ -198,7 +204,7 @@
       }
 
       p {
-        font-size: 14px;
+        font-size: 20px;
         margin-bottom: 1.5rem;
       }
     }

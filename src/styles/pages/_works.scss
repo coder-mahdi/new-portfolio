@@ -131,7 +131,7 @@
 
     .works-explanation {
       max-width: map.get(vars.$tablet-layout, max-width);
-      font-size: map.get(vars.$tablet-font-sizes, text);
+      font-size: 20px;
     }
   }
 
@@ -185,7 +185,7 @@
 
     .works-explanation {
       max-width: map.get(vars.$desktop-layout, max-width);
-      font-size: map.get(vars.$desktop-font-sizes, text);
+      font-size: 24px;
     }
   }
 
@@ -239,7 +239,7 @@
   }
 
   p {
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.6;
     color: #666;
     margin-bottom: 2rem;
