@@ -28,7 +28,10 @@ function Home() {
     useEffect(() => {
         fetch('/data/homeData.json')
             .then(response => response.json())
-            .then(data => setHomeData(data))
+            .then(data => {
+                console.log("Loaded homeData:", data);
+                setHomeData(data);
+            })
             .catch(error => console.error("Error fetching data:", error));
             
         fetch('/data/worksData.json')
@@ -81,6 +84,11 @@ function Home() {
         };
 
         window.addEventListener('scroll', handleScroll);
+        
+        // Log the hero image element after it's rendered
+        console.log("Hero image element:", heroImageRef.current);
+        console.log("Hero image src:", heroImageRef.current?.src);
+        
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -97,6 +105,7 @@ function Home() {
                         </Link>
                     </div>
                     <div className="hero-image-container">
+                        {console.log("Image path in render:", homeData.hero?.image)}
                         <img 
                             ref={heroImageRef}
                             src={homeData.hero?.image || ""} 
