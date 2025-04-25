@@ -24,13 +24,14 @@
   &__text-content {
     display: flex;
     flex-direction: column;
-    gap: map-get($mobile-spacing, gap);
+    gap: 1rem;
   }
 
   &__header {
+    padding-top: 1rem;
     display: grid;
     grid-template-columns: 1fr;
-    gap: map-get($mobile-spacing, gap);
+    gap: 1rem;
     width: 100%;
   }
 
@@ -47,10 +48,10 @@
   }
 
   &__details {
-    display: flex;
     gap: 2rem;
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
   }
 
   &__details-labels,
@@ -106,7 +107,6 @@
   &__see-more {
     width: 100vw;
     overflow: hidden;
-    margin-top: 2rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -185,7 +185,7 @@
   }
 
   .section-list {
-    width: 50%;
+    width: 100%;
     list-style-type: disc;
     padding-left: 1.5rem;
     display: flex;
@@ -256,6 +256,9 @@
     .section-item {
       font-size: map-get($tablet-font-sizes, text);
     }
+    .section-list {
+      width: 50%;
+    }
   }
 
   @media (min-width: $desktop) {
@@ -302,7 +305,7 @@
     }
 
     &__image-container {
-      height: 100vh;
+      height: 100%;
       margin-top: 4rem;
     }
 
@@ -320,6 +323,9 @@
 
     .section-item {
       font-size: map-get($desktop-font-sizes, text);
+    }
+    .section-list {
+      width: 50%;
     }
   }
 }
