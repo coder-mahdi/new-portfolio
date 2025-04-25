@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Layout from '../Layout/Layout.jsx';
+import SkillIcon from '../components/SkillIcon';
 
 function About() {
     const [aboutData, setAboutData] = useState({
@@ -37,6 +38,25 @@ function About() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Function to render technical skills with icons
+    const renderTechnicalSkills = (skillsString) => {
+        if (!skillsString) return null;
+        
+        // Split the skills string by commas
+        const skills = skillsString.split(',').map(skill => skill.trim());
+        
+        return (
+            <div className="technical-skills-list">
+                {skills.map((skill, index) => (
+                    <div key={index} className="skill-item">
+                        <SkillIcon skillName={skill} />
+                        <span>{skill}</span>
+                    </div>
+                ))}
+            </div>
+        );
+    };
 
     return (
         <Layout>
@@ -91,6 +111,12 @@ function About() {
                                         <p>{skill.soft}</p>
                                     </div>
                                 )}
+                                {skill["Technical Skills"] && (
+                                    <div className="about-skill-content">
+                                        <h4>Technical Skills</h4>
+                                        {renderTechnicalSkills(skill["Technical Skills"])}
+                                    </div>
+                                )}
                                 {skill.languages && (
                                     <div className="about-skill-content">
                                         <h4>Languages</h4>
@@ -105,13 +131,14 @@ function About() {
                 {/* Experience */}
                 <section className="about-experience">
                     <h3>Experience</h3>
-                    <ul>
+                    <div className="about-experience-grid">
                         {aboutData.experience.map((exp, index) => (
-                            <li key={index}>
-                                <p><strong>{exp.title}</strong> - {exp.year}</p>
-                            </li>
+                            <div className="about-experience-box" key={index}>
+                                <h4>{exp.title}</h4>
+                                <p>{exp.year}</p>
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 </section>
             </div>
         </Layout>

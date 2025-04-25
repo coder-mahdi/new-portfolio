@@ -80,7 +80,7 @@
 
   .github-link {
     color: $text-color;
-    text-decoration: underline;
+    text-decoration: none;
     transition: color 0.3s ease;
     
     &:hover {
@@ -91,7 +91,7 @@
   &__details-value {
     a {
       color: $text-color;
-      text-decoration: underline;
+      text-decoration: none;
       
       &:hover {
         color: rgb(0, 153, 255);

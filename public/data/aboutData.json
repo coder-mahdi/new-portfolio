@@ -7,10 +7,8 @@
       "image": "/images/about/hero.jpg"
     },
   
-    "myStory": "It is a long established fact that a reader will be distracted by the readable content of a It is a long established fact that a reader will be distracted by the readable content of a ",
-    "hobbies": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'",
-   
-  
+    "myStory": "I was born and raised in a small town in western Iran and spent over a decade in Tehran before embarking on years of travel across East Africa and other parts of the world. My journey led me to write a book in Persian about my travel experiences and personal reflections.With a background in media and communications, I worked as a journalist, editor, and university lecturer, focusing on the social impact of technology and media. This perspective now complements my work as a web developer.Since moving to Vancouver, Canada, I’ve been working in the tech industry with a focus on frontend development and digital communication. I build websites from both a technical and strategic standpoint — combining visual design, user experience, and content thinking.",
+    "hobbies": "I’m passionate about nature and outdoor adventures. I love camping and backcountry hiking, and I often spend weekends exploring the wilderness. I also enjoy kayaking and sailing during the warmer seasons, and in the winter, I stay active through skiing in the mountains. Adventure and connection with nature are essential parts of my life.",
       "gallery": [
         { "image": "/images/about/1.jpg" },
         { "image": "/images/about/2.jpg" },
@@ -22,10 +20,10 @@
           "soft": "writing, Communication"
         },
         {
-          "languages": "English, French"
+          "Technical Skills": "HTML, JavaScript, PHP, React, Laravel, jQuery, WordPress(custom theme development), Sass, CSS, Tailwind CSS, WooCommerce, Shopify ,Headless CMS, MySQL, Github, VS Code, Figma"
         },
         {
-          "languages": "English, French"
+          "languages": "English, Persian"
         },
         {
           "languages": "English, French"
