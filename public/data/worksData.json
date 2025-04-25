@@ -44,7 +44,7 @@
     {
       "id": 2,
       "name": "Redtattoo",
-      "image": "/images/projects/callmeguide.jpg",
+      "image": "/images/projects/redtattoo.jpg",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
       "detailedDescription": {
@@ -75,8 +75,8 @@
 
     {
       "id": 3,
-      "name": "Adventure tour",
-      "image": "/images/projects/callmeguide.jpg",
+      "name": "pacificpeak",
+      "image": "/images/projects/pacificpeak.jpg",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
       "detailedDescription": {
@@ -107,8 +107,8 @@
 
     {
       "id": 4,
-      "name": "Flag game",
-      "image": "/images/projects/callmeguide.jpg",
+      "name": "35mm-app",
+      "image": "/images/projects/35mm-app.jpg",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
       "detailedDescription": {
