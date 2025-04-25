@@ -40,31 +40,31 @@ function About() {
 
     return (
         <Layout>
-            <div className="main-content">
-                <div className="hero-section">
-                    <div className="hero-content">
+            <div className="about-main-content">
+                <div className="about-hero-section">
+                    <div className="about-hero-content">
                         <h1>{aboutData.hero.title || "loading..."}</h1>
                         <h2>{aboutData.hero.subtitle || "loading..."}</h2>
                     </div>
-                    <p className="location-text">{aboutData.hero.location || "loading..."}</p>
-                    <div className="hero-image-container">
+                    {/* <p className="about-location-text">{aboutData.hero.location || "loading..."}</p> */}
+                    <div className="about-hero-image-container">
                         <img
                             ref={heroImageRef}
                             src={aboutData.hero.image} 
                             alt="Hero" 
-                            className="hero-image"
+                            className="about-hero-image"
                         />
                     </div>
                 </div>
 
                
-                <section className="story">
+                <section className="about-story">
                     <h3>My Story</h3>
                     <p>{aboutData.myStory || "loading..."}</p>
                 </section>
 
                
-                <section className="hobbies">
+                <section className="about-hobbies">
                     <h3>Hobbies</h3>
                     <p>{aboutData.hobbies || "loading..."}</p>
                 </section>
@@ -72,7 +72,7 @@ function About() {
            
    
     
-                    <div className="gallery">
+                    <div className="about-gallery">
                         {aboutData.gallery.map((item, index) => (
                             <img key={index} src={item.image} alt={`Gallery ${index}`} />
                         ))}
@@ -80,19 +80,19 @@ function About() {
 
 
                 {/* Skills */}
-                <section className="skills">
+                <section className="about-skills">
                     <h3>Skills</h3>
-                    <div className="skills-grid">
+                    <div className="about-skills-grid">
                         {aboutData.skills.map((skill, index) => (
-                            <div className="skill-box" key={index}>
+                            <div className="about-skill-box" key={index}>
                                 {skill.soft && (
-                                    <div className="skill-content">
+                                    <div className="about-skill-content">
                                         <h4>Soft Skills</h4>
                                         <p>{skill.soft}</p>
                                     </div>
                                 )}
                                 {skill.languages && (
-                                    <div className="skill-content">
+                                    <div className="about-skill-content">
                                         <h4>Languages</h4>
                                         <p>{skill.languages}</p>
                                     </div>
@@ -103,7 +103,7 @@ function About() {
                 </section>
 
                 {/* Experience */}
-                <section className="experience">
+                <section className="about-experience">
                     <h3>Experience</h3>
                     <ul>
                         {aboutData.experience.map((exp, index) => (

@@ -2,87 +2,11 @@
 @use '../mixins/mixins' as *;
 @use '../mixins/animations' as *;
 
-.main-content {
+.about-main-content {
   width: 100%;
-  padding-top: 60px;
+  padding-top: 45px;
   min-height: 100vh;
   position: relative;
-
-  // Hero Section
-  .hero-section {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    margin-bottom: 4rem;
-
-    p {
-      padding: 0 1rem;
-    }
-  }
-
-  .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 4rem;
-    margin-top: 4rem;
-    max-width: 100%;
-    padding: 0 0.5rem;
-    position: relative;
-    z-index: 2;
-
-    h1 {
-      font-size: 48px;
-      line-height: 1.1;
-      text-align: center;
-      margin-bottom: 0;
-      white-space: normal;
-      @include apply-dune-animation;
-      animation-delay: 0.2s;
-    }
-
-    h2 {
-      font-size: 24px;
-      line-height: 1.2;
-      text-align: center;
-      margin-bottom: 0;
-      @include apply-dune-animation;
-      animation-delay: 0.2s;
-    }
-  }
-
-  .location-text {
-    align-self: flex-start;
-    font-size: 12px;
-    color: rgb(163, 163, 163);
-    margin-bottom: 1rem;
-    position: relative;
-    z-index: 2;
-    padding-left: 1rem;
-  }
-
-  .hero-image-container {
-    width: 100%;
-    height: 50vh;
-    position: relative;
-    overflow: hidden;
-    margin-top: 2rem;
-    z-index: 1;
-  }
-
-  .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 30% 30%;
-    transform-origin: center;
-    transition: transform 0.3s ease-out;
-    will-change: transform;
-  }
 
   // Sections
   section {
@@ -102,7 +26,7 @@
   }
 
   // Story Section
-  .story {
+  .about-story {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -128,7 +52,7 @@
   }
 
   // Hobbies Section
-  .hobbies {
+  .about-hobbies {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -154,7 +78,7 @@
   }
 
   // Gallery
-  .gallery {
+  .about-gallery {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -176,7 +100,7 @@
   }
 
   // Skills Section
-  .skills {
+  .about-skills {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -191,13 +115,13 @@
       align-self: flex-end;
     }
 
-    .skills-grid {
+    .about-skills-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 0;
       width: 100%;
 
-      .skill-box {
+      .about-skill-box {
         border: 1px solid rgba(255, 255, 255, 0.1);
         padding: 1rem;
 
@@ -205,7 +129,7 @@
           border-bottom: none;
         }
 
-        .skill-content {
+        .about-skill-content {
           h4 {
             font-size: map-get($mobile-font-sizes, h4);
             margin-bottom: 0.25rem;
@@ -221,55 +145,49 @@
     }
   }
 
-  // Small mobile devices (320px and up)
-  @media screen and (min-width: 320px) {
-    .hero-image-container {
-      height: 60vh;
-    }
-  }
+  // Experience Section
+  .about-experience {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: map-get($mobile-spacing, padding);
+    margin-top: 2rem;
+    margin-bottom: map-get($mobile-spacing, section-margin);
 
-  // Medium mobile devices (375px and up)
-  @media screen and (min-width: 375px) {
-    .hero-image-container {
-      height: 65vh;
+    h3 {
+      font-size: map-get($mobile-font-sizes, h3);
+      margin-bottom: 1rem;
+      text-align: left;
+      align-self: flex-start;
     }
-  }
 
-  // Large mobile devices (425px and up)
-  @media screen and (min-width: 425px) {
-    .hero-image-container {
-      height: 70vh;
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+
+      li {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        p {
+          margin: 0;
+          text-align: left;
+        }
+      }
     }
   }
 
   // Tablet styles (768px and up)
   @media screen and (min-width: $tablet) {
-    padding-top: 80px;
-
-    .hero-content {
-      gap: 1rem;
-      margin-bottom: 6rem;
-      margin-top: 6rem;
-      max-width: 90%;
-
-      h1 {
-        font-size: 72px;
-      }
-
-      h2 {
-        font-size: 36px;
-      }
-    }
-
-    .location-text {
-      padding-left: 2rem;
-    }
-
-    .hero-image-container {
-      height: 80vh;
-      margin-top: 3rem;
-    }
-
     section {
       padding: map-get($tablet-spacing, padding);
       margin-bottom: map-get($tablet-spacing, section-margin);
@@ -279,7 +197,7 @@
       }
     }
 
-    .story, .hobbies {
+    .about-story, .about-hobbies {
       padding: map-get($tablet-spacing, padding);
       margin-top: 3rem;
       margin-bottom: map-get($tablet-spacing, section-margin);
@@ -294,7 +212,7 @@
       }
     }
 
-    .gallery {
+    .about-gallery {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
 
@@ -307,7 +225,7 @@
       }
     }
 
-    .skills {
+    .about-skills {
       padding: map-get($tablet-spacing, padding);
       margin-top: 3rem;
       margin-bottom: map-get($tablet-spacing, section-margin);
@@ -316,11 +234,11 @@
         font-size: map-get($tablet-font-sizes, h3);
       }
 
-      .skills-grid {
+      .about-skills-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0;
 
-        .skill-box {
+        .about-skill-box {
           padding: 1.25rem;
 
           &:nth-child(odd) {
@@ -331,7 +249,7 @@
             border-bottom: none;
           }
 
-          .skill-content {
+          .about-skill-content {
             h4 {
               font-size: map-get($tablet-font-sizes, h4);
             }
@@ -339,38 +257,27 @@
         }
       }
     }
+
+    .about-experience {
+      padding: map-get($tablet-spacing, padding);
+      margin-top: 3rem;
+      margin-bottom: map-get($tablet-spacing, section-margin);
+
+      h3 {
+        font-size: map-get($tablet-font-sizes, h3);
+      }
+
+      ul {
+        li {
+          padding: 1.25rem;
+        }
+      }
+    }
   }
 
   // Desktop styles (1024px and up)
   @media screen and (min-width: $desktop) {
-    padding-top: 120px;
-
-    .hero-content {
-      gap: 1rem;
-      margin-bottom: 8rem;
-      margin-top: 8rem;
-      max-width: 800px;
-
-      h1 {
-        font-size: 96px;
-        white-space: nowrap;
-      }
-
-      h2 {
-        font-size: 48px;
-      }
-    }
-
-    .location-text {
-      padding-left: 3rem;
-    }
-
-    .hero-image-container {
-      height: 100vh;
-      margin-top: 4rem;
-    }
-
-    .story, .hobbies {
+    .about-story, .about-hobbies {
       padding: map-get($desktop-spacing, padding);
       margin-top: 4rem;
       margin-bottom: map-get($desktop-spacing, section-margin);
@@ -394,7 +301,7 @@
       }
     }
 
-    .gallery {
+    .about-gallery {
       grid-template-columns: repeat(3, 1fr);
       gap: 3rem;
 
@@ -407,7 +314,7 @@
       }
     }
 
-    .skills {
+    .about-skills {
       padding: map-get($desktop-spacing, padding);
       margin-top: 4rem;
       margin-bottom: map-get($desktop-spacing, section-margin);
@@ -416,18 +323,34 @@
         font-size: map-get($desktop-font-sizes, h3);
       }
 
-      .skills-grid {
+      .about-skills-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 0;
 
-        .skill-box {
+        .about-skill-box {
           padding: 1.5rem;
 
-          .skill-content {
+          .about-skill-content {
             h4 {
               font-size: map-get($desktop-font-sizes, h4);
             }
           }
+        }
+      }
+    }
+
+    .about-experience {
+      padding: map-get($desktop-spacing, padding);
+      margin-top: 4rem;
+      margin-bottom: map-get($desktop-spacing, section-margin);
+
+      h3 {
+        font-size: map-get($desktop-font-sizes, h3);
+      }
+
+      ul {
+        li {
+          padding: 1.5rem;
         }
       }
     }
