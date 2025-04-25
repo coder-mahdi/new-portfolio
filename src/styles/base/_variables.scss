@@ -5,6 +5,22 @@ $text-color: rgb(179, 179, 179);
 $background-color: #000000;
 $button-hover-color: rgb(0, 153, 255);
 
+// Button sizes
+$button-sizes: (
+  mobile: (
+    padding: 0.3rem 0.8rem,
+    font-size: 12px
+  ),
+  tablet: (
+    padding: 0.4rem 1rem,
+    font-size: 14px
+  ),
+  desktop: (
+    padding: 0.4rem 1rem,
+    font-size: 14px
+  )
+);
+
 // Typography
 $font-family-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
 $font-size-base: 16px;
@@ -37,7 +53,8 @@ $mobile-font-sizes: (
   h3: 20px,
   button: 12px,
   text: 14px,
-  small-text: 12px
+  small-text: 12px,
+  button-padding: 0.3rem 0.8rem
 );
 
 $mobile-spacing: (
@@ -60,7 +77,8 @@ $tablet-font-sizes: (
   h3: 24px,
   button: 14px,
   text: 16px,
-  small-text: 14px
+  small-text: 14px,
+  button-padding: 0.4rem 1rem
 );
 
 $tablet-spacing: (
@@ -83,7 +101,8 @@ $desktop-font-sizes: (
   h3: 32px,
   button: 14px,
   text: 16px,
-  small-text: 14px
+  small-text: 14px,
+  button-padding: 0.4rem 1rem
 );
 
 $desktop-spacing: (
