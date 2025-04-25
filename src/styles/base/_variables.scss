@@ -1,0 +1,100 @@
+// Colors
+$primary-color: rgb(0, 153, 255);
+$secondary-color: #535bf2;
+$text-color: rgb(179, 179, 179);
+$background-color: #000000;
+$button-hover-color: rgb(0, 153, 255);
+
+// Typography
+$font-family-base: system-ui, Avenir, Helvetica, Arial, sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.5;
+
+// Breakpoints
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 1024px;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+
+// Transitions
+$transition-base: all 0.3s ease;
+
+// Mobile Default Settings
+$mobile-font-sizes: (
+  h1: 48px,
+  h2: 24px,
+  h3: 20px,
+  button: 12px,
+  text: 14px,
+  small-text: 12px
+);
+
+$mobile-spacing: (
+  padding: 1rem,
+  gap: 0.5rem,
+  margin: 2rem,
+  section-margin: 4rem,
+  h1-line-gap: 0.05rem
+);
+
+$mobile-layout: (
+  grid-columns: 1,
+  max-width: 100%
+);
+
+// Tablet Default Settings
+$tablet-font-sizes: (
+  h1: 72px,
+  h2: 36px,
+  h3: 24px,
+  button: 14px,
+  text: 16px,
+  small-text: 14px
+);
+
+$tablet-spacing: (
+  padding: 1.5rem,
+  gap: 1rem,
+  margin: 3rem,
+  section-margin: 6rem,
+  h1-line-gap: 0.5rem
+);
+
+$tablet-layout: (
+  grid-columns: 2,
+  max-width: 90%
+);
+
+// Desktop Default Settings
+$desktop-font-sizes: (
+  h1: 96px,
+  h2: 48px,
+  h3: 32px,
+  button: 14px,
+  text: 16px,
+  small-text: 14px
+);
+
+$desktop-spacing: (
+  padding: 3rem,
+  gap: 3rem,
+  margin: 4rem,
+  section-margin: 8rem,
+  h1-line-gap: 1rem
+);
+
+$desktop-layout: (
+  grid-columns: 2,
+  max-width: 40%
+); 

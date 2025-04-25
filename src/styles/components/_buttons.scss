@@ -1,0 +1,66 @@
+@use '../base/variables' as *;
+@use '../mixins/mixins' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  height: 35px;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: "Roboto Mono", monospace;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 10px) 0,
+    100% 10px,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(0, 153, 255);
+    transition: width 0.3s ease-in-out;
+    z-index: 1;
+    clip-path: inherit;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease-in-out;
+  }
+
+  &:hover span {
+    color: #ffffff;
+  }
+}
+
+// Menu box style
+.menu-box {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    10px 100%,
+    0 calc(100% - 10px)
+  );
+} 

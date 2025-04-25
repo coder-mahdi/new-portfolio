@@ -1,0 +1,254 @@
+@use '../base/variables' as *;
+@use '../mixins/mixins' as *;
+
+.header {
+  width: 100%;
+  padding: $spacing-md;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: $background-color;
+
+  &-left {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .local-time {
+    font-family: "Roboto Mono", monospace;
+    font-size: 14px;
+    color: $text-color;
+  }
+
+  .phone-icon {
+    color: $text-color;
+    transition: $transition-base;
+    
+    &:hover {
+      color: #ffffff;
+    }
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 101;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+    align-items: center;
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-lg;
+      align-items: center;
+    }
+
+    .social-links {
+      display: flex;
+      gap: $spacing-xl;
+      margin-top: $spacing-xl;
+
+      a {
+        position: relative;
+        width: auto;
+        font-size: 14px;
+        padding: 5px 0;
+        color: $text-color;
+        text-decoration: none;
+        transition: $transition-base;
+        font-family: "Roboto Mono", monospace;
+        text-transform: uppercase;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 0;
+          height: 1px;
+          background-color: #ffffff;
+          transition: width 0.3s ease;
+          transform: translateY(-50%);
+        }
+
+        &:hover {
+          color: #ffffff;
+
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    a {
+      color: $text-color;
+      text-decoration: none;
+      transition: $transition-base;
+      font-family: "Roboto Mono", monospace;
+      font-size: 16px;
+      text-transform: uppercase;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      padding: 10px 0;
+
+      &::after {
+        content: attr(data-hover-text);
+        position: absolute;
+        left: 50%;
+        bottom: -5px;
+        transform: translateX(-50%);
+        font-size: 12px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        color: rgb(0, 153, 255);
+        white-space: nowrap;
+        pointer-events: none;
+      }
+
+      &:hover {
+        color: #ffffff;
+        
+        &::after {
+          opacity: 1;
+          bottom: -15px;
+        }
+      }
+
+      &.active {
+        color: rgb(0, 153, 255);
+      }
+    }
+  }
+}
+
+// Mobile styles (default)
+.header {
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: $background-color;
+    flex-direction: column;
+    justify-content: center;
+    padding: $spacing-xl;
+    transition: right 0.3s ease-in-out;
+    gap: $spacing-xl;
+    z-index: 100;
+
+    &.active {
+      right: 0;
+    }
+
+    .nav-links {
+      width: 100%;
+    }
+
+    .social-links {
+      width: 100%;
+      justify-content: center;
+    }
+
+    a {
+      font-size: 24px;
+      text-align: center;
+      width: 100%;
+      padding: $spacing-md 0;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 99;
+  }
+
+  &.menu-open::before {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+// Tablet styles (768px and up)
+@media screen and (min-width: 768px) {
+  .header {
+    .main-nav {
+      position: fixed;
+      top: 0;
+      right: -50%;
+      width: 50%;
+      height: 100vh;
+      background-color: $background-color;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: $spacing-xl;
+      transition: right 0.3s ease-in-out;
+      gap: $spacing-xl;
+      z-index: 100;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+
+      &.active {
+        right: 0;
+      }
+
+      .nav-links {
+        width: 100%;
+      }
+
+      .social-links {
+        width: 100%;
+        justify-content: center;
+      }
+
+      a {
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+        padding: $spacing-md 0;
+      }
+    }
+  }
+}
+
+// Desktop styles (1024px and up)
+@media screen and (min-width: 1024px) {
+  .header {
+    padding-left: 3rem;
+  padding-right: 3rem;
+    .main-nav {
+      right: -33.33%;
+      width: 33.33%;
+
+      a {
+        font-size: 18px;
+      }
+    }
+  }
+} 
