@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Layout from '../Layout/Layout.jsx';
 import { Link, useLocation } from 'react-router-dom';
-import About from '../components/About';
-import Worksection from '../components/Worksection';
+import Aboutsection from '../components/Aboutsection';
+import Worksection from '../components/Worksection.jsx';
 import Education from '../components/Education';
 
 function Home() {
@@ -115,7 +115,7 @@ function Home() {
                     </div>
                 </div>
 
-                <About homeData={homeData} />
+                <Aboutsection homeData={homeData} />
                 
                 <Worksection 
                     homeData={homeData}
