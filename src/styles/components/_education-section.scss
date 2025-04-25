@@ -210,6 +210,12 @@
       padding: 1rem;
 
       .education-container {
+        .graduation-icon {
+          left: auto;
+          right: 0;
+          transform: none;
+        }
+
         .education-items {
           .education-row {
             flex-direction: column;
@@ -217,9 +223,14 @@
             padding: 0;
             gap: 1rem;
 
-            .empty-box, .content-box {
-              width: 250px;
-              height: 250px;
+            .empty-box {
+              display: none;
+            }
+
+            .content-box {
+              width: 100%;
+              height: auto;
+              min-height: 200px;
               margin: 0;
               padding: 1.5rem;
             }
