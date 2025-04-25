@@ -10,7 +10,12 @@ import {
   FaPhp,
   FaWordpress,
   FaShopify,
-  FaCode
+  FaCode,
+  FaImage,
+  FaVideo,
+  FaFileAlt,
+  FaPalette,
+  FaCamera
 } from 'react-icons/fa';
 import { 
   SiTypescript, 
@@ -25,7 +30,14 @@ import {
   SiMysql,
   SiGithub,
   SiFigma,
-  SiHeadlessui
+  SiHeadlessui,
+  SiAdobexd,
+  SiCanva,
+  SiAdobeillustrator,
+  SiAdobephotoshop,
+  SiAdobepremierepro,
+  SiAdobeindesign,
+  SiAdobelightroom
 } from 'react-icons/si';
 
 const SkillIcon = ({ skill, skillName }) => {
@@ -98,6 +110,23 @@ const SkillIcon = ({ skill, skillName }) => {
         return <FaCode />;
       case 'figma':
         return <SiFigma />;
+      // Adobe Creative Suite
+      case 'photoshop':
+        return <SiAdobephotoshop />;
+      case 'premiere pro':
+      case 'premiere':
+        return <SiAdobepremierepro />;
+      case 'indesign':
+        return <SiAdobeindesign />;
+      case 'illustrator':
+        return <SiAdobeillustrator />;
+      case 'lightroom':
+        return <SiAdobelightroom />;
+      case 'adobe xd':
+      case 'xd':
+        return <SiAdobexd />;
+      case 'canva':
+        return <SiCanva />;
       default:
         // Check for partial matches
         if (skillLower.includes('react')) return <FaReact />;
@@ -123,6 +152,14 @@ const SkillIcon = ({ skill, skillName }) => {
         if (skillLower.includes('mysql')) return <SiMysql />;
         if (skillLower.includes('vs code') || skillLower.includes('vscode')) return <FaCode />;
         if (skillLower.includes('figma')) return <SiFigma />;
+        // Adobe Creative Suite partial matches
+        if (skillLower.includes('photoshop')) return <SiAdobephotoshop />;
+        if (skillLower.includes('premiere')) return <SiAdobepremierepro />;
+        if (skillLower.includes('indesign')) return <SiAdobeindesign />;
+        if (skillLower.includes('illustrator')) return <SiAdobeillustrator />;
+        if (skillLower.includes('lightroom')) return <SiAdobelightroom />;
+        if (skillLower.includes('adobe xd') || skillLower.includes('xd')) return <SiAdobexd />;
+        if (skillLower.includes('canva')) return <SiCanva />;
         
         // If no match found, return null
         return null;

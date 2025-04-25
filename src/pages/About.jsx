@@ -13,6 +13,7 @@ function About() {
     });
     
     const heroImageRef = useRef(null);
+    const galleryImageRefs = useRef([]);
 
     useEffect(() => {
         // Scroll to top when component mounts
@@ -22,25 +23,59 @@ function About() {
     useEffect(() => {
         fetch('/data/aboutData.json')
             .then(response => response.json())
-            .then(data => setAboutData(data))
+            .then(data => {
+                console.log("Loaded data:", data);
+                console.log("Skills array:", data.skills);
+                if (data.skills && data.skills.length > 0) {
+                    console.log("First skill object keys:", Object.keys(data.skills[0]));
+                    console.log("Second skill object keys:", Object.keys(data.skills[1]));
+                    console.log("Third skill object keys:", Object.keys(data.skills[2]));
+                    console.log("Fourth skill object keys:", Object.keys(data.skills[3]));
+                    
+                    // Check if the third skill object has the Software & Tools key
+                    if (data.skills[2]) {
+                        console.log("Third skill object:", data.skills[2]);
+                        console.log("Has 'Software & Tools' key:", data.skills[2].hasOwnProperty("Software & Tools"));
+                        console.log("Value of 'Software & Tools' key:", data.skills[2]["Software & Tools"]);
+                    }
+                }
+                setAboutData(data);
+            })
             .catch(error => console.error("Error fetching data:", error));
     }, []);
 
     useEffect(() => {
         const handleScroll = () => {
+            // Hero image zoom effect
             if (heroImageRef.current) {
                 const scrollPosition = window.scrollY;
                 const scale = Math.min(1.5, 1 + scrollPosition * 0.0003);
                 heroImageRef.current.style.transform = `scale(${scale})`;
             }
+            
+            // Gallery images zoom effect
+            galleryImageRefs.current.forEach((ref, index) => {
+                if (ref) {
+                    const rect = ref.getBoundingClientRect();
+                    const viewportHeight = window.innerHeight;
+                    
+                    // Calculate how far the image is from the center of the viewport
+                    const distanceFromCenter = rect.top + rect.height / 2 - viewportHeight / 2;
+                    
+                    // Apply zoom effect based on distance from center
+                    // The closer to center, the more zoom
+                    const zoomFactor = Math.max(0.95, 1 - Math.abs(distanceFromCenter) * 0.0005);
+                    ref.style.transform = `scale(${zoomFactor})`;
+                }
+            });
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Function to render technical skills with icons
-    const renderTechnicalSkills = (skillsString) => {
+    // Function to render developer skills with icons
+    const renderDeveloperSkills = (skillsString) => {
         if (!skillsString) return null;
         
         // Split the skills string by commas
@@ -52,6 +87,25 @@ function About() {
                     <div key={index} className="skill-item">
                         <SkillIcon skillName={skill} />
                         <span>{skill}</span>
+                    </div>
+                ))}
+            </div>
+        );
+    };
+
+    // Function to render software and tools with icons
+    const renderSoftwareAndTools = (toolsString) => {
+        if (!toolsString) return null;
+        
+        // Split the tools string by commas
+        const tools = toolsString.split(',').map(tool => tool.trim());
+        
+        return (
+            <div className="technical-skills-list">
+                {tools.map((tool, index) => (
+                    <div key={index} className="skill-item">
+                        <SkillIcon skillName={tool} />
+                        <span>{tool}</span>
                     </div>
                 ))}
             </div>
@@ -94,7 +148,12 @@ function About() {
     
                     <div className="about-gallery">
                         {aboutData.gallery.map((item, index) => (
-                            <img key={index} src={item.image} alt={`Gallery ${index}`} />
+                            <img 
+                                key={index} 
+                                src={item.image} 
+                                alt={`Gallery ${index}`} 
+                                ref={el => galleryImageRefs.current[index] = el}
+                            />
                         ))}
                     </div>
 
@@ -111,10 +170,16 @@ function About() {
                                         <p>{skill.soft}</p>
                                     </div>
                                 )}
-                                {skill["Technical Skills"] && (
+                                {skill["Developer Skills"] && (
                                     <div className="about-skill-content">
-                                        <h4>Technical Skills</h4>
-                                        {renderTechnicalSkills(skill["Technical Skills"])}
+                                        <h4>Developer Skills</h4>
+                                        {renderDeveloperSkills(skill["Developer Skills"])}
+                                    </div>
+                                )}
+                                {skill["Software & Tools"] && (
+                                    <div className="about-skill-content">
+                                        <h4>Software & Tools</h4>
+                                        {renderSoftwareAndTools(skill["Software & Tools"])}
                                     </div>
                                 )}
                                 {skill.languages && (
@@ -130,7 +195,9 @@ function About() {
 
                 {/* Experience */}
                 <section className="about-experience">
-                    <h3>Experience</h3>
+                    <div className="about-experience-header">
+                        <h3>Experience</h3>
+                    </div>
                     <div className="about-experience-grid">
                         {aboutData.experience.map((exp, index) => (
                             <div className="about-experience-box" key={index}>
