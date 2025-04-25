@@ -14,7 +14,7 @@
         "Client": ["Call Me Guide Tourism Service Inc"],
         "Year": " 2023",
         "Category": "Tourism",
-        "ProjectLink": "https://github.com/coder-mahdi/redtattoo",
+        "ProjectLink": "https://github.com/coder-mahdi/callmeguide-front",
         "Live Project": "https://callmeguide.com"
       },
 
@@ -94,30 +94,36 @@
       "image": "/images/projects/pacificpeak.jpg",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
-      "detailedDescription": {
-        "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
+        "overview": "This is a new business project built with WordPress. The project is currently ongoing and has not been fully launched yet. Pacific Peaks offers adventure tours ranging from one-day to multi-day options in all four seasons with various packages.",
+        "details": {
+        "Client": ["Pacific Peaks Inc"],
+        "Year": " 2024",
+        "Category": "Tourism",
+        "ProjectLink": "https://github.com/htpwebdesign/pacificpeak-theme",
+        "Live Project": "https://pacificpeak.bcitwebdeveloper.ca"
+      },
         "sections": {
           "Technologies": [
-            "React: Used for dynamic component management and to create an interactive user experience.",
-            "SASS: Applied for clean, maintainable, and responsive styling.",
-            "SiteGround: The website is hosted on SiteGround, ensuring reliable performance and uptime.",
-            "Vite: Deployed with Vite for fast build times and efficient development."
+            "WordPress and WooCommerce: The platform is built using these powerful tools for flexibility and e-commerce functionality.",
+            "Custom WordPress theme: A fully customized theme developed to meet the unique needs of the business.",
+            "PHP: Custom backend code written to manage specific functionalities of the site.",
+            "SASS: Applied for a more structured and maintainable approach to styling.",
+            "Security and SEO plugins: Integrated to ensure optimal performance and security."
           ],
           "Features": [
-            "Project Showcase: Includes an interactive slider to showcase projects with smooth navigation.",
+            "Booking System: Integrated booking functionality with availability calendars for real-time tour scheduling.",
+            "Interactive Maps: Users can view tour routes and destinations via interactive maps.",
             "Responsive Design: Ensures compatibility across all devices, from desktops to smartphones.",
-            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience.",
-            "JSON-based Content: All content is dynamically sourced from JSON files, allowing easy updates without modifying the code."
+            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience"
           ],
           "Contributions": [
-            "Designed and developed the entire site structure and layout.",
-            "Created custom React components for dynamic and reusable UI elements.",
-            "Styled all UI elements using SASS, ensuring design consistency and responsiveness.",
-            "Implemented a JSON-based content management system for easier future updates.",
-            "Ensured cross-browser compatibility and optimized performance for faster load times."
+            "Collaborated in the initial planning phase of the project",
+            "Focused on backend development, writing custom PHP code for the WordPress theme",
+            "Worked extensively on styling the pages using SASS to ensure a polished and consistent design",
+            "Contributed to the integration of WooCommerce and other WordPress functionalities",
+            "Helped implement SEO and security plugins to enhance the performance and safety of the website"
           ]
         }
-      }
     },
 
     {
@@ -126,30 +132,34 @@
       "image": "/images/projects/35mm-app.jpg",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
-      "detailedDescription": {
-        "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
+      "overview": "This a dynamic movie database built with modern technologies to offer a smooth and enjoyable experience for cinema lovers.",
+      "details": {
+        "Client": ["BCIT, Student Project"],
+        "Year": " 2024",
+        "Category": "Movie Database",
+        "ProjectLink": "https://github.com/marcs12/react-movie-project",
+        "Live Project": "https://mahdiroozbahani.com/35mm-app"
+      },
         "sections": {
           "Technologies": [
-            "React: Used for dynamic component management and to create an interactive user experience.",
-            "SASS: Applied for clean, maintainable, and responsive styling.",
-            "SiteGround: The website is hosted on SiteGround, ensuring reliable performance and uptime.",
-            "Vite: Deployed with Vite for fast build times and efficient development."
+            "React: Used for component management",
+            "Vite: Utilized for fast builds",
+            "SASS: Applied for advanced styling",
+            "Gulp: Utilized to ensure consistent breakpoints and alignment."
           ],
           "Features": [
             "Project Showcase: Includes an interactive slider to showcase projects with smooth navigation.",
             "Responsive Design: Ensures compatibility across all devices, from desktops to smartphones.",
-            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience.",
-            "JSON-based Content: All content is dynamically sourced from JSON files, allowing easy updates without modifying the code."
+            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience."
           ],
           "Contributions": [
             "Designed and developed the entire site structure and layout.",
             "Created custom React components for dynamic and reusable UI elements.",
             "Styled all UI elements using SASS, ensuring design consistency and responsiveness.",
-            "Implemented a JSON-based content management system for easier future updates.",
             "Ensured cross-browser compatibility and optimized performance for faster load times."
           ]
         }
-      }
+    
     },
 
     {

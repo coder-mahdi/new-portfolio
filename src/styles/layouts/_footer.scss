@@ -16,7 +16,7 @@ footer {
   .social-links {
     display: flex;
     gap: map-get($mobile-spacing, gap);
-    margin-bottom: map-get($mobile-spacing, margin);
+    margin-bottom: map-get($mobile-spacing, section-margin);
 
     a {
       color: #ffffff;
