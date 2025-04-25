@@ -17,33 +17,38 @@
   
       "skills": [
         {
-          "soft": "writing, Communication"
+          "soft": "Strategic Communication, Public Relations, Media Relations, Stakeholder Engagement, Event Planning, Scheduling, Coordination, Effective Stakeholder Management, Adaptability, Problem-Solving, Attention to Detail, Multitasking, Teamwork"
         },
         {
-          "Technical Skills": "HTML, JavaScript, PHP, React, Laravel, jQuery, WordPress(custom theme development), Sass, CSS, Tailwind CSS, WooCommerce, Shopify ,Headless CMS, MySQL, Github, VS Code, Figma"
+          "Developer Skills": "HTML, JavaScript, PHP, React, Laravel, jQuery, WordPress(custom theme development), Sass, CSS, Tailwind CSS, WooCommerce, Shopify ,Headless CMS, MySQL, Github, VS Code"
         },
         {
-          "languages": "English, Persian"
+          "Software & Tools": "Adobe Photoshop, Premiere Pro, InDesign, Illustrator, Lightroom, Figma, Adobe XD, Canva, Figma"
         },
         {
-          "languages": "English, French"
+          "languages": "Persian (Native), English (Fluent), Arabic (Beginner), French (Beginner)"
         }
 
       ],
   
       "experience": [
         {
-          "title": "Web Developer",
+          "title": "Co-founder & Communication Manage | Call Me Guide Tourism Services Inc.",
+          "year": "2022 - PRESENT"
+        },
+        {
+          "title": "Freelance Web Developer & Designer",
           "year": "2023 - PRESENT"
         },
         {
-          "title": "Web Developer",
-          "year": "2023 - PRESENT"
+          "title": "Communication Manager | Safari Icon Limited",
+          "year": "2021 - 2022"
         },
         {
-          "title": "Web Developer",
-          "year": "2023 - PRESENT"
+          "title": "Journalist",
+          "year": "2015 - 2021"
         }
+
       ]
     }
   
