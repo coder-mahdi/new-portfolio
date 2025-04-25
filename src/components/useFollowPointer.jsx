@@ -10,8 +10,8 @@ export function useFollowPointer(ref) {
     const y = useSpring(yPoint, spring);
 
     useEffect(() => {
+        // Check if device is touch-enabled
         const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-
         if (isTouchDevice) return;
 
         const handelPointerMove = ({ pageX, pageY }) => {
