@@ -5,7 +5,8 @@ function Contact() {
     const [contactData, setContactData] = useState({ hero: {},});
     
     useEffect(() => {
-        fetch('/data/contactData.json')
+        const baseUrl = window.location.origin;
+        fetch(`${baseUrl}/data/contactData.json`)
             .then(response => response.json())
             .then(data => setContactData(data))
             .catch(error => console.error("Error fetching data:", error));

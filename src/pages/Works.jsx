@@ -7,7 +7,8 @@ function Works() {
     const projectImagesRef = useRef([]);
 
     const fetchData = () => {
-        fetch('/data/worksData.json') 
+        const baseUrl = window.location.origin;
+        fetch(`${baseUrl}/data/worksData.json`) 
             .then(response => response.json())
             .then(data => {
                 const shuffled = [ ...data.projects].sort(() => 0.99 - Math.random());
