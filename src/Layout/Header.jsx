@@ -6,6 +6,7 @@ const Header = () => {
     const [headerData, setHeaderData] = useState(null);
     const [currentTime, setCurrentTime] = useState('');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const menuRef = useRef(null);
     const buttonRef = useRef(null);
     const location = useLocation();
@@ -16,10 +17,28 @@ const Header = () => {
     }, [location]);
 
     useEffect(() => {
-        fetch('/data/headerData.json')
-            .then(response => response.json())
-            .then(data => setHeaderData(data))
-            .catch(error => console.error('Error loading header data:', error));
+        const fetchHeaderData = async () => {
+            setIsLoading(true);
+            try {
+                // Using absolute path with window.location.origin
+                const baseUrl = window.location.origin;
+                const response = await fetch(`${baseUrl}/data/headerData.json`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                console.log("Loaded header data:", data);
+                setHeaderData(data);
+            } catch (error) {
+                console.error('Error loading header data:', error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchHeaderData();
     }, []);
 
     useEffect(() => {
@@ -50,9 +69,13 @@ const Header = () => {
             }
         };
 
+        // Add event listener for both mousedown and touchstart
         document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('touchstart', handleClickOutside);
+        
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('touchstart', handleClickOutside);
         };
     }, [isMenuOpen]);
 
@@ -95,6 +118,21 @@ const Header = () => {
         return false;
     };
 
+    if (isLoading) {
+        return (
+            <header className="header">
+                <div className="header-left">
+                    <div className="local-time">LOCAL/{currentTime}</div>
+                </div>
+                <div className="header-right">
+                    <button className="btn menu-toggle">
+                        <span>Menu</span>
+                    </button>
+                </div>
+            </header>
+        );
+    }
+
     if (!headerData) return null;
 
     return (
@@ -107,11 +145,20 @@ const Header = () => {
             </div>
 
             <div className="header-right">
-                <button className="btn menu-toggle" onClick={toggleMenu} ref={buttonRef}>
+                <button 
+                    className="btn menu-toggle" 
+                    onClick={toggleMenu} 
+                    ref={buttonRef}
+                    aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                >
                     <span>{isMenuOpen ? 'Close' : 'Menu'}</span>
                 </button>
                 
-                <nav className={`main-nav menu-box ${isMenuOpen ? 'active' : ''}`} ref={menuRef}>
+                <nav 
+                    className={`main-nav ${isMenuOpen ? 'active' : ''}`} 
+                    ref={menuRef}
+                    aria-hidden={!isMenuOpen}
+                >
                     <div className="nav-links">
                         {headerData.navLink.map((link, index) => {
                             const isCurrentPage = link.name === "Education" 
