@@ -96,7 +96,6 @@ function Home() {
         <Layout>
             <div className="main-content">
                 <div className="hero-section">
-                    <div className="location-text">{homeData.hero?.location || ""}</div>
                     <div className="hero-container">
                         <div className="hero-content">
                             <h1>{homeData.hero?.title || "loading..."}</h1>
@@ -105,6 +104,7 @@ function Home() {
                                 <span>Learn More</span>
                             </Link>
                         </div>
+                        <div className="location-text">{homeData.hero?.location || ""}</div>
                     </div>
 
                     <div className="hero-image-container">
