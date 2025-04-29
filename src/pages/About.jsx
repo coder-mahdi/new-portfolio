@@ -21,7 +21,8 @@ function About() {
     }, []);
 
     useEffect(() => {
-        fetch('/data/aboutData.json')
+        const baseUrl = window.location.origin;
+        fetch(`${baseUrl}/data/aboutData.json`)
             .then(response => response.json())
             .then(data => {
                 console.log("Loaded data:", data);

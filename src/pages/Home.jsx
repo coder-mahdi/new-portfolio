@@ -26,7 +26,10 @@ function Home() {
     const location = useLocation();
 
     useEffect(() => {
-        fetch('/data/homeData.json')
+        // Using absolute path with window.location.origin
+        const baseUrl = window.location.origin;
+        
+        fetch(`${baseUrl}/data/homeData.json`)
             .then(response => response.json())
             .then(data => {
                 console.log("Loaded homeData:", data);
@@ -34,7 +37,7 @@ function Home() {
             })
             .catch(error => console.error("Error fetching data:", error));
             
-        fetch('/data/worksData.json')
+        fetch(`${baseUrl}/data/worksData.json`)
             .then(response => response.json())
             .then(data => setWorksData(data))
             .catch(error => console.error("Error fetching works data:", error));
