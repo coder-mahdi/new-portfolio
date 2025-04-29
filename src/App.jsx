@@ -8,13 +8,13 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router basename="/">
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/works" element={<Works />} />
         <Route path="/singlework/:id" element={<Singlework />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
