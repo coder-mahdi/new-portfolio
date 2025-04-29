@@ -96,14 +96,17 @@ function Home() {
         <Layout>
             <div className="main-content">
                 <div className="hero-section">
-                    <div className="hero-content">
-                        <h1>{homeData.hero?.title || "loading..."}</h1>
-                        <h2>{homeData.hero?.subtitle || ""}</h2>
-                        <Link to="/about" className="learn-more-btn">
-                            <span>Learn More</span>
-                        </Link>
-                    </div>
                     <div className="location-text">{homeData.hero?.location || ""}</div>
+                    <div className="hero-container">
+                        <div className="hero-content">
+                            <h1>{homeData.hero?.title || "loading..."}</h1>
+                            <h2>{homeData.hero?.subtitle || ""}</h2>
+                            <Link to="/about" className="learn-more-btn">
+                                <span>Learn More</span>
+                            </Link>
+                        </div>
+                    </div>
+
                     <div className="hero-image-container">
                         {console.log("Image path in render:", homeData.hero?.image)}
                         <img 
