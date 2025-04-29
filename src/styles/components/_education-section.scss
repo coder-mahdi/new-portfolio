@@ -32,7 +32,7 @@
     }
 
     p {
-      font-size: 16px;
+      font-size: 24px;
       line-height: 1.6;
       color: #666;
       margin-bottom: 2rem;
@@ -152,8 +152,20 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .education-section {
+
+  .education-content {
+    p {
+      font-size: 20px;
+    }
+  }
+}
+}
+  
 @media screen and (max-width: 1023px) and (min-width: 768px) {
   .education-section {
+    
     .education-list {
       .education-container {
         .education-items {
@@ -204,7 +216,7 @@
       }
 
       p {
-        font-size: 20px;
+        font-size: 16px;
         margin-bottom: 1.5rem;
       }
     }
