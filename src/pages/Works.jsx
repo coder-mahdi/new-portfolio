@@ -4,25 +4,40 @@ import Layout from '../Layout/Layout.jsx';
 
 function Works() {
     const [worksData, setWorksData] = useState({ title: "", explanation: "", projects: [] });
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
     const projectImagesRef = useRef([]);
 
-    const fetchData = () => {
-        const baseUrl = window.location.origin;
-        fetch(`${baseUrl}/data/worksData.json`) 
-            .then(response => response.json())
-            .then(data => {
-                const shuffled = [ ...data.projects].sort(() => 0.99 - Math.random());
-                const randomProjects = shuffled.slice(0, 4);
+    const fetchData = async () => {
+        setIsLoading(true);
+        setError(null);
+        
+        try {
+            const baseUrl = window.location.origin;
+            const response = await fetch(`${baseUrl}/data/worksData.json`);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            const shuffled = [ ...data.projects].sort(() => 0.99 - Math.random());
+            const randomProjects = shuffled.slice(0, 4);
 
-                setWorksData({...data, projects: randomProjects});
-            })
-            .catch(error => console.error("Error fetching data:", error));
+            setWorksData({...data, projects: randomProjects});
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            setError("Failed to load data. Please try refreshing the page.");
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     useEffect(() => {
         fetchData();
-        const intervalId = setInterval(fetchData, 5000);
-        return () => clearInterval(intervalId);
+        // Remove the interval to prevent unnecessary data fetching
+        // const intervalId = setInterval(fetchData, 5000);
+        // return () => clearInterval(intervalId);
     }, []); 
 
     useEffect(() => {
@@ -63,6 +78,32 @@ function Works() {
     };
 
     const { firstLine, secondLine } = splitTitle(worksData.title);
+
+    if (isLoading) {
+        return (
+            <Layout>
+                <div className="main-content">
+                    <div className="loading-container">
+                        <h2>Loading...</h2>
+                    </div>
+                </div>
+            </Layout>
+        );
+    }
+
+    if (error) {
+        return (
+            <Layout>
+                <div className="main-content">
+                    <div className="error-container">
+                        <h2>Error</h2>
+                        <p>{error}</p>
+                        <button onClick={() => window.location.reload()}>Refresh Page</button>
+                    </div>
+                </div>
+            </Layout>
+        );
+    }
 
     return (
         <Layout> 
