@@ -11,6 +11,16 @@
   min-height: 100vh;
   position: relative;
 
+  .hero-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0; 
+    padding: 0 1rem;
+  }
+
   .hero-section {
     width: 100%;
     display: flex;
@@ -100,13 +110,16 @@
   }
 
   .location-text {
-    padding: 1rem;
+    display: flex;
     align-self: flex-start;
     font-size: 12px;
     color: rgb(163, 163, 163);
-    margin-bottom: 1rem;
-    position: relative;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
     z-index: 2;
+    font-family: "Roboto Mono", monospace;
+    letter-spacing: 0.5px;
   }
 
   .hero-image-container {
@@ -135,6 +148,12 @@
     .hero-image-container {
       height: 60vh;
     }
+
+    .location-text {
+      font-size: 12px;
+      bottom: 1rem;
+      left: 1rem;
+    }
   }
 }
 
@@ -153,6 +172,12 @@
     .hero-image-container {
       height: 70vh;
     }
+
+    .location-text {
+      font-size: 14px;
+      bottom: 1.5rem;
+      left: 1.5rem;
+    }
   }
 }
 
@@ -165,7 +190,7 @@
       gap: 1rem;
       margin-bottom: 6rem;
       margin-top: 6rem;
-      max-width: 90%;
+      max-width: 100%;
 
       h1 {
         font-size: 72px;
@@ -182,7 +207,8 @@
 
     .location-text {
       font-size: 14px;
-      margin-bottom: 2rem;
+      bottom: 2rem;
+      left: 2rem;
     }
 
     .hero-image-container {
@@ -199,10 +225,11 @@
 
     .hero-section {
       .location-text {
+        position: absolute;
+        z-index: 3;
+        bottom: 2rem;
+        left: 2rem;
         font-size: 14px;
-        margin-bottom: 2rem;
-        padding-left: 3rem;
-        padding-right: 3rem;
       }
     }
 

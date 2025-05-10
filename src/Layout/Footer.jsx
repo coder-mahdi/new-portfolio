@@ -17,8 +17,8 @@ function Footer() {
     return (
         <footer>
             <div className="social-links">
-                <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/roozbahani.mahdi/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.linkedin.com/in/mahdi-roozbahani/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
             <h2>{footerData.title}</h2>
             <h3>{footerData.subtitle}</h3>

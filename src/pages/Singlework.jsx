@@ -8,7 +8,8 @@ function SingleWork() {
     const [project, setProject] = useState(null);
 
     useEffect(() => {
-        fetch('/data/worksData.json')
+        const baseUrl = window.location.origin;
+        fetch(`${baseUrl}/data/worksData.json`)
             .then(response => response.json())
             .then(data => {
                 const foundProject = data.projects.find(p => p.id === Number(id));

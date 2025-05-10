@@ -26,7 +26,10 @@ function Home() {
     const location = useLocation();
 
     useEffect(() => {
-        fetch('/data/homeData.json')
+        // Using absolute path with window.location.origin
+        const baseUrl = window.location.origin;
+        
+        fetch(`${baseUrl}/data/homeData.json`)
             .then(response => response.json())
             .then(data => {
                 console.log("Loaded homeData:", data);
@@ -34,7 +37,7 @@ function Home() {
             })
             .catch(error => console.error("Error fetching data:", error));
             
-        fetch('/data/worksData.json')
+        fetch(`${baseUrl}/data/worksData.json`)
             .then(response => response.json())
             .then(data => setWorksData(data))
             .catch(error => console.error("Error fetching works data:", error));
@@ -96,14 +99,17 @@ function Home() {
         <Layout>
             <div className="main-content">
                 <div className="hero-section">
-                    <div className="hero-content">
-                        <h1>{homeData.hero?.title || "loading..."}</h1>
-                        <h2>{homeData.hero?.subtitle || ""}</h2>
-                        <Link to="/about" className="learn-more-btn">
-                            <span>Learn More</span>
-                        </Link>
+                    <div className="hero-container">
+                        <div className="hero-content">
+                            <h1>{homeData.hero?.title || "loading..."}</h1>
+                            <h2>{homeData.hero?.subtitle || ""}</h2>
+                            <Link to="/about" className="learn-more-btn">
+                                <span>Learn More</span>
+                            </Link>
+                        </div>
+                        <div className="location-text">{homeData.hero?.location || ""}</div>
                     </div>
-                    <div className="location-text">{homeData.hero?.location || ""}</div>
+
                     <div className="hero-image-container">
                         {console.log("Image path in render:", homeData.hero?.image)}
                         <img 

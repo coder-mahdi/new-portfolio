@@ -12,6 +12,9 @@ function About() {
         experience: []
     });
     
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+    
     const heroImageRef = useRef(null);
     const galleryImageRefs = useRef([]);
 
@@ -21,27 +24,31 @@ function About() {
     }, []);
 
     useEffect(() => {
-        fetch('/data/aboutData.json')
-            .then(response => response.json())
-            .then(data => {
-                console.log("Loaded data:", data);
-                console.log("Skills array:", data.skills);
-                if (data.skills && data.skills.length > 0) {
-                    console.log("First skill object keys:", Object.keys(data.skills[0]));
-                    console.log("Second skill object keys:", Object.keys(data.skills[1]));
-                    console.log("Third skill object keys:", Object.keys(data.skills[2]));
-                    console.log("Fourth skill object keys:", Object.keys(data.skills[3]));
-                    
-                    // Check if the third skill object has the Software & Tools key
-                    if (data.skills[2]) {
-                        console.log("Third skill object:", data.skills[2]);
-                        console.log("Has 'Software & Tools' key:", data.skills[2].hasOwnProperty("Software & Tools"));
-                        console.log("Value of 'Software & Tools' key:", data.skills[2]["Software & Tools"]);
-                    }
+        const fetchData = async () => {
+            setIsLoading(true);
+            setError(null);
+            
+            try {
+                // Using absolute path with window.location.origin
+                const baseUrl = window.location.origin;
+                const response = await fetch(`${baseUrl}/data/aboutData.json`);
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
+                
+                const data = await response.json();
+                console.log("Loaded about data:", data);
                 setAboutData(data);
-            })
-            .catch(error => console.error("Error fetching data:", error));
+            } catch (error) {
+                console.error("Error fetching about data:", error);
+                setError("Failed to load data. Please try refreshing the page.");
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchData();
     }, []);
 
     useEffect(() => {
@@ -111,6 +118,32 @@ function About() {
             </div>
         );
     };
+
+    if (isLoading) {
+        return (
+            <Layout>
+                <div className="about-main-content">
+                    <div className="loading-container">
+                        <h2>Loading...</h2>
+                    </div>
+                </div>
+            </Layout>
+        );
+    }
+
+    if (error) {
+        return (
+            <Layout>
+                <div className="about-main-content">
+                    <div className="error-container">
+                        <h2>Error</h2>
+                        <p>{error}</p>
+                        <button onClick={() => window.location.reload()}>Refresh Page</button>
+                    </div>
+                </div>
+            </Layout>
+        );
+    }
 
     return (
         <Layout>
