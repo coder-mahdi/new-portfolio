@@ -44,6 +44,49 @@
 
     {
       "id": 2,
+      "name": "Vansun Studio Website",
+      "image": "/images/projects/vansunstudio.jpg",
+      "alt": "Screenshot of Vansun Studio booking website",
+      "shortDescription": "A fully custom booking website for a piercing and tattoo studio, built from scratch with React and WordPress headless CMS.",
+      "overview": "Vansun Studio is a fully responsive, feature-rich booking platform for a Vancouver-based tattoo and piercing studio. The website is built entirely from scratch, integrating a custom-built React frontend with WordPress as a headless CMS and WooCommerce for appointment handling. It includes advanced features such as a consent form, custom booking logic, and smooth animations to enhance user experience.",
+      "details": {
+        "Client": ["Vansun Studio"],
+        "Year": "2025",
+        "Category": "Studio Booking Platform",
+        "ProjectLink": "https://github.com/coder-mahdi/vansun",
+        "Live Project": "https://vansunstudio.com"
+      },
+      "sections": {
+        "Technologies": [
+          "React: Used for creating reusable and dynamic UI components.",
+          "WordPress Headless CMS: Provides content management via REST API.",
+          "WooCommerce: Manages booking products and handles checkout processes.",
+          "ACF (Advanced Custom Fields): Powers dynamic availability per service.",
+          "SASS: Enables scalable and modular styling.",
+          "Framer Motion: Adds smooth and modern UI animations."
+        ],
+        "Features": [
+          "Custom Booking System: Fully developed booking workflow with availability slots, connected directly to WooCommerce products.",
+          "Consent Form Integration: A digital consent form tailored for the studio’s service flow.",
+          "Admin-Friendly CMS: Studio content, services, and availability managed easily via WordPress backend.",
+          "Responsive & Mobile-First: Optimized UX for all screen sizes.",
+          "Enhanced Animations: Clean transitions and hover effects enhance the feel.",
+          "SEO & Performance: Optimized loading speed and metadata for search engines."
+        ],
+        "Contributions": [
+          "Designed and developed the entire project from scratch, from UX/UI to full functionality.",
+          "Wrote all frontend and backend integration logic using React and REST API calls.",
+          "Built WooCommerce booking logic, including custom functions for availability and validation.",
+          "Integrated ACF for dynamic service time slots and synced it with React UI components.",
+          "Implemented a custom digital consent form workflow integrated into the booking system.",
+          "Handled full deployment and post-launch updates, ensuring performance and stability."
+        ]
+      }
+    },
+    
+
+    {
+      "id": 3,
       "name": "Redtattoo",
       "image": "/images/projects/redtattoo.jpg",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
@@ -89,44 +132,6 @@
     },
 
     {
-      "id": 3,
-      "name": "pacificpeak",
-      "image": "/images/projects/pacificpeak.jpg",
-      "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
-      "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
-        "overview": "This is a new business project built with WordPress. The project is currently ongoing and has not been fully launched yet. Pacific Peaks offers adventure tours ranging from one-day to multi-day options in all four seasons with various packages.",
-        "details": {
-        "Client": ["Pacific Peaks Inc"],
-        "Year": " 2024",
-        "Category": "Tourism",
-        "ProjectLink": "https://github.com/htpwebdesign/pacificpeak-theme",
-        "Live Project": "https://pacificpeak.bcitwebdeveloper.ca"
-      },
-        "sections": {
-          "Technologies": [
-            "WordPress and WooCommerce: The platform is built using these powerful tools for flexibility and e-commerce functionality.",
-            "Custom WordPress theme: A fully customized theme developed to meet the unique needs of the business.",
-            "PHP: Custom backend code written to manage specific functionalities of the site.",
-            "SASS: Applied for a more structured and maintainable approach to styling.",
-            "Security and SEO plugins: Integrated to ensure optimal performance and security."
-          ],
-          "Features": [
-            "Booking System: Integrated booking functionality with availability calendars for real-time tour scheduling.",
-            "Interactive Maps: Users can view tour routes and destinations via interactive maps.",
-            "Responsive Design: Ensures compatibility across all devices, from desktops to smartphones.",
-            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience"
-          ],
-          "Contributions": [
-            "Collaborated in the initial planning phase of the project",
-            "Focused on backend development, writing custom PHP code for the WordPress theme",
-            "Worked extensively on styling the pages using SASS to ensure a polished and consistent design",
-            "Contributed to the integration of WooCommerce and other WordPress functionalities",
-            "Helped implement SEO and security plugins to enhance the performance and safety of the website"
-          ]
-        }
-    },
-
-    {
       "id": 4,
       "name": "35mm-app",
       "image": "/images/projects/35mm-app.jpg",
@@ -164,34 +169,40 @@
 
     {
       "id": 5,
-      "name": "Vansun",
-      "image": "/images/projects/callmeguide.jpg",
+      "name": "pacificpeak",
+      "image": "/images/projects/pacificpeak.jpg",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
-      "detailedDescription": {
-        "overview": "This portfolio website was built using React to showcase my projects, skills, and experience in front-end development. It serves as an interactive platform for potential clients and employers to learn more about my work.",
+        "overview": "This is a new business project built with WordPress. The project is currently ongoing and has not been fully launched yet. Pacific Peaks offers adventure tours ranging from one-day to multi-day options in all four seasons with various packages.",
+        "details": {
+        "Client": ["Pacific Peaks Inc"],
+        "Year": " 2024",
+        "Category": "Tourism",
+        "ProjectLink": "https://github.com/htpwebdesign/pacificpeak-theme",
+        "Live Project": "https://pacificpeak.bcitwebdeveloper.ca"
+      },
         "sections": {
           "Technologies": [
-            "React: Used for dynamic component management and to create an interactive user experience.",
-            "SASS: Applied for clean, maintainable, and responsive styling.",
-            "SiteGround: The website is hosted on SiteGround, ensuring reliable performance and uptime.",
-            "Vite: Deployed with Vite for fast build times and efficient development."
+            "WordPress and WooCommerce: The platform is built using these powerful tools for flexibility and e-commerce functionality.",
+            "Custom WordPress theme: A fully customized theme developed to meet the unique needs of the business.",
+            "PHP: Custom backend code written to manage specific functionalities of the site.",
+            "SASS: Applied for a more structured and maintainable approach to styling.",
+            "Security and SEO plugins: Integrated to ensure optimal performance and security."
           ],
           "Features": [
-            "Project Showcase: Includes an interactive slider to showcase projects with smooth navigation.",
+            "Booking System: Integrated booking functionality with availability calendars for real-time tour scheduling.",
+            "Interactive Maps: Users can view tour routes and destinations via interactive maps.",
             "Responsive Design: Ensures compatibility across all devices, from desktops to smartphones.",
-            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience.",
-            "JSON-based Content: All content is dynamically sourced from JSON files, allowing easy updates without modifying the code."
+            "Animations: Smooth text and image animations powered by CSS and Framer Motion for enhanced user experience"
           ],
           "Contributions": [
-            "Designed and developed the entire site structure and layout.",
-            "Created custom React components for dynamic and reusable UI elements.",
-            "Styled all UI elements using SASS, ensuring design consistency and responsiveness.",
-            "Implemented a JSON-based content management system for easier future updates.",
-            "Ensured cross-browser compatibility and optimized performance for faster load times."
+            "Collaborated in the initial planning phase of the project",
+            "Focused on backend development, writing custom PHP code for the WordPress theme",
+            "Worked extensively on styling the pages using SASS to ensure a polished and consistent design",
+            "Contributed to the integration of WooCommerce and other WordPress functionalities",
+            "Helped implement SEO and security plugins to enhance the performance and safety of the website"
           ]
         }
-      }
     }
 
 
