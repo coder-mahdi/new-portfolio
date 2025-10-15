@@ -143,6 +143,12 @@
   .education-section {
     padding-left: 3rem;
     padding-right: 3rem;
+
+    .education-content {
+      p {
+        font-size: 26px;
+      }
+    }
   }
 }
 

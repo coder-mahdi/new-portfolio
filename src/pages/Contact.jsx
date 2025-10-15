@@ -7,6 +7,11 @@ function Contact() {
     const [error, setError] = useState(null);
     
     useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true);
             setError(null);

@@ -34,6 +34,11 @@ function Works() {
     };
 
     useEffect(() => {
+        // Scroll to top when component mounts
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         fetchData();
         // Remove the interval to prevent unnecessary data fetching
         // const intervalId = setInterval(fetchData, 5000);
