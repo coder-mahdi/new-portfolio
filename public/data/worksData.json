@@ -3,6 +3,47 @@
   "explanation": "Here you'll find a selection of projects that represent my journey as a web developer with more than three years of experience. This portfolio includes both freelance work and collaborations with companies, all centered around modern front-end and CMS development. My focus areas include React, JavaScript, Sass, WordPress (including custom theme development with PHP), and headless CMS architecture. Each project reflects my commitment to building responsive, user-friendly, and technically solid digital experiences.",
   "projects": [
     {
+      "id": 6,
+      "name": "Electricity Forum",
+      "image": "/images/projects/electricityforum.jpg",
+      "alt": "Screenshot of Electricity Forum website",
+      "shortDescription": "A professional platform for electrical industry discussions, resources, and community engagement.",
+      "overview": "Electricity Forum is a comprehensive web platform designed for electrical engineers, technicians, and industry professionals. The site serves as a hub for technical discussions, industry news, and educational resources. Built with a focus on performance and user experience, the platform facilitates knowledge sharing and professional networking within the electrical engineering community.",
+      "details": {
+        "Client": ["Electricity Forum"],
+        "Year": "2023-2024",
+        "Category": "Professional Community Platform",
+        "ProjectLink": "https://github.com/electricityforum",
+        "Live Project": "https://electricityforum.com"
+      },
+      "sections": {
+        "Technologies": [
+          "PHP: Backend functionality and server-side logic for dynamic content management",
+          "JavaScript: Enhanced interactivity and modern UI features",
+          "CSS/SASS: Modern styling with responsive design principles",
+          "HTML5: Semantic markup for improved accessibility and SEO",
+          "MySQL: Database management for user content and forum data"
+        ],
+        "Features": [
+          "Dynamic content management system for articles and discussions",
+          "Responsive design optimized for all devices and screen sizes",
+          "Modern UI with enhanced user experience and intuitive navigation",
+          "Optimized front-end performance for fast page loads",
+          "SEO-friendly structure for improved search engine visibility"
+        ],
+        "Contributions": [
+          "Developed and maintained front-end components using modern JavaScript and CSS",
+          "Implemented PHP-based functionality for the company's website backend",
+          "Created new web pages with focus on user experience and accessibility",
+          "Enhanced UI with modern CSS techniques and responsive design patterns",
+          "Optimized front-end performance through code optimization and best practices",
+          "Collaborated with the team to implement new features and improvements",
+          "Ensured cross-browser compatibility and consistent user experience"
+        ]
+      }
+    },
+
+    {
       "id": 1,
       "name": "Call Me Guide",
       "image": "/images/projects/callmeguide.jpg",

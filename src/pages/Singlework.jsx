@@ -7,6 +7,11 @@ function SingleWork() {
     const { id } = useParams();
     const [project, setProject] = useState(null);
 
+    // Scroll to top when component mounts or id changes
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
+
     useEffect(() => {
         const baseUrl = window.location.origin;
         fetch(`${baseUrl}/data/worksData.json`)
