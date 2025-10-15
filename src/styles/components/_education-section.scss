@@ -149,6 +149,24 @@
         font-size: 26px;
       }
     }
+
+    .education-list {
+      .education-container {
+        .education-items {
+          .education-row {
+            .content-box {
+              h3 {
+                font-size: 20px;
+              }
+
+              p {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 

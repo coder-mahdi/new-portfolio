@@ -172,7 +172,7 @@ footer {
       margin-bottom: map-get(vars.$desktop-spacing, margin);
 
       a {
-        font-size: map-get(vars.$desktop-font-sizes, button);
+        font-size: 16px;
       }
     }
 
@@ -189,7 +189,7 @@ footer {
       margin-bottom: map-get(vars.$desktop-spacing, margin);
 
       a {
-        font-size: map-get(vars.$desktop-font-sizes, button);
+        font-size: 16px;
       }
     }
 
@@ -197,11 +197,11 @@ footer {
       padding: map-get(vars.$desktop-spacing, padding);
 
       p {
-        font-size: map-get(vars.$desktop-font-sizes, small-text);
+        font-size: 16px;
       }
 
       button {
-        font-size: map-get(vars.$desktop-font-sizes, button);
+        font-size: 16px;
       }
     }
   }

@@ -336,12 +336,16 @@
 
     &__details-label,
     &__details-value {
-      font-size: map-get($desktop-font-sizes, text);
+      font-size: 26px;
     }
 
     &__image-container {
       height: 100%;
       margin-top: 4rem;
+    }
+
+    &__see-more-link {
+      font-size: 16px;
     }
 
     .section-container {
