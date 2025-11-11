@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 function Work({ homeData, worksData, projectItemsRef, projectImagesRef }) {
-    // Get the latest 4 projects from worksData
-    const latestProjects = worksData.projects.slice(0, 4);
+    // Get the latest 5 projects from worksData
+    const latestProjects = worksData.projects.slice(0, 5);
 
     // Update projectItemsRef and projectImagesRef when latestProjects changes
     useEffect(() => {

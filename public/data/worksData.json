@@ -3,6 +3,42 @@
   "explanation": "Here you'll find a selection of projects that represent my journey as a web developer with more than three years of experience. This portfolio includes both freelance work and collaborations with companies, all centered around modern front-end and CMS development. My focus areas include React, JavaScript, Sass, WordPress (including custom theme development with PHP), and headless CMS architecture. Each project reflects my commitment to building responsive, user-friendly, and technically solid digital experiences.",
   "projects": [
     {
+      "id": 7,
+      "name": "Granville Tattoo",
+      "image": "/images/projects/granvilletattoo.jpg",
+      "alt": "Screenshot of Granville Tattoo headless website",
+      "shortDescription": "Granville Tattoo: A headless Next.js and WordPress experience for a Vancouver studio.",
+      "overview": "Granville Tattoo is a headless web experience built with Next.js on the front end and WordPress powering content through the REST API. The architecture balances high-performance rendering with flexible content management, pairing modern UI interactions with a tightly integrated booking workflow.",
+      "details": {
+        "Client": ["Granville Tattoo"],
+        "Year": "2025",
+        "Category": "Tattoo Studio Website",
+        "ProjectLink": "https://github.com/coder-mahdi/granvilletattoo-front",
+        "Live Project": "https://granvilletattoo.ca/"
+      },
+      "sections": {
+        "Technologies": [
+          "Next.js: Front-end framework for fast, SEO-ready rendering and routing.",
+          "WordPress Headless CMS: Delivers structured content via the REST API.",
+          "Custom WordPress Plugin: Powers the booking workflow, including appointments and confirmations.",
+          "SASS Modules: Provides scalable styling with studio-specific design system."
+        ],
+        "Features": [
+          "Dynamic content delivery from WordPress without sacrificing front-end performance.",
+          "Real-time booking system supporting appointment requests, artist scheduling, and automated confirmations.",
+          "Artist and portfolio galleries tailored for each tattooist.",
+          "High-performance rendering with image optimization and caching."
+        ],
+        "Contributions": [
+          "Architected the headless stack, connecting Next.js with WordPress REST endpoints.",
+          "Developed the custom booking plugin managing appointments, schedules, and confirmations.",
+          "Implemented reusable UI components and animations for the portfolio and booking flows.",
+          "Handled deployment and performance optimization across the stack."
+        ]
+      }
+    },
+
+    {
       "id": 6,
       "name": "Electricity Forum",
       "image": "/images/projects/electricityforum.jpg",
@@ -11,7 +47,7 @@
       "overview": "Electricity Forum is a comprehensive web platform designed for electrical engineers, technicians, and industry professionals. The site serves as a hub for technical discussions, industry news, and educational resources. Built with a focus on performance and user experience, the platform facilitates knowledge sharing and professional networking within the electrical engineering community.",
       "details": {
         "Client": ["Electricity Forum"],
-        "Year": "2025-Present",
+        "Year": "2025",
         "Category": "Professional Community Platform",
         "ProjectLink": "https://github.com/electricityforum",
         "Live Project": "https://electricityforum.com"
