@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import Layout from '../Layout/Layout.jsx';
 
 function Works() {
     const [worksData, setWorksData] = useState({ title: "", explanation: "", projects: [] });
@@ -86,19 +85,16 @@ function Works() {
 
     if (isLoading) {
         return (
-            <Layout>
                 <div className="main-content">
                     <div className="loading-container">
                         <h2>Loading...</h2>
                     </div>
                 </div>
-            </Layout>
         );
     }
 
     if (error) {
         return (
-            <Layout>
                 <div className="main-content">
                     <div className="error-container">
                         <h2>Error</h2>
@@ -106,12 +102,10 @@ function Works() {
                         <button onClick={() => window.location.reload()}>Refresh Page</button>
                     </div>
                 </div>
-            </Layout>
         );
     }
 
     return (
-        <Layout> 
             <div className="main-content">
                 <div className='works-content'>
                     <div className='works-title'> 
@@ -144,7 +138,6 @@ function Works() {
                     ))}
                 </ul>
             </div>
-        </Layout>
     );
 }
 

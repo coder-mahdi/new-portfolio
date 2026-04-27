@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Layout from '../Layout/Layout.jsx';
 import { Link, useLocation } from 'react-router-dom';
 import Aboutsection from '../components/Aboutsection';
 import Worksection from '../components/Worksection.jsx';
@@ -96,7 +95,6 @@ function Home() {
     }, []);
 
     return (
-        <Layout>
             <div className="main-content">
                 <div className="hero-section">
                     <div className="hero-container">
@@ -137,7 +135,6 @@ function Home() {
                     educationContentRef={educationContentRef}
                 />
             </div>
-        </Layout>
     );
 }
 
