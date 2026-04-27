@@ -12,6 +12,11 @@ const Header = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
+    const closeMenu = () => {
+        setIsMenuOpen(false);
+        document.body.style.overflow = 'auto';
+    };
+
     useEffect(() => {
         console.log('Current path:', location.pathname);
     }, [location]);
@@ -64,8 +69,7 @@ const Header = () => {
                 !menuRef.current.contains(event.target) && 
                 buttonRef.current && 
                 !buttonRef.current.contains(event.target)) {
-                setIsMenuOpen(false);
-                document.body.style.overflow = 'auto';
+                closeMenu();
             }
         };
 
@@ -79,6 +83,17 @@ const Header = () => {
         };
     }, [isMenuOpen]);
 
+    useEffect(() => {
+        // Always reset menu/scroll lock after route changes on mobile.
+        closeMenu();
+    }, [location.pathname]);
+
+    useEffect(() => {
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, []);
+
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
         document.body.style.overflow = !isMenuOpen ? 'hidden' : 'auto';
@@ -86,8 +101,7 @@ const Header = () => {
 
     const handleEducationClick = (e) => {
         e.preventDefault();
-        setIsMenuOpen(false);
-        document.body.style.overflow = 'auto';
+        closeMenu();
         
         if (location.pathname !== '/') {
             // When on other pages, navigate to home with state to scroll to education
@@ -189,8 +203,7 @@ const Header = () => {
                                     data-hover-text={isCurrentPage ? 'here' : 'open'}
                                     className={isCurrentPage ? 'active' : ''}
                                     onClick={() => {
-                                        setIsMenuOpen(false);
-                                        document.body.style.overflow = 'auto';
+                                        closeMenu();
                                         // Scroll to top when navigating to a new page
                                         window.scrollTo(0, 0);
                                     }}
