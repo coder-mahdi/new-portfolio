@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Layout from '../Layout/Layout.jsx';
 import { FaGithub } from 'react-icons/fa';
 
 function SingleWork() {
@@ -25,11 +24,9 @@ function SingleWork() {
 
     if (!project) {
         return (
-            <Layout>
                 <div className="main-content">
                     <p>Loading project...</p>
                 </div>
-            </Layout>
         );
     }
 
@@ -37,7 +34,6 @@ function SingleWork() {
     const sections = details.sections || project.sections || {};
 
     return (
-        <Layout>
             <div className="main-content">
                 <div className="single-work">
                     <div className="single-work__container">
@@ -138,7 +134,6 @@ function SingleWork() {
                     </div>
                 </div>
             </div>
-        </Layout>
     );
 }
 

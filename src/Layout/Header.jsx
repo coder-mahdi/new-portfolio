@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useLayoutEffect, useRef, useCallback } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 
@@ -12,10 +12,10 @@ const Header = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const closeMenu = () => {
+    const closeMenu = useCallback(() => {
         setIsMenuOpen(false);
         document.body.style.overflow = 'auto';
-    };
+    }, []);
 
     useEffect(() => {
         console.log('Current path:', location.pathname);
@@ -81,12 +81,12 @@ const Header = () => {
             document.removeEventListener('mousedown', handleClickOutside);
             document.removeEventListener('touchstart', handleClickOutside);
         };
-    }, [isMenuOpen]);
+    }, [isMenuOpen, closeMenu]);
 
-    useEffect(() => {
-        // Always reset menu/scroll lock after route changes on mobile.
+    useLayoutEffect(() => {
+        // Close menu before paint so overlay never covers the next route (mobile Safari).
         closeMenu();
-    }, [location.pathname]);
+    }, [location.pathname, closeMenu]);
 
     useEffect(() => {
         return () => {

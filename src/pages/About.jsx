@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Layout from '../Layout/Layout.jsx';
 import SkillIcon from '../components/SkillIcon';
 
 function About() {
@@ -121,19 +120,16 @@ function About() {
 
     if (isLoading) {
         return (
-            <Layout>
                 <div className="about-main-content">
                     <div className="loading-container">
                         <h2>Loading...</h2>
                     </div>
                 </div>
-            </Layout>
         );
     }
 
     if (error) {
         return (
-            <Layout>
                 <div className="about-main-content">
                     <div className="error-container">
                         <h2>Error</h2>
@@ -141,12 +137,10 @@ function About() {
                         <button onClick={() => window.location.reload()}>Refresh Page</button>
                     </div>
                 </div>
-            </Layout>
         );
     }
 
     return (
-        <Layout>
             <div className="about-main-content">
                 <div className="about-hero-section">
                     <div className="about-hero-content">
@@ -241,7 +235,6 @@ function About() {
                     </div>
                 </section>
             </div>
-        </Layout>
     );
 }
 

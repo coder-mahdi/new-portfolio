@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Layout from '../Layout/Layout.jsx';
 
 function Contact() {
     const [contactData, setContactData] = useState({ hero: {} });
@@ -47,19 +46,16 @@ function Contact() {
 
     if (isLoading) {
         return (
-            <Layout>
                 <div className="contact">
                     <div className="loading-container">
                         <h2>Loading...</h2>
                     </div>
                 </div>
-            </Layout>
         );
     }
 
     if (error) {
         return (
-            <Layout>
                 <div className="contact">
                     <div className="error-container">
                         <h2>Error</h2>
@@ -67,12 +63,10 @@ function Contact() {
                         <button onClick={() => window.location.reload()}>Refresh Page</button>
                     </div>
                 </div>
-            </Layout>
         );
     }
 
     return (
-        <Layout>
             <div className="contact">
                 <div className="contact-content">
                     <h1>{contactData.hero.title || "loading..."}</h1>
@@ -85,7 +79,6 @@ function Contact() {
                     <img src={contactData.hero.image} alt="Hero" />
                 </div>
             </div>
-        </Layout>
     );
 }
 
