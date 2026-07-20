@@ -18,6 +18,7 @@ function Footer() {
         <footer>
             <div className="social-links">
                 <a href="https://www.linkedin.com/in/mahdi-roozbahani/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/coder-mahdi" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
             <h2>{footerData.title}</h2>
             <h3>{footerData.subtitle}</h3>

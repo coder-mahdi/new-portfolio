@@ -20,10 +20,9 @@ function Works() {
             }
             
             const data = await response.json();
-            const shuffled = [ ...data.projects].sort(() => 0.99 - Math.random());
-            const randomProjects = shuffled.slice(0, 4);
+            const selectedProjects = data.projects.slice(0, 6);
 
-            setWorksData({...data, projects: randomProjects});
+            setWorksData({...data, projects: selectedProjects});
         } catch (error) {
             console.error("Error fetching data:", error);
             setError("Failed to load data. Please try refreshing the page.");

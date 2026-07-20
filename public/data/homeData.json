@@ -18,23 +18,28 @@
     "explanation": "A selection of projects where I turned ideas into clean, working code, blending logic, creativity, and user experience. These examples reflect my background in front-end development and my ability to build responsive, dynamic interfaces using tools like React and WordPress. From styling with Sass and Tailwind to managing data flow and component logic, each project shows a piece of what I do best: crafting seamless, user-focused digital experiences.",
     "projects": [
       {
+        "name":"Vansun Studio",
+        "image": "/images/projects/vansunstudio.webp"
+      },
+      {
         "name":"Tattnix",
         "image": "/images/projects/Tattnix.webp"
+      },
+      {
+        "name":"RedTattoo",
+        "image": "/images/projects/redtattoo.webp"
+      },
+      {
+        "name":"Granville Tattoo",
+        "image": "/images/projects/granvilletattoo.webp"
       },
       {
         "name":"Call Me Guide",
         "image": "/images/projects/callmeguide.webp"
       },
-
       {
-        "name":"RedTattoo",
-         "image": "/images/projects/redtattoo.webp"
-      },
-      {
-        "name":"Game"
-      },
-      {
-        "name":"Movie data base"
+        "name":"Electricity Forum",
+        "image": "/images/projects/electricityforum.webp"
       }
     ]
 

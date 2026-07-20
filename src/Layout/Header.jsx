@@ -221,6 +221,13 @@ const Header = () => {
                         >
                             LinkedIn
                         </a>
+                        <a 
+                            href="https://github.com/coder-mahdi" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                        </a>
                     </div>
                 </nav>
             </div>

@@ -4,7 +4,8 @@
   "subtitle": "Web developer",
 
       "navLink": [
-        { "name": "Linkedin", "link": "https://www.linkedin.com/in/mahdi-roozbahani" }
+        { "name": "Linkedin", "link": "https://www.linkedin.com/in/mahdi-roozbahani" },
+        { "name": "GitHub", "link": "https://github.com/coder-mahdi" }
       ]
     }
     
