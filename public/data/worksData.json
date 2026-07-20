@@ -3,9 +3,70 @@
   "explanation": "Here you'll find a selection of projects that represent my journey as a web developer with more than three years of experience. This portfolio includes both freelance work and collaborations with companies, all centered around modern front-end and CMS development. My focus areas include React, JavaScript, Sass, WordPress (including custom theme development with PHP), and headless CMS architecture. Each project reflects my commitment to building responsive, user-friendly, and technically solid digital experiences.",
   "projects": [
     {
+      "id": 8,
+      "name": "Tattnix",
+      "image": "/images/projects/Tattnix.webp",
+      "alt": "Screenshot of Tattnix AI tattoo recommendation app",
+      "shortDescription": "An AI-powered tattoo recommendation app that generates personalized designs through an interactive quiz.",
+      "overview": "Tattnix is an AI-powered tattoo recommendation app that helps users discover personalized tattoo ideas through an interactive quiz. Based on the user’s answers, the app generates a custom tattoo design and description, provides a preview, and allows users to securely unlock and download the full result through an integrated payment system. Built for both web and mobile, Tattnix combines AI image generation, responsive design, and secure digital payments in a smooth user experience.",
+      "details": {
+        "Client": ["Tattnix"],
+        "Year": "2026",
+        "Category": "AI-Powered Mobile & Web Application",
+        "ProjectLink": "https://github.com/coder-mahdi/tattnix-app",
+        "Live Project": "https://app.tattnix.com"
+      },
+      "sections": {
+        "Technologies": [
+          "React Native",
+          "Expo",
+          "TypeScript",
+          "React Native Web",
+          "Supabase",
+          "Supabase Edge Functions",
+          "PostgreSQL",
+          "OpenAI API",
+          "Square Payments API",
+          "Apple Pay",
+          "Google Pay",
+          "Vercel",
+          "REST APIs",
+          "Git and GitHub"
+        ],
+        "Features": [
+          "Interactive tattoo-style recommendation quiz",
+          "AI-generated tattoo design previews",
+          "Personalized tattoo descriptions based on quiz responses",
+          "Blurred preview and paywall-based content unlocking",
+          "Secure card payments through Square",
+          "Apple Pay and Google Pay support",
+          "Downloadable high-resolution tattoo designs",
+          "Responsive experience across web and mobile devices",
+          "Payment verification before accessing premium content",
+          "QR-code-friendly flow designed for use in tattoo studios",
+          "Real-time backend processing with Supabase Edge Functions"
+        ],
+        "Contributions": [
+          "Designed and developed the complete application flow from quiz completion to AI-generated results",
+          "Built the front end using React Native, Expo, and TypeScript",
+          "Created a responsive web version using React Native Web",
+          "Integrated the OpenAI API to generate personalized tattoo images and descriptions",
+          "Developed Supabase Edge Functions for preview generation, payment processing, and webhook handling",
+          "Designed and managed the PostgreSQL payment database structure",
+          "Integrated Square’s production payment system, including card payments, Apple Pay, and Google Pay",
+          "Implemented secure payment validation to prevent unpaid access to premium results",
+          "Configured CORS, environment variables, API keys, and production endpoints",
+          "Deployed and maintained the application on Vercel",
+          "Connected the custom domain and prepared the application for mobile store deployment",
+          "Tested and debugged the application across desktop, mobile, Safari, and Chrome"
+        ]
+      }
+    },
+
+    {
       "id": 7,
       "name": "Granville Tattoo",
-      "image": "/images/projects/granvilletattoo.jpg",
+      "image": "/images/projects/granvilletattoo.webp",
       "alt": "Screenshot of Granville Tattoo headless website",
       "shortDescription": "Granville Tattoo: A headless Next.js and WordPress experience for a Vancouver studio.",
       "overview": "Granville Tattoo is a headless web experience built with Next.js on the front end and WordPress powering content through the REST API. The architecture balances high-performance rendering with flexible content management, pairing modern UI interactions with a tightly integrated booking workflow.",
@@ -41,7 +102,7 @@
     {
       "id": 6,
       "name": "Electricity Forum",
-      "image": "/images/projects/electricityforum.jpg",
+      "image": "/images/projects/electricityforum.webp",
       "alt": "Screenshot of Electricity Forum website",
       "shortDescription": "A professional platform for electrical industry discussions, resources, and community engagement.",
       "overview": "Electricity Forum is a comprehensive web platform designed for electrical engineers, technicians, and industry professionals. The site serves as a hub for technical discussions, industry news, and educational resources. Built with a focus on performance and user experience, the platform facilitates knowledge sharing and professional networking within the electrical engineering community.",
@@ -82,7 +143,7 @@
     {
       "id": 1,
       "name": "Call Me Guide",
-      "image": "/images/projects/callmeguide.jpg",
+      "image": "/images/projects/callmeguide.webp",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "Call Me Guide: A platform offering real-time travel guidance with a user-friendly interface and secure payment integration.",
       "overview": "This is a platform offering real-time travel guidance with a user-friendly interface and secure payment integration.",
@@ -122,7 +183,7 @@
     {
       "id": 2,
       "name": "Vansun Studio Website",
-      "image": "/images/projects/vansunstudio.jpg",
+      "image": "/images/projects/vansunstudio.webp",
       "alt": "Screenshot of Vansun Studio booking website",
       "shortDescription": "A fully custom booking website for a piercing and tattoo studio, built from scratch with React and WordPress headless CMS.",
       "overview": "Vansun Studio is a fully responsive, feature-rich booking platform for a Vancouver-based tattoo and piercing studio. The website is built entirely from scratch, integrating a custom-built React frontend with WordPress as a headless CMS and WooCommerce for appointment handling. It includes advanced features such as a consent form, custom booking logic, and smooth animations to enhance user experience.",
@@ -165,11 +226,11 @@
     {
       "id": 3,
       "name": "Redtattoo",
-      "image": "/images/projects/redtattoo.jpg",
-      "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
-      "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
-      "overview": "Red Tattoo is a custom-built website designed for a tattoo studio, functioning as both an online portfolio and a booking platform. The site allows potential customers to browse past work, learn more about the artist, book appointments, and complete payments seamlessly — all in one place. It's crafted to reflect the unique style of the artist while offering a smooth and modern user experience.",
-        
+      "image": "/images/projects/redtattoo.webp",
+      "alt": "Screenshot of Red Tattoo studio website",
+      "shortDescription": "A React front-end with WordPress CMS for a tattoo studio portfolio and custom booking flow.",
+      "overview": "Red Tattoo is a custom-built website for a tattoo studio, combining an online portfolio with a booking platform. Customers can browse past work, learn about the artist, and book appointments. The front end is built with React, while WordPress powers the backend and content management.",
+
         "details": {
         "Client": ["Redtattoo Studio Ltd"],
         "Year": " 2024",
@@ -180,38 +241,35 @@
 
         "sections": {
           "Technologies": [
-            "CMS: WordPress 6.8",
-            "E-commerce: WooCommerce 9.4.1",
-            "JavaScript Frameworks & Libraries: Svelte, jQuery, jQuery UI, jQuery Migrate",
-             "Styling & UI: Tailwind CSS, Bootstrap Icons, Google Font API",
+            "Frontend: React",
+            "CMS / Backend: WordPress",
             "Backend & Logic: PHP",
             "Database: MySQL",
             "Hosting: SiteGround"
           ],
           "Features": [
-            "Custom WordPress theme tailored to the tattoo studio's branding",
             "Portfolio section to showcase artwork",
-            "Appointment booking system with calendar and time slot integration (Bookly)",
-            "E-commerce functionality via WooCommerce for deposits and payment processing",
+            "Custom-designed booking system",
+            "Consent form submission and storage",
+            "Booking emails sent to both artist and customer",
             "Fully responsive design, mobile-optimized"
           ],
           "Contributions": [
-            "Designed and developed a custom WordPress theme from scratch",
-            "Implemented both frontend and backend logic using PHP",
-            "Integrated WooCommerce for payments and Bookly for appointment scheduling",
-            "Handled database structure and optimization (MySQL)",
-            "Customized plugin behavior for specific client needs",
+            "Built the React front end for portfolio and booking flows",
+            "Set up WordPress as the CMS and backend",
+            "Designed and customized the booking system from scratch",
+            "Implemented consent form handling and booking email notifications",
             "Ensured the site is SEO-ready and performance-tuned",
-            "Provided post-launch support and documentation"  
+            "Provided post-launch support and documentation"
           ]
         }
-      
+
     },
 
     {
       "id": 4,
       "name": "35mm-app",
-      "image": "/images/projects/35mm-app.jpg",
+      "image": "/images/projects/35mm-app.webp",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
       "overview": "This a dynamic movie database built with modern technologies to offer a smooth and enjoyable experience for cinema lovers.",
@@ -247,7 +305,7 @@
     {
       "id": 5,
       "name": "pacificpeak",
-      "image": "/images/projects/pacificpeak.jpg",
+      "image": "/images/projects/pacificpeak.webp",
       "alt": "Screenshot of Mahdi Roozbahani's portfolio website",
       "shortDescription": "A modern and responsive portfolio website built with React to showcase projects and skills.",
         "overview": "This is a new business project built with WordPress. The project is currently ongoing and has not been fully launched yet. Pacific Peaks offers adventure tours ranging from one-day to multi-day options in all four seasons with various packages.",

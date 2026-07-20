@@ -4,7 +4,7 @@
     "subtitle": "Web Developer",
     "buttonText": "Learn more",
     "location": "Based in Vancouver, Canada",
-    "image": "/images/home/hero.jpg"
+    "image": "/images/home/hero.webp"
   },
 
   "about":{
@@ -18,13 +18,17 @@
     "explanation": "A selection of projects where I turned ideas into clean, working code, blending logic, creativity, and user experience. These examples reflect my background in front-end development and my ability to build responsive, dynamic interfaces using tools like React and WordPress. From styling with Sass and Tailwind to managing data flow and component logic, each project shows a piece of what I do best: crafting seamless, user-focused digital experiences.",
     "projects": [
       {
+        "name":"Tattnix",
+        "image": "/images/projects/Tattnix.webp"
+      },
+      {
         "name":"Call Me Guide",
-        "image": "/images/projects/callmeguide.jpg"
+        "image": "/images/projects/callmeguide.webp"
       },
 
       {
         "name":"RedTattoo",
-         "image": "/images/projects/redtattoo.jpg"
+         "image": "/images/projects/redtattoo.webp"
       },
       {
         "name":"Game"

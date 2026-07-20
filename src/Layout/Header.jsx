@@ -215,14 +215,7 @@ const Header = () => {
                     </div>
                     <div className="social-links">
                         <a 
-                            href="#" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                        >
-                            Instagram
-                        </a>
-                        <a 
-                            href="#" 
+                            href="https://www.linkedin.com/in/mahdi-roozbahani/" 
                             target="_blank" 
                             rel="noopener noreferrer"
                         >
